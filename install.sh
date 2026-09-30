@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
 #
-# install.sh — installs this icon theme into ~/.local/share/icons
-#
-# Usage:
-#   ./install.sh [OPTIONS]
-#
-# Options:
-#   -c, --color COLOR   Use a colored places variant:
-#                       b, blue     g, green    o, orange
-#                       p, pink     pu, purple  r, red
-#                       s, slate    t, teal     y, yellow
-#   -n, --name NAME     Install into ~/.local/share/icons/NAME
-#   -f, --folders       Run the custom folder icons generator after install
-#   -h, --help          Show this help message
-#
-# Examples:
-#   ./install.sh
-#   ./install.sh -c p
-#   ./install.sh -c purple
-#   ./install.sh -c r -n MyIcons
-#   ./install.sh -c t -f
+	# install.sh — installs this icon theme into ~/.local/share/icons
+	#
+	# Usage:
+	#   ./install.sh [OPTIONS]
+	#
+	# Options:
+	#   -c, COLOR   	Use a colored places variant:
+	#                       b, blue     g, green    o, orange
+	#                       p, pink     pu, purple  r, red
+	#                       s, slate    t, teal     y, yellow
+	#   -n, NAME    Install into ~/.local/share/icons/NAME
+	#   -f,       	Run the custom folder icons generator after install
+	#   -h,         Show this help message
+	#
+	# Examples:
+	#   ./install.sh
+	#   ./install.sh -c p
+	#   ./install.sh -c purple
+	#   ./install.sh -c r -n MyIcons
+	#   ./install.sh -c t -f
 
 set -euo pipefail
 
