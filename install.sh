@@ -10,7 +10,7 @@
 	#                       b, blue     g, green    o, orange
 	#                       p, pink     pu, purple  r, red
 	#                       s, slate    t, teal     y, yellow
-	#   -n, NAME    Install into ~/.local/share/icons/NAME
+	#   -n, NAME    Install into ~/.local/share/icons/NAME (default: Adwair)
 	#   -f,       	Run the custom folder icons generator after install
 	#   -h,         Show this help message
 	#
@@ -34,7 +34,7 @@ COLORS_DIR="$MAKE_DIR/places-generator/colors"
 AVAILABLE_COLORS=(blue green orange pink purple red slate teal yellow)
 
 COLOR=""
-THEME_NAME=""
+THEME_NAME="Adwair"
 RUN_CUSTOM_FOLDER_ICONS=0
 
 # ---------------------------------------------------------------------------
@@ -112,10 +112,7 @@ if [[ "$RUN_CUSTOM_FOLDER_ICONS" -eq 1 && ! -f "$CUSTOM_FOLDER_ICONS_SCRIPT" ]];
     die "custom_folder_icons.sh not found: $CUSTOM_FOLDER_ICONS_SCRIPT"
 fi
 
-DEST_BASE="$HOME/.local/share/icons"
-if [[ -n "$THEME_NAME" ]]; then
-    DEST_BASE="$DEST_BASE/$THEME_NAME"
-fi
+DEST_BASE="$HOME/.local/share/icons/$THEME_NAME"
 
 mkdir -p "$DEST_BASE"
 log "Installing icons to: $DEST_BASE"
