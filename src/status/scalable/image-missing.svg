@@ -1,0 +1,18 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+	<defs>
+		<image width="31" height="31" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAPFJREFUSIntl00LgzAMhh/jpnOXwf7/bxzbZX4w2x1MpBQHA21PfSFIK+R5Ez0kFdsSoNLYK6/h4hdxcgFOwAVogPoA+AyMGp/QRAivgQ64KVg4rnIHTMAL6NXQmlyAK3AH2oOgWyZG4AG8AWdtPSu4SwRG89YaAzALS9X2jVOBQwMNS3dFggtJDDaJwiuDH/Vz/aOVJ8FFTlWQr9WbKvACL/ACL/ACTwL3mbne4DZd5jKw8gw+sTHUJ5JjmWK96GFQA6mrt0JHgtHZWmFbSsq5/alPH8JnlnUmhvud4TT3oOBe737uaq1Gtl0tNpF8S/0Cv+VTBPRhQykAAAAASUVORK5CYII="/>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-46,46,0,99.516,56)">
+			<stop offset="0" stop-color="#eef0f0"/>
+			<stop offset="1" stop-color="#ffffff"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+		.s1 { fill: none } 
+		.s2 { fill: #999999 } 
+	</style>
+	<use id="img1" href="#img1" transform="matrix(2,0,0,2,1,2.408)"/>
+	<path fill-rule="evenodd" class="s0" d="m16 4h32c6.62 0 12 5.38 12 12v32c0 6.62-5.38 12-12 12h-32c-6.62 0-12-5.38-12-12v-32c0-6.62 5.38-12 12-12z"/>
+	<path class="s1" d="m0 0h64v64h-64z"/>
+	<path class="s2" d="m32.01 17c-1.07-0.05-2.11 0.57-2.92 1.97l-12.68 23.52c-1.09 1.96 0.1 4.76 2.22 4.76h26.7c1.99 0 3.86-2.35 2.47-4.76l-12.81-23.39c-0.81-1.31-1.91-2.04-2.98-2.1zm2.22 7.93v10.15c0.02 1.07-0.96 2.02-2.03 2.02-1.07 0-2.05-0.95-2.03-2.02v-10.15zm-2.03 14.2c1.12 0 2.03 0.92 2.03 2.03 0 1.12-0.91 2.03-2.03 2.03-1.12 0-2.03-0.91-2.03-2.03 0-1.11 0.91-2.03 2.03-2.03z"/>
+</svg>

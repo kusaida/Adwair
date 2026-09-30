@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg6342"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6338">
+    <style
+       id="current-color-scheme"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+  </defs>
+  <path
+     style="isolation:isolate;fill:#000000;stroke-width:0.225326;stroke-linejoin:round;paint-order:markers stroke fill"
+     d="M 9.7615814,14.608623 Q 11.389573,12.728655 11.856365,11.114115 A 3.4638244,3.5502953 0 0 1 10.258059,10.710055 3.0019811,3.0769227 0 0 1 9.0556175,9.5587457 3.3978467,3.4826708 0 0 1 8.5706804,7.7988163 Q 8.5294102,6.2772612 9.5306563,5.3541809 a 3.6617571,3.7531695 0 0 1 2.4114837,-0.961962 3.4638244,3.5502953 0 0 1 2.043652,0.54776 3.6436133,3.7345727 0 0 1 1.296462,1.4792942 4.1813308,4.2857139 0 0 1 0.466791,1.8309388 A 6.9111546,7.083685 0 0 1 14.5532,12.395603 15.41072,15.795434 0 0 1 11.349986,16 Z"
+     id="path16" />
+  <path
+     class="cls-9"
+     d="M 1.4401542,1.3913769 Q 3.0681465,3.2713451 3.5365909,4.8858828 A 3.4638244,3.5502953 0 0 0 1.9382849,5.2899377 3.0069294,3.0819945 0 0 0 0.73419154,6.4412463 3.3978467,3.4826708 0 0 0 0.25090456,8.2028706 C 0.22284763,9.2172412 0.53955741,10.03381 1.2092304,10.645811 A 3.6650561,3.7565507 0 0 0 3.6207134,11.607773 3.4638244,3.5502953 0 0 0 5.6643706,11.061707 3.6403144,3.7311915 0 0 0 6.9608286,9.579033 4.1681352,4.2721889 0 0 0 7.4276194,7.7497879 6.8963092,7.0684692 0 0 0 6.2317745,3.6043974 15.41072,15.795434 0 0 0 3.0285607,-7.0156958e-8 Z"
+     id="path2051"
+     style="isolation:isolate;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.55616;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" />
+</svg>

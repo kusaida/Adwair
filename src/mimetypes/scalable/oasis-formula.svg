@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><filter id="a" width="1.078" height="1.067" x="-.039" y="-.033" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".206"/></filter><filter id="b" width="1.113" height="1.225" x="-.056" y="-.113" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".281"/></filter><clipPath id="g_pageclip"><path d="M13 4c-2.77 0-5 2.23-5 5v46c0 2.77 2.23 5 5 5h38c2.77 0 5-2.23 5-5V16L44 4z"/></clipPath>
+<linearGradient id="g_a" gradientUnits="userSpaceOnUse" x1="36" x2="60" y1="68" y2="68">
+    <stop offset="0" stop-color="#ed336c" id="g_stop2"/>
+    <stop offset="1" stop-color="#ffa348" id="g_stop4"/>
+  </linearGradient>
+  
+<linearGradient id="g_b" gradientTransform="matrix(0 1 -1 0 144 -32)" gradientUnits="userSpaceOnUse" x1="72" x2="96" y1="68" y2="68">
+    <stop offset="0" stop-color="#404ce6" id="g_stop7"/>
+    <stop offset="1" stop-color="#c061cb" id="g_stop9"/>
+  </linearGradient>
+  
+<linearGradient id="g_c" gradientUnits="userSpaceOnUse" x1="68.84919" x2="95.257637" y1="84" y2="84">
+    <stop offset="0" stop-color="#33d1c6" id="g_stop12"/>
+    <stop offset="1" stop-color="#1c25d8" id="g_stop14"/>
+  </linearGradient>
+  
+</defs>
+<path d="M3.44 1.354a1.32 1.32 0 0 0-1.323 1.323v12.171c0 .733.59 1.323 1.323 1.323h10.053a1.32 1.32 0 0 0 1.323-1.323V4.53l-3.175-3.175z" filter="url(#a)" opacity=".15" style="paint-order:stroke fill markers" transform="scale(3.7796)"/>
+<g fill-rule="evenodd"><path fill="#f4f4f4" d="M13 4c-2.77 0-5 2.23-5 5v46c0 2.77 2.23 5 5 5h38c2.77 0 5-2.23 5-5V16L44 4z" style="paint-order:stroke fill markers"/><path fill="#bbb" d="m14.816 4.233-3.175-3.175V2.91c0 .733.59 1.323 1.323 1.323z" style="paint-order:stroke fill markers" transform="scale(3.7796)"/></g>
+<g transform="matrix(0.5 0 0 0.5 0 0)"><path d="M 60.967067,61.749994 47.124662,89.434802 40.782071,76.749619 h -4.907127 a 1.8749532,1.8749532 0 0 0 -1.874954,1.874953 1.8749532,1.8749532 0 0 0 1.874954,1.874953 h 2.592722 L 47.1247,97.813593 63.281546,65.4999 h 28.84203 a 1.8749532,1.8749532 0 0 0 1.874953,-1.874953 1.8749532,1.8749532 0 0 0 -1.874953,-1.874953 z" color="#000000" stroke-linecap="round" style="fill:#d5d3cf;fill-opacity:1;fill-rule:evenodd;stroke-width:0.999999;-inkscape-stroke:none" id="g_path5"/>
+  <path id="g_rect2807" style="display:inline;fill:#d5d3cf;stroke-width:2;stroke-linecap:round;paint-order:markers stroke fill;enable-background:new;stop-color:#000000;fill-opacity:1" d="m 36.00149,103 h 10.999626 c 1.108,0 2,0.55382 2,1.24174 v 1.26652 c 0,0.68792 -0.892,1.24174 -2,1.24174 H 36.00149 c -1.108,0 -2,-0.55382 -2,-1.24174 v -1.26652 c 0,-0.68792 0.892,-1.24174 2,-1.24174 z"/>
+  <path id="g_rect2807-1" style="display:inline;fill:#d5d3cf;stroke-width:2;stroke-linecap:round;paint-order:markers stroke fill;enable-background:new;stop-color:#000000;fill-opacity:1" d="m 58.477233,103 h 10.999626 c 1.108,0 2,0.55382 2,1.24174 v 1.26652 c 0,0.68792 -0.892,1.24174 -2,1.24174 H 58.477233 c -1.108,0 -2,-0.55382 -2,-1.24174 v -1.26652 c 0,-0.68792 0.892,-1.24174 2,-1.24174 z"/>
+  <path id="g_rect2807-9" style="display:inline;fill:#d5d3cf;stroke-width:2;stroke-linecap:round;paint-order:markers stroke fill;enable-background:new;stop-color:#000000;fill-opacity:1" d="m 80.952976,103 h 10.999626 c 1.108,0 2,0.55382 2,1.24174 v 1.26652 c 0,0.68792 -0.892,1.24174 -2,1.24174 H 80.952976 c -1.108,0 -2,-0.55382 -2,-1.24174 v -1.26652 c 0,-0.68792 0.892,-1.24174 2,-1.24174 z"/>
+  <path d="m 90.251866,95.499696 h -10 V 93.33303 h 2.75 l -4.708334,-6.458334 -4.708333,6.458334 h 2.791667 v 2.166666 H 68.168532 V 93.33303 h 2.875 l 5.958334,-8.208334 -6.583334,-9.083333 h -2.666666 v -2.166667 h 9.666666 v 2.166667 h -2.583333 l 4.541667,6.25 4.541666,-6.25 h -2.916666 v -2.166667 h 8.333333 v 2.166667 h -2.875 l -5.791667,8 6.75,9.291667 h 2.833334 z" id="g_text1" style="font-size:48px;line-height:1.25;font-family:'DejaVu Math TeX Gyre';-inkscape-font-specification:'DejaVu Math TeX Gyre';fill:#dd2850;fill-opacity:1;stroke-width:1" aria-label="x"/>
+</g>
+<path d="M43.998 10.999v.586c0 3 2.23 5.416 5 5.416h7v-1.002h-7a4.99 4.99 0 0 1-5.004-5z" filter="url(#b)" opacity=".1" style="paint-order:stroke fill markers"/>
+</svg>

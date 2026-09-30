@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><filter id="a" width="1.078" height="1.067" x="-.039" y="-.033" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".206"/></filter><filter id="b" width="1.113" height="1.225" x="-.056" y="-.113" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".281"/></filter><clipPath id="g_pageclip"><path d="M13 4c-2.77 0-5 2.23-5 5v46c0 2.77 2.23 5 5 5h38c2.77 0 5-2.23 5-5V16L44 4z"/></clipPath>
+</defs>
+<path d="M3.44 1.354a1.32 1.32 0 0 0-1.323 1.323v12.171c0 .733.59 1.323 1.323 1.323h10.053a1.32 1.32 0 0 0 1.323-1.323V4.53l-3.175-3.175z" filter="url(#a)" opacity=".15" style="paint-order:stroke fill markers" transform="scale(3.7796)"/>
+<g fill-rule="evenodd"><path fill="#f4f4f4" d="M13 4c-2.77 0-5 2.23-5 5v46c0 2.77 2.23 5 5 5h38c2.77 0 5-2.23 5-5V16L44 4z" style="paint-order:stroke fill markers"/><path fill="#bbb" d="m14.816 4.233-3.175-3.175V2.91c0 .733.59 1.323 1.323 1.323z" style="paint-order:stroke fill markers" transform="scale(3.7796)"/></g>
+<g transform="matrix(0.5 0 0 0.5 0 0)"><path d="m 35.988281 99.925781 v -2 h 60 v 2 z m 0 0" fill="#1a5fb4"/>
+    <path d="m 63.707031 55.621094 c -6.925781 0 -13.933593 1.851562 -18.683593 5.234375 l 4.511718 8.777343 c 3.140625 -2.496093 7.890625 -4.027343 12.480469 -4.027343 c 6.761719 0 9.984375 3.140625 9.984375 8.535156 h -9.984375 c -13.207031 0 -18.601563 5.316406 -18.601563 12.964844 c 0 7.488281 6.039063 13.125 16.183594 13.125 c 6.363282 0 10.871094 -2.09375 13.207032 -6.039063 v 5.398438 h 11.757812 v -24.722656 c 0 -13.125 -7.652344 -19.246094 -20.855469 -19.246094 z m -0.96875 36.15625 c -4.425781 0 -7.085937 -2.09375 -7.085937 -5.234375 c 0 -2.898438 1.851562 -5.074219 7.730468 -5.074219 h 8.617188 v 4.429688 c -1.449219 3.945312 -5.074219 5.878906 -9.261719 5.878906 z m 0 0" fill="#3584e4"/>
+    <g fill="#1a5fb4">
+        <path d="m 89.988281 49.925781 h 2 v 56 h -2 z m 0 0"/>
+        <path d="m 86.996094 49.925781 l 3.992187 -3.992187 l 3.992188 3.992187 z m 0 0"/>
+        <path d="m 86.996094 103.933594 l 3.992187 3.992187 l 3.992188 -3.992187 z m 0 0"/>
+    </g>
+</g>
+<path d="M43.998 10.999v.586c0 3 2.23 5.416 5 5.416h7v-1.002h-7a4.99 4.99 0 0 1-5.004-5z" filter="url(#b)" opacity=".1" style="paint-order:stroke fill markers"/>
+</svg>

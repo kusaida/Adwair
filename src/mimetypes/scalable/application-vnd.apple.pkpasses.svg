@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><filter id="a" width="1.078" height="1.067" x="-.039" y="-.033" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".206"/></filter><filter id="b" width="1.113" height="1.225" x="-.056" y="-.113" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".281"/></filter><clipPath id="g_pageclip"><path d="M13 4c-2.77 0-5 2.23-5 5v46c0 2.77 2.23 5 5 5h38c2.77 0 5-2.23 5-5V16L44 4z"/></clipPath>
+<linearGradient id="g_b" x1="40" x2="46" y1="17" y2="11" gradientTransform="matrix(1 0 0 1 -.022678 -1.0016)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fefefe" offset="0"/>
+   <stop stop-color="#e9e9e9" offset="1"/>
+  </linearGradient>
+  
+<linearGradient id="g_linearGradient6" x1="31.974" x2="31.974" y1=".99781" y2="60.999" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#35a3e9" offset="0"/>
+   <stop stop-color="#2178e7" offset="1"/>
+  </linearGradient>
+ 
+</defs>
+<path d="M3.44 1.354a1.32 1.32 0 0 0-1.323 1.323v12.171c0 .733.59 1.323 1.323 1.323h10.053a1.32 1.32 0 0 0 1.323-1.323V4.53l-3.175-3.175z" filter="url(#a)" opacity=".15" style="paint-order:stroke fill markers" transform="scale(3.7796)"/>
+<g fill-rule="evenodd"><path fill="#2a8be7" d="M13 4c-2.77 0-5 2.23-5 5v46c0 2.77 2.23 5 5 5h38c2.77 0 5-2.23 5-5V16L44 4z" style="paint-order:stroke fill markers"/><path fill="#fff" opacity=".35" d="m14.816 4.233-3.175-3.175V2.91c0 .733.59 1.323 1.323 1.323z" style="paint-order:stroke fill markers" transform="scale(3.7796)"/></g>
+<g transform="matrix(1 0 0 1 0 0)"><path d="m22.001 23.999v6.5009c0 0.27591 0.223 0.49891 0.49891 0.49891h3.001c0.2773 0.0043 0.50321-0.22161 0.49891-0.49891v-6.5009zm1.0016 4.0026h1.9994v1.9994h-2.0032zm0.99782-27.001v2.0032h2.0032v-2.0032zm0 2.0032h-2.0032v1.9956h2.0032zm0 1.9956v2.0032h2.0032v-2.0032zm0 2.0032h-2.0032v1.9994h2.0032zm0 1.9994v1.9994h2.0032v-2.0032zm0 1.9994h-2.0032v1.9994h2.0032zm0 1.9994v1.9994h2.0032v-2.0032zm0 1.9994h-2.0032v2.0032h2.0032zm0 2.0032v1.9956h2.0032v-1.9994zm0 1.9956h-2.0032v2.0032h2.0032zm0 2.0032v1.9994h2.0032v-2.0032z" fill="#ffffff" opacity=".75"/>
+ <path d="m15 35v6h-2v15c0 0.76175 0.26134 1 1 1h23v-15c0-0.76175-0.26135-1-1-1h-6v-6zm1 1h13v5h-4c-0.62732-0.86256-1.4545-1.4966-2.5-1.5-1.0483 8.5e-4 -1.871 0.63517-2.5 1.5h-4zm-2 6h22v4h-9.666c-1.4773 0-2.834 1.4765-2.834 3s1.3608 3.1105 2.834 3h9.666v4h-22zm14 5.5c0.73636 0 1.5 0.7406 1.5 1.5 0 0.75939-0.76364 1.5-1.5 1.5-0.7364 0-1.5-0.74061-1.5-1.5 0-0.7594 0.7636-1.5 1.5-1.5z" fill="#ffffff" opacity=".75"/>
+</g>
+<path d="M43.998 10.999v.586c0 3 2.23 5.416 5 5.416h7v-1.002h-7a4.99 4.99 0 0 1-5.004-5z" filter="url(#b)" opacity=".1" style="paint-order:stroke fill markers"/>
+</svg>

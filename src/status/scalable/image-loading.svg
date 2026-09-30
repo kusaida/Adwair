@@ -1,0 +1,24 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+	<defs>
+		<image width="31" height="31" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAPFJREFUSIntl00LgzAMhh/jpnOXwf7/bxzbZX4w2x1MpBQHA21PfSFIK+R5Ez0kFdsSoNLYK6/h4hdxcgFOwAVogPoA+AyMGp/QRAivgQ64KVg4rnIHTMAL6NXQmlyAK3AH2oOgWyZG4AG8AWdtPSu4SwRG89YaAzALS9X2jVOBQwMNS3dFggtJDDaJwiuDH/Vz/aOVJ8FFTlWQr9WbKvACL/ACL/ACTwL3mbne4DZd5jKw8gw+sTHUJ5JjmWK96GFQA6mrt0JHgtHZWmFbSsq5/alPH8JnlnUmhvud4TT3oOBe737uaq1Gtl0tNpF8S/0Cv+VTBPRhQykAAAAASUVORK5CYII="/>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-23,23,0,49.758,28)">
+			<stop offset="0" stop-color="#eef0f0"/>
+			<stop offset="1" stop-color="#ffffff"/>
+		</linearGradient>
+		<radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(8,0,0,8,16,16)">
+			<stop offset="0" stop-color="#b3b3b3"/>
+			<stop offset="1" stop-color="#313131"/>
+		</radialGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+		.s1 { fill: none } 
+		.s2 { opacity: .5;fill: #4e4e4e } 
+		.s3 { opacity: .5;fill: url(#g2) } 
+	</style>
+	<use  href="#img1" transform="matrix(1,0,0,1,.5,1.204)"/>
+	<path fill-rule="evenodd" class="s0" d="m8 2h16c3.31 0 6 2.69 6 6v16c0 3.31-2.69 6-6 6h-16c-3.31 0-6-2.69-6-6v-16c0-3.31 2.69-6 6-6z"/>
+	<path class="s1" d="m0 0h32v32h-32z"/>
+	<path fill-rule="evenodd" class="s2" d="m16.44 11.67h-0.67l-0.67 4.66 3.34 2.67v-0.67l-2-2.66z"/>
+	<path fill-rule="evenodd" class="s3" d="m24 16c0 4.42-3.58 8-8 8-4.42 0-8-3.58-8-8 0-4.42 3.58-8 8-8 4.42 0 8 3.58 8 8zm-14 0c0 3.31 2.69 6 6 6 3.31 0 6-2.69 6-6 0-3.31-2.69-6-6-6-3.31 0-6 2.69-6 6z"/>
+</svg>
