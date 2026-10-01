@@ -32,21 +32,21 @@ The installer supports colored folder variants and custom installation names.
 ![Adwair folder variants](preview/folders.png)
 
 ```text
-  -c, COLOR     Use a colored places variant:
-                      b, blue     g, green    o, orange
-                      p, pink     pu, purple  r, red
-                      s, slate    t, teal     y, yellow
-
-  -n, NAME      Change icon theme folder name ~/.local/share/icons/NAME
-
-  -f,           Run the custom folder icons generator after install
-
-  -h,           Show this help message
+   -c, --color COLOR    Use a colored places variant. Accepts the full name
+                        or an unambiguous prefix, case-insensitive:
+                          b, blue     g, green    o, orange
+                          p, pink     pu, purple  r, red
+                          s, slate    t, teal     y, yellow
+   -n, --name NAME      Theme folder name (default: Adwair)
+   -p, --path PATH      Base installation path (default: ~/.local/share/icons)
+                        The theme is installed into PATH/NAME
+   -f, --folder-icons   Run the custom folder icons generator after install
+   -h, --help           Show this help message
 ```
 
 ## Custom folders
 
-The `-f` / `--folders` option runs the custom folder icon generator after installation.
+The `-f` / `--folder-icons` option runs the custom folder icon generator after installation.
 
 The generator scans directories on the system and automatically assigns matching folder icons based on their names.
 
@@ -82,6 +82,5 @@ Based on **WhiteSur** and **Hatter icon** themes.
 * Folder icons: modified Adwaita artwork with Adwaita symbolic icons.
 * Some app icons: based on Hatter and adapted to the WhiteSur style.
 * Several app icons are original artwork.
-
 
 
