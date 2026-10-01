@@ -1,31 +1,34 @@
 #!/usr/bin/env bash
 #
-	# install.sh — installs this icon theme into ~/.local/share/icons
-	#
-	# Usage:
-	#   ./install.sh [OPTIONS]
-	#
-	# Options:
-	#   -c, COLOR   	Use a colored places variant:
-	#                       b, blue     g, green    o, orange
-	#                       p, pink     pu, purple  r, red
-	#                       s, slate    t, teal     y, yellow
-	#   -n, NAME    Install into ~/.local/share/icons/NAME (default: Adwair)
-	#   -f,       	Run the custom folder icons generator after install
-	#   -h,         Show this help message
-	#
-	# Examples:
-	#   ./install.sh
-	#   ./install.sh -c p
-	#   ./install.sh -c purple
-	#   ./install.sh -c r -n MyIcons
-	#   ./install.sh -c t -f
+# install.sh — installs this icon theme into ~/.local/share/icons
+#
+# Usage:
+#   ./install.sh [OPTIONS]
+#
+# Options:
+#   -c, --color COLOR    Use a colored places variant. Accepts the full name
+#                        or an unambiguous prefix, case-insensitive:
+#                          b, blue     g, green    o, orange
+#                          p, pink     pu, purple  r, red
+#                          s, slate    t, teal     y, yellow
+#   -n, --name NAME      Theme folder name (default: Adwair)
+#   -p, --path PATH      Base installation path (default: ~/.local/share/icons)
+#                        The theme is installed into PATH/NAME
+#   -f, --folder-icons   Run the custom folder icons generator after install
+#   -h, --help           Show this help message
+#
+#
+# Examples:
+#   ./install.sh
+#   ./install.sh -c p
+#   ./install.sh --color purple
+#   ./install.sh -c r -n MyIcons
+#   ./install.sh --color teal --name MyIcons --f
+#   ./install.sh -p ~/.icons
+#   sudo ./install.sh --path /usr/share/icons
 
 set -euo pipefail
 
-# ---------------------------------------------------------------------------
-# Paths
-# ---------------------------------------------------------------------------
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 SRC_DIR="$SCRIPT_DIR/src"
 MAKE_DIR="$SCRIPT_DIR/make"
@@ -35,13 +38,12 @@ AVAILABLE_COLORS=(blue green orange pink purple red slate teal yellow)
 
 COLOR=""
 THEME_NAME="Adwair"
+INSTALL_PATH="$HOME/.local/share/icons"
 RUN_CUSTOM_FOLDER_ICONS=0
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
 usage() {
-    sed -n '2,26p' "$0" | sed 's/^# \{0,1\}//'
+    awk 'NR==1{next} /^[[:space:]]*#/{print; next} {exit}' "$0" \
+        | sed -E 's/^[[:space:]]*# ?//'
     exit "${1:-0}"
 }
 
@@ -87,10 +89,33 @@ resolve_color() {
     esac
 }
 
-while getopts ":c:n:fh" opt; do
+ARGS=()
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --color=*|--name=*|--path=*)
+            long="${1%%=*}"
+            ARGS+=("-${long:2:1}" "${1#*=}")
+            ;;
+        --color|--name|--path)
+            [[ $# -ge 2 ]] || die "Option $1 requires an argument"
+            ARGS+=("-${1:2:1}" "$2")
+            shift
+            ;;
+        --folder-icons) ARGS+=(-f) ;;
+        --help)         ARGS+=(-h) ;;
+        --)             shift; ARGS+=("$@"); break ;;
+        --*)            die "Unknown option: $1 (use -h for help)" ;;
+        *)              ARGS+=("$1") ;;
+    esac
+    shift
+done
+set -- ${ARGS[@]+"${ARGS[@]}"}
+
+while getopts ":c:n:p:fh" opt; do
     case "$opt" in
         c) COLOR="$OPTARG" ;;
         n) THEME_NAME="$OPTARG" ;;
+        p) INSTALL_PATH="$OPTARG" ;;
         f) RUN_CUSTOM_FOLDER_ICONS=1 ;;
         h) usage 0 ;;
         \?) die "Unknown option: -$OPTARG (use -h for help)" ;;
@@ -112,9 +137,17 @@ if [[ "$RUN_CUSTOM_FOLDER_ICONS" -eq 1 && ! -f "$CUSTOM_FOLDER_ICONS_SCRIPT" ]];
     die "custom_folder_icons.sh not found: $CUSTOM_FOLDER_ICONS_SCRIPT"
 fi
 
-DEST_BASE="$HOME/.local/share/icons/$THEME_NAME"
+case "$INSTALL_PATH" in
+    "~")   INSTALL_PATH="$HOME" ;;
+    "~/"*) INSTALL_PATH="$HOME/${INSTALL_PATH#"~/"}" ;;
+esac
+INSTALL_PATH="${INSTALL_PATH%/}"
+[[ -n "$INSTALL_PATH" ]] || die "Installation path must not be empty or '/'"
 
-mkdir -p "$DEST_BASE"
+DEST_BASE="$INSTALL_PATH/$THEME_NAME"
+
+mkdir -p "$DEST_BASE" 2>/dev/null \
+    || die "Cannot create $DEST_BASE (permission denied? try sudo for system paths)"
 log "Installing icons to: $DEST_BASE"
 
 for dir in "$SRC_DIR"/*/; do
