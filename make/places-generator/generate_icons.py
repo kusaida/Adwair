@@ -6,16 +6,11 @@ import re
 
 FOLDER = Path("folder")
 SYMBOLICS = Path("symbolics")
-OUTPUT_ROOT = Path("colors")  # внутри будет output/pink и output/slate
+OUTPUT_ROOT = Path("colors")
 
 SVG_NS = "http://www.w3.org/2000/svg"
+GPA_NS = "https://www.gtk.org/grappa"
 
-# -----------------------------------------------------------------
-# Базовые шаблоны (уже нарисованные вручную, НЕ генерируются)
-# ВАЖНО: эти файлы должны быть окрашены в BASE_MAIN/BASE_LIGHT
-# (синий), т.к. recolor_folder() ищет именно эти hex-значения,
-# чтобы заменить их на цвет темы.
-# -----------------------------------------------------------------
 BASES = {
     "folder": FOLDER / "folder.svg",
     "folder-open": FOLDER / "folder-open.svg",
@@ -23,16 +18,11 @@ BASES = {
     "user-desktop": FOLDER / "user-desktop.svg",
 }
 
-# -----------------------------------------------------------------
-# Спецпапки собираются АВТОМАТИЧЕСКИ из всех файлов в SYMBOLICS
-# -----------------------------------------------------------------
 SUFFIX = "-symbolic.svg"
 FOLDER_PREFIX = "folder-"
 
 
 def discover_special_icons():
-    """Сканирует SYMBOLICS и строит словарь: короткое-имя -> имя файла эмблемы."""
-
     icons = {}
 
     for symbolic_file in sorted(SYMBOLICS.glob(f"*{SUFFIX}")):
@@ -58,21 +48,8 @@ def discover_special_icons():
 
 SPECIAL_ICONS = discover_special_icons()
 
-# -----------------------------------------------------------------
-# Переименования при генерации: короткое-имя (ключ SPECIAL_ICONS)
-# -> имя, которое должно оказаться в имени итогового файла.
-# Не создаёт symlink — просто меняет, под каким именем эмблема
-# будет нарисована. Пустой словарь = без переименований.
-# -----------------------------------------------------------------
-ALIASES = {
-    # "downloads": "download",
-    # "public": "image-people",
-}
+ALIASES = {}
 
-# -----------------------------------------------------------------
-# Отдельная "-open" версия нужна ТОЛЬКО для этих иконок (сверяются
-# уже ПОСЛЕ применения ALIASES, т.е. по итоговому короткому имени).
-# -----------------------------------------------------------------
 OPEN_ICONS = {
     "documents",
     "download",
@@ -84,36 +61,19 @@ OPEN_ICONS = {
     "user-home",
 }
 
-# Все размеры ниже заданы в координатах эталонного холста 128x128.
-# Скрипт сам пересчитывает их под фактический viewBox каждого шаблона
-# (64x64, 128x128, 256x256 ...), так что при смене размера шаблонов
-# ничего подгонять не нужно.
 REFERENCE_SIZE = 128
 
-# Область символики на закрытой папке: передняя панель x 12..116,
-# y 40..106, центр по X = 64, центр по Y = 73.
 AREA_X = 32
 AREA_Y = 41
 AREA_WIDTH = 64
 AREA_HEIGHT = 64
 
-# Максимальный размер символики
 MAX_SIZE = 40
 
-# Вертикальное сжатие эмблемы (1.0 = без сжатия). Имитирует перспективу:
-# у "приоткрытых" шаблонов передняя панель наклонена к зрителю, поэтому
-# плоская эмблема на ней выглядит сплюснутой по вертикали.
 SCALE_Y = 1.0
 
-# Перспектива "приоткрытой" папки. Образец геометрии — folder-drag-accept:
-# передняя панель короче и опущена (тело панели y 55..108, центр по Y ~ 81),
-# поэтому эмблема ужимается по вертикали до 75%.
-#   (x, y, width, height, max_size, scale_y)
 OPEN_PERSPECTIVE = (32, 56, 64, 50, 36, 0.75)
 
-# Свои параметры для шаблонов, у которых панель расположена иначе:
-#   "ключ из BASES": (x, y, width, height, max_size, scale_y)
-# Всё, что не указано, использует значения выше.
 AREA_OVERRIDES = {
     "folder-open": OPEN_PERSPECTIVE,
 }
@@ -125,12 +85,6 @@ def get_area(base_key):
     )
 
 
-# -----------------------------------------------------------------
-# Только два цвета темы. Каждый цвет пишется в свою собственную
-# подпапку output/<color>/, поэтому в именах файлов цвет больше
-# не указывается вообще (никакой "folder-pink-..." — просто
-# "folder-...").
-# -----------------------------------------------------------------
 COLORS = {
     "blue": {"main": "#3a87e5", "light": "#93c0ea"},
     "teal": {"main": "#2190a4", "light": "#53c6d0"},
@@ -142,15 +96,10 @@ COLORS = {
     "purple": {"main": "#9141ac", "light": "#b185c6"},
     "slate": {"main": "#6f8396", "light": "#acb2b6"},
 }
-# Цвета, зашитые в базовые шаблоны (folder/*.svg), которые
-# recolor_folder() ищет и заменяет на цвет текущей темы.
-# Совпадают с классами .s0 / .s4 в folder/folder.svg.
+
 BASE_MAIN = "#438DE6"
 BASE_LIGHT = "#A4CAEE"
 
-# Производные цвета шаблонов (градиент g1 и светлая кромка .s3 в
-# folder-drag-accept). Каждый — это цвет темы, смешанный с белым в
-# указанной пропорции (подобрано под синий шаблон).
 BASE_GRADIENT = {
     "#62a0ea": ("main", 0.165),
     "#afd4ff": ("light", 0.15),
@@ -158,19 +107,6 @@ BASE_GRADIENT = {
     "#b9d6f2": ("light", 0.23),
 }
 
-# -----------------------------------------------------------------
-# Алиасы, которые создаются РЕАЛЬНЫМИ symlink'ами (не копиями файла),
-# как в настоящей Papirus. Каждая пара — "базовые" имена без .svg.
-# Пересоздаются внутри КАЖДОЙ цветовой подпапки, т.к. цвет теперь
-# определяется папкой, а не именем файла.
-#
-# Примеры того, что получится (внутри output/pink/ и output/slate/):
-#   folder-downloads.svg -> folder-download.svg
-#   folder-desktop.svg   -> user-desktop.svg
-#
-# Дополняйте список любыми парами, которых не хватает —
-# отсутствующая цель просто даст предупреждение, а не ошибку.
-# -----------------------------------------------------------------
 PER_COLOR_ALIASES = [
     ("folder-downloads", "folder-download"),
     ("folder-desktop", "user-desktop"),
@@ -180,13 +116,6 @@ PER_COLOR_ALIASES = [
     ("folder-photos", "folder-photo"),
 ]
 
-# -----------------------------------------------------------------
-# Раньше эти алиасы были "глобальными" (без цвета — ссылались на
-# цвет темы по умолчанию). Теперь единой темы по умолчанию нет:
-# оба цвета равноправны, каждый в своей папке. Поэтому эти алиасы
-# ТОЖЕ пересоздаются внутри КАЖДОЙ цветовой подпапки и ссылаются
-# на файл того же цвета (той же папки).
-# -----------------------------------------------------------------
 GLOBAL_ALIASES = [
     ("desktop", "user-desktop"),
     ("certificate-server", "folder-locked"),
@@ -205,7 +134,6 @@ GLOBAL_ALIASES = [
     ("folder-home", "user-home"),
     ("folder_home", "user-home"),
     ("folder_home2", "folder-image-people"),
-    # ("folder-root", "folder-red"),  # "red" больше не генерируется как цвет темы
     ("folder-text", "folder-documents"),
     ("folder-txt", "folder-documents"),
     ("folder_man", "folder-documents"),
@@ -223,19 +151,21 @@ GLOBAL_ALIASES = [
     ("folder-html", "folder-network"),
 ]
 
+PAINT_ATTRS = ("fill", "stroke", "stop-color")
+SKIPPED_TAGS = ("defs", "namedview", "metadata", "title", "desc")
+BLACK_VALUES = {"#000", "#000000", "black", "rgb(0,0,0)"}
+STYLE_PAINT_RE = re.compile(
+    r"(fill|stroke|stop-color)\s*:\s*"
+    r"(currentColor|#000000|#000|black|rgb\(\s*0\s*,\s*0\s*,\s*0\s*\))",
+    re.IGNORECASE,
+)
+
 
 def parse_svg(path):
     return etree.parse(str(path))
 
 
 def parse_length(value: str):
-    """
-    Парсит строку вида '24', '24px', '24.0pt', '1in' и возвращает
-    число в "пользовательских единицах" (px как 1:1, остальное
-    переводится приблизительно по 96 DPI). Возвращает None, если
-    распарсить не удалось (например, единица '%').
-    """
-
     if value is None:
         return None
 
@@ -260,22 +190,14 @@ def parse_length(value: str):
     if unit in UNIT_TO_PX:
         return number * UNIT_TO_PX[unit]
 
-    # '%' или неизвестная единица — не можем надёжно перевести
     return None
 
 
 def get_viewbox(root):
-    """
-    Возвращает (x, y, w, h). Если атрибут viewBox отсутствует —
-    пытается восстановить его из width/height. Если и их нет
-    (или они в непереводимых единицах, например '%') — использует
-    дефолт 24x24, типичный для symbolic-иконок.
-    """
-
     vb = root.get("viewBox")
 
     if vb:
-        return tuple(map(float, vb.split()))
+        return tuple(map(float, vb.replace(",", " ").split()))
 
     width = parse_length(root.get("width"))
     height = parse_length(root.get("height"))
@@ -300,8 +222,6 @@ def _mix_with_white(value, amount):
 
 
 def build_color_map(main_color, light_color):
-    """Словарь {старый hex (нижний регистр): новый hex} для одной темы."""
-
     mapping = {
         BASE_MAIN.lower(): main_color,
         BASE_LIGHT.lower(): light_color,
@@ -316,25 +236,17 @@ def build_color_map(main_color, light_color):
 
 
 def replace_colors(text, mapping):
-    """Заменяет все hex-цвета из mapping за один проход, без учёта регистра."""
-
     pattern = re.compile("|".join(re.escape(k) for k in mapping), re.IGNORECASE)
     return pattern.sub(lambda m: mapping[m.group(0).lower()], text)
 
 
 def recolor_folder(root, main_color, light_color):
-    """
-    Перекрашивает шаблон папки. Цвета могут лежать в трёх местах:
-    в блоке <style> (классы .s0, .s4 ...), в атрибутах fill / stop-color
-    и в атрибуте style. Обрабатываем все три.
-    """
-
     mapping = build_color_map(main_color, light_color)
 
     for element in root.iter():
 
         if not isinstance(element.tag, str):
-            continue  # комментарии и т.п.
+            continue
 
         if etree.QName(element).localname == "style" and element.text:
             element.text = replace_colors(element.text, mapping)
@@ -346,29 +258,36 @@ def recolor_folder(root, main_color, light_color):
                 element.set(attr, replace_colors(value, mapping))
 
 
+def _is_symbolic_paint(value):
+    normalized = re.sub(r"\s+", "", value).lower()
+    return normalized == "currentcolor" or normalized in BLACK_VALUES
+
+
 def recolor_symbolic(root, color):
-    """Symbolic использует currentColor. Заменяем его на основной цвет папки."""
-
     for element in root.iter():
-        fill = element.get("fill")
 
-        if fill == "currentColor":
-            element.set("fill", color)
+        if not isinstance(element.tag, str):
+            continue
+
+        for attr in PAINT_ATTRS:
+            value = element.get(attr)
+
+            if value and _is_symbolic_paint(value):
+                element.set(attr, color)
+
+        for attr in list(element.attrib):
+            if attr.startswith(f"{{{GPA_NS}}}"):
+                del element.attrib[attr]
 
         style = element.get("style")
 
         if style:
-            style = style.replace("fill:currentColor", f"fill:{color}")
-            style = style.replace("fill: currentColor", f"fill: {color}")
-            element.set("style", style)
+            element.set("style", STYLE_PAINT_RE.sub(lambda m: f"{m.group(1)}:{color}", style))
 
 
 def create_symbolic(symbolic_root, color, base_key, base_root):
-    """Масштабирует symbolic и центрирует его в заданной области папки."""
-
     area_x, area_y, area_w, area_h, max_size, scale_y = get_area(base_key)
 
-    # Пересчёт эталонных 128x128 в координаты viewBox шаблона
     base_vb_w = get_viewbox(base_root)[2]
 
     if base_vb_w <= 0:
@@ -404,19 +323,21 @@ def create_symbolic(symbolic_root, color, base_key, base_root):
     recolor_symbolic(symbolic_root, color)
 
     for child in symbolic_root:
-        tag = etree.QName(child).localname
 
-        if tag in ("defs", "namedview"):
+        if not isinstance(child.tag, str):
+            continue
+
+        if etree.QName(child).localname in SKIPPED_TAGS:
             continue
 
         group.append(deepcopy(child))
+
+    etree.cleanup_namespaces(group)
 
     return group
 
 
 def load_recolored_base(base_path, main_color, light_color):
-    """Загружает базовый шаблон и красит его в нужный цвет."""
-
     tree = parse_svg(base_path)
     root = tree.getroot()
     recolor_folder(root, main_color, light_color)
@@ -432,18 +353,12 @@ def write_svg(root, path):
     )
 
 
-# Что реально сгенерировано в этом запуске, отдельно по каждой
-# цветовой подпапке: {output_dir: {"folder", "folder-documents", ...}}
-# Нужно, чтобы make_symlink мог проверить существование цели.
 GENERATED = {}
 
-# Файлы, которые не удалось обработать (для итогового отчёта)
 FAILED = []
 
 
 def make_plain_icon(base_key, base_name, main_color, light_color, output_dir):
-    """Просто красит базовый шаблон, без эмблемы. Имя файла без цвета."""
-
     root = load_recolored_base(BASES[base_key], main_color, light_color)
     output_file = output_dir / f"{base_name}.svg"
     write_svg(root, output_file)
@@ -452,8 +367,6 @@ def make_plain_icon(base_key, base_name, main_color, light_color, output_dir):
 
 
 def make_special_icon(base_key, short_name, symbolic_filename, suffix, main_color, light_color, output_dir):
-    """Красит базовый шаблон и накладывает поверх symbolic-эмблему. Имя файла без цвета."""
-
     symbolic_path = SYMBOLICS / symbolic_filename
 
     if not symbolic_path.exists():
@@ -490,13 +403,6 @@ def make_special_icon(base_key, short_name, symbolic_filename, suffix, main_colo
 
 
 def make_symlink(output_dir: Path, link_name: str, target_name: str):
-    """
-    Создаёт настоящий относительный symlink link_name.svg -> target_name.svg
-    внутри output_dir (т.е. внутри конкретной цветовой подпапки).
-    Пропускает, если имена совпадают, и предупреждает, если цель ещё
-    не сгенерирована и не существует на диске.
-    """
-
     if link_name == target_name:
         return
 
@@ -540,18 +446,11 @@ for color_name, colors in COLORS.items():
 
     print(f"== {color_name} -> {output_dir} ==")
 
-    # ---------------------------------------------------------
-    # 1. Базовые иконки без эмблем
-    # ---------------------------------------------------------
     make_plain_icon("folder", "folder", main_color, light_color, output_dir)
     make_plain_icon("folder-open", "folder-open", main_color, light_color, output_dir)
     make_plain_icon("folder-drag-accept", "folder-drag-accept", main_color, light_color, output_dir)
     make_plain_icon("user-desktop", "user-desktop", main_color, light_color, output_dir)
 
-    # ---------------------------------------------------------
-    # 2. Спецпапки: закрытый вариант — всегда,
-    #    открытый — только если имя есть в OPEN_ICONS
-    # ---------------------------------------------------------
     for short_name, symbolic_filename in SPECIAL_ICONS.items():
 
         result_name = ALIASES.get(short_name, short_name)
@@ -567,11 +466,6 @@ for color_name, colors in COLORS.items():
                 main_color, light_color, output_dir,
             )
 
-    # ---------------------------------------------------------
-    # 3. Симлинки-алиасы для этой цветовой подпапки
-    #    (и "per-color", и бывшие "global" — оба набора теперь
-    #    пересоздаются в каждой подпапке отдельно)
-    # ---------------------------------------------------------
     for alias_base, target_base in PER_COLOR_ALIASES:
         make_symlink(output_dir, alias_base, target_base)
 
