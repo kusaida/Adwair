@@ -1,6 +1,9 @@
 from pathlib import Path
 from copy import deepcopy
 from lxml import etree
+from PIL import Image
+import base64
+import io
 import os
 import re
 
@@ -8,7 +11,13 @@ FOLDER = Path("folder")
 SYMBOLICS = Path("symbolics")
 OUTPUT_ROOT = Path("colors")
 
+APPS = Path("apps")
+APP_OUTPUT_ROOT = APPS
+
+APP_ICONS = ["file-manager"]
+
 SVG_NS = "http://www.w3.org/2000/svg"
+XLINK_NS = "http://www.w3.org/1999/xlink"
 GPA_NS = "https://www.gtk.org/grappa"
 
 BASES = {
@@ -344,6 +353,69 @@ def load_recolored_base(base_path, main_color, light_color):
     return root
 
 
+PNG_DATA_PREFIX = "data:image/png;base64,"
+
+# цвет, в который в исходнике покрашено встроенное PNG-свечение (#62a0ea),
+# в палитре папок это основа градиента — берём её же для нового цвета
+GLOW_BASE = "#62a0ea"
+
+# PNG с меньшей средней насыщенностью (чёрные тени и т.п.) не трогаем
+TINT_MIN_SATURATION = 0.25
+
+
+def _is_colored_png(img):
+    saturation = img.convert("RGB").convert("HSV").getchannel("S")
+    alpha = img.getchannel("A")
+
+    total = 0
+    weighted = 0
+
+    for s, a in zip(saturation.getdata(), alpha.getdata()):
+        total += a
+        weighted += s * a
+
+    if total == 0:
+        return False
+
+    return weighted / total / 255 > TINT_MIN_SATURATION
+
+
+def recolor_embedded_images(root, main_color, light_color):
+    tint = build_color_map(main_color, light_color)[GLOW_BASE]
+    tint_rgb = _hex_to_rgb(tint)
+
+    for element in root.iter(f"{{{SVG_NS}}}image"):
+
+        key = f"{{{XLINK_NS}}}href" if element.get(f"{{{XLINK_NS}}}href") else "href"
+        href = element.get(key)
+
+        if not href or not href.startswith(PNG_DATA_PREFIX):
+            continue
+
+        img = Image.open(io.BytesIO(base64.b64decode(href[len(PNG_DATA_PREFIX):]))).convert("RGBA")
+
+        if not _is_colored_png(img):
+            continue
+
+        # заменяем цвет целиком, альфа-канал (форма свечения) остаётся
+        tinted = Image.new("RGBA", img.size, tint_rgb + (255,))
+        tinted.putalpha(img.getchannel("A"))
+
+        buffer = io.BytesIO()
+        tinted.save(buffer, format="PNG", optimize=True)
+
+        element.set(key, PNG_DATA_PREFIX + base64.b64encode(buffer.getvalue()).decode("ascii"))
+
+
+def strip_metadata(root):
+    # c2pa-манифест после перекраски всё равно недействителен
+    for element in list(root):
+        if isinstance(element.tag, str) and etree.QName(element).localname == "metadata":
+            root.remove(element)
+
+    etree.cleanup_namespaces(root)
+
+
 def write_svg(root, path):
     etree.ElementTree(root).write(
         str(path),
@@ -399,6 +471,31 @@ def make_special_icon(base_key, short_name, symbolic_filename, suffix, main_colo
     output_file = output_dir / f"{out_name}.svg"
     write_svg(root, output_file)
     GENERATED.setdefault(output_dir, set()).add(out_name)
+    print(f"✓ {output_file}")
+
+
+def make_app_icon(app_name, color_name, main_color, light_color):
+    source = APPS / f"{app_name}.svg"
+
+    if not source.exists():
+        print(f"! пропуск: нет файла {source}")
+        FAILED.append((source.name, "файл не найден"))
+        return
+
+    try:
+        root = load_recolored_base(source, main_color, light_color)
+        recolor_embedded_images(root, main_color, light_color)
+        strip_metadata(root)
+    except Exception as e:
+        print(f"! пропуск {source.name}: {e}")
+        FAILED.append((source.name, str(e)))
+        return
+
+    output_dir = APP_OUTPUT_ROOT / color_name
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    output_file = output_dir / f"{app_name}.svg"
+    write_svg(root, output_file)
     print(f"✓ {output_file}")
 
 
@@ -471,6 +568,9 @@ for color_name, colors in COLORS.items():
 
     for alias_name, target_base in GLOBAL_ALIASES:
         make_symlink(output_dir, alias_name, target_base)
+
+    for app_name in APP_ICONS:
+        make_app_icon(app_name, color_name, main_color, light_color)
 
     print()
 

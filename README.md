@@ -40,6 +40,9 @@ The installer supports colored folder variants and custom installation names.
    -n, --name NAME      Theme folder name (default: Adwair)
    -p, --path PATH      Base installation path (default: ~/.local/share/icons)
                         The theme is installed into PATH/NAME
+   -a, --apps           Also install colored app icons into apps/scalable,
+                        using the color from -c (requires -c).
+                        Currently only provides a recolored file-manager icon
    -f, --folder-icons   Run the custom folder icons generator after install
    -h, --help           Show this help message
 ```
