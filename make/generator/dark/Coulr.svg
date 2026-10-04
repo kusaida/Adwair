@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="64" height="64" viewBox="0 0 64 64">
+  <defs id="coulr-defs2">
+    <image id="coulr-shadow" width="251" height="251" href="data:image/png;base64,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"/>
+    <linearGradient id="coulr-b" x1="4" x2="76" y1="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop id="coulr-stop7" stop-color="#ac1925" offset="0"/>
+      <stop id="coulr-stop8" stop-color="#c01c28" offset=".1111"/>
+      <stop id="coulr-stop9" stop-color="#c01c28" offset=".61111"/>
+      <stop id="coulr-stop10" stop-color="#e43842" offset=".68056"/>
+      <stop id="coulr-stop11" stop-color="#c01c28" offset=".75"/>
+      <stop id="coulr-stop12" stop-color="#e43842" offset=".81944"/>
+      <stop id="coulr-stop13" stop-color="#c01c28" offset=".88889"/>
+      <stop id="coulr-stop14" stop-color="#c01c28" offset="1"/>
+    </linearGradient>
+    <linearGradient id="coulr-d" x1="72" x2="72" y1="40" y2="22" gradientUnits="userSpaceOnUse">
+      <stop id="coulr-stop15" stop-color="#c0bfbc" offset="0"/>
+      <stop id="coulr-stop16" stop-color="#b1b0ab" offset=".11111"/>
+      <stop id="coulr-stop17" stop-color="#dddbd9" offset=".74984"/>
+      <stop id="coulr-stop18" stop-color="#c0bfbc" offset="1"/>
+    </linearGradient>
+    <clipPath id="coulr-e">
+      <path id="coulr-path18" d="m78 24h14v2h-14z"/>
+    </clipPath>
+    <clipPath id="coulr-f">
+      <path id="coulr-path19" d="m76 22h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+    <clipPath id="coulr-g">
+      <path id="coulr-path20" d="m80 28h12v2h-12z"/>
+    </clipPath>
+    <clipPath id="coulr-h">
+      <path id="coulr-path21" d="m76 22h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+    <clipPath id="coulr-i">
+      <path id="coulr-path22" d="m77 34h15v1h-15z"/>
+    </clipPath>
+    <clipPath id="coulr-j">
+      <path id="coulr-path23" d="m76 22h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+    <clipPath id="coulr-k">
+      <path id="coulr-path24" d="m80 30h12v1h-12z"/>
+    </clipPath>
+    <clipPath id="coulr-l">
+      <path id="coulr-path25" d="m76 22h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+    <linearGradient id="coulr-m" x1="10" x2="82" y1="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop id="coulr-stop25" stop-color="#22925d" offset="0"/>
+      <stop id="coulr-stop26" stop-color="#26a269" offset=".1111"/>
+      <stop id="coulr-stop27" stop-color="#26a269" offset=".61111"/>
+      <stop id="coulr-stop28" stop-color="#2cbc7c" offset=".68056"/>
+      <stop id="coulr-stop29" stop-color="#26a269" offset=".75"/>
+      <stop id="coulr-stop30" stop-color="#2cbc7c" offset=".81944"/>
+      <stop id="coulr-stop31" stop-color="#26a269" offset=".88889"/>
+      <stop id="coulr-stop32" stop-color="#26a269" offset="1"/>
+    </linearGradient>
+    <linearGradient id="coulr-n" x1="78" x2="78" y1="72" y2="54" gradientUnits="userSpaceOnUse">
+      <stop id="coulr-stop15_2" stop-color="#c0bfbc" offset="0"/>
+      <stop id="coulr-stop16_2" stop-color="#b1b0ab" offset=".11111"/>
+      <stop id="coulr-stop17_2" stop-color="#dddbd9" offset=".74984"/>
+      <stop id="coulr-stop18_2" stop-color="#c0bfbc" offset="1"/>
+    </linearGradient>
+    <clipPath id="coulr-o">
+      <path id="coulr-path32" d="m84 56h14v2h-14z"/>
+    </clipPath>
+    <clipPath id="coulr-p">
+      <path id="coulr-path33" d="m82 54h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+    <clipPath id="coulr-q">
+      <path id="coulr-path34" d="m86 60h12v2h-12z"/>
+    </clipPath>
+    <clipPath id="coulr-r">
+      <path id="coulr-path35" d="m82 54h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+    <clipPath id="coulr-s">
+      <path id="coulr-path36" d="m83 66h15v1h-15z"/>
+    </clipPath>
+    <clipPath id="coulr-t">
+      <path id="coulr-path37" d="m82 54h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+    <clipPath id="coulr-u">
+      <path id="coulr-path38" d="m86 62h12v1h-12z"/>
+    </clipPath>
+    <clipPath id="coulr-v">
+      <path id="coulr-path39" d="m82 54h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+    <linearGradient id="coulr-w" x1="16" x2="88" y1="96" y2="96" gradientUnits="userSpaceOnUse">
+      <stop id="coulr-stop39" stop-color="#1856a3" offset="0"/>
+      <stop id="coulr-stop40" stop-color="#1a5fb4" offset=".1111"/>
+      <stop id="coulr-stop41" stop-color="#1a5fb4" offset=".61111"/>
+      <stop id="coulr-stop42" stop-color="#287ce0" offset=".68056"/>
+      <stop id="coulr-stop43" stop-color="#1a5fb4" offset=".75"/>
+      <stop id="coulr-stop44" stop-color="#287ce0" offset=".81944"/>
+      <stop id="coulr-stop45" stop-color="#1a5fb4" offset=".88889"/>
+      <stop id="coulr-stop46" stop-color="#1a5fb4" offset="1"/>
+    </linearGradient>
+    <linearGradient id="coulr-x" x1="84" x2="84" y1="104" y2="86" gradientUnits="userSpaceOnUse">
+      <stop id="coulr-stop15_3" stop-color="#c0bfbc" offset="0"/>
+      <stop id="coulr-stop16_3" stop-color="#b1b0ab" offset=".11111"/>
+      <stop id="coulr-stop17_3" stop-color="#dddbd9" offset=".74984"/>
+      <stop id="coulr-stop18_3" stop-color="#c0bfbc" offset="1"/>
+    </linearGradient>
+    <clipPath id="coulr-y">
+      <path id="coulr-path46" d="m90 88h14v2h-14z"/>
+    </clipPath>
+    <clipPath id="coulr-z">
+      <path id="coulr-path47" d="m88 86h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+    <clipPath id="coulr-A">
+      <path id="coulr-path48" d="m92 92h12v2h-12z"/>
+    </clipPath>
+    <clipPath id="coulr-B">
+      <path id="coulr-path49" d="m88 86h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+    <clipPath id="coulr-C">
+      <path id="coulr-path50" d="m89 98h15v1h-15z"/>
+    </clipPath>
+    <clipPath id="coulr-D">
+      <path id="coulr-path51" d="m88 86h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+    <clipPath id="coulr-E">
+      <path id="coulr-path52" d="m92 94h12v1h-12z"/>
+    </clipPath>
+    <clipPath id="coulr-F">
+      <path id="coulr-path53" d="m88 86h16l-4.2891 16h-11.711z"/>
+    </clipPath>
+  <linearGradient id="darkTileBg" x1="0" x2="0" y1="0.9464" y2="0.0536"><stop offset="0" stop-color="#363636"/><stop offset="1" stop-color="#525252"/></linearGradient></defs>
+  <use href="#coulr-shadow" transform="matrix(.242558 0 0 .247016 1.5593 1.999)"/>
+  <rect id="coulr-rect2" x="4" y="4" width="56" height="56" rx="13" ry="13" fill="url(#darkTileBg)" stroke-width="3.7796"/>
+  <g id="coulr-g127" transform="matrix(.50073 0 0 .50073 -1.3482 .45382)" stroke-width="1.9971">
+    <path id="coulr-path56" d="m4 31.996v0.0078c0 4.418 3.5781 7.9961 7.9961 7.9961h35.762c2.7148 0 5.3203-1.0781 7.2422-3 1.6562-1.6562 4.3438-1.6562 6 0 1.9219 1.9219 4.5273 3 7.2422 3h7.7578v-16h-7.7578c-2.7148 0-5.3203 1.0781-7.2422 3-1.6562 1.6562-4.3438 1.6562-6 0-1.9219-1.9219-4.5273-3-7.2422-3h-35.762c-4.418 0-7.9961 3.5781-7.9961 7.9961z" fill="url(#coulr-b)"/>
+    <path id="coulr-path57" d="m76 24 16-2v2l-4.2891 16h-11.711z" fill="#b5835a"/>
+    <path id="coulr-path58" d="m4 29.996v0.0078c0 4.418 3.5781 7.9961 7.9961 7.9961h35.762c2.7148 0 5.3203-1.0781 7.2422-3 1.6562-1.6562 4.3438-1.6562 6 0 1.9219 1.9219 4.5273 3 7.2422 3h7.7578v-16h-7.7578c-2.7148 0-5.3203 1.0781-7.2422 3-1.6562 1.6562-4.3438 1.6562-6 0-1.9219-1.9219-4.5273-3-7.2422-3h-35.762c-4.418 0-7.9961 3.5781-7.9961 7.9961z" fill="#ed333b"/>
+    <path id="coulr-path59" d="m4.0625 29.5c-0.023438 0.16406-0.046875 0.32812-0.0625 0.49219v0.01562c0 4.4141 3.5781 7.9922 7.9961 7.9922h35.762c2.7148 0 5.3203-1.0781 7.2422-3 1.6562-1.6562 4.3438-1.6562 6 0 1.9219 1.9219 4.5273 3 7.2422 3h7.7578v-1h-7.7578c-2.7148 0-5.3203-1.0781-7.2422-3-1.6562-1.6562-4.3438-1.6562-6 0-1.9219 1.9219-4.5273 3-7.2422 3h-35.762c-4.207-0.027344-7.6719-3.3047-7.9336-7.5z" fill="#ffffff" fill-opacity=".13333"/>
+    <path id="coulr-path60" d="m76 22h16l-4.2891 16h-11.711z" fill="#cdab8f"/>
+    <path id="coulr-path61" d="m68 22h8v18h-8z" fill="url(#coulr-d)"/>
+    <path id="coulr-path62" d="m92 22-4.2891 16h-5.7109l-0.14453 2h5.8594l4.2852-16z" fill="#a51d2d"/>
+    <path id="coulr-path63" d="m84 22c-1.1055 0-2 0.89453-2 2s0.89453 2 2 2 2 0.89453 2 2-0.89453 2-2 2h-2.0273c-1.0898 0-1.9727 0.88281-1.9727 1.9727v0.027344c0 1.1055 0.89453 2 2 2 1.0977-0.0078 1.9961 0.87891 2 1.9805 0.0039 1.1094-0.89062 2.0117-2 2.0195h5.7148l4.2852-16z" fill="#ed333b"/>
+    <g id="coulr-g65" clip-path="url(#coulr-e)">
+      <g id="coulr-g64" clip-path="url(#coulr-f)" stroke-width="1.9971">
+        <path id="coulr-path64" d="m92 24-14 2h14z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <g id="coulr-g67" clip-path="url(#coulr-g)">
+      <g id="coulr-g66" clip-path="url(#coulr-h)" stroke-width="1.9971">
+        <path id="coulr-path65" d="m92 28-12 1 12 1z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <g id="coulr-g69" clip-path="url(#coulr-i)">
+      <g id="coulr-g68" clip-path="url(#coulr-j)" stroke-width="1.9971">
+        <path id="coulr-path67" d="m92 34h-15l15 1z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <g id="coulr-g71" clip-path="url(#coulr-k)">
+      <g id="coulr-g70" clip-path="url(#coulr-l)" stroke-width="1.9971">
+        <path id="coulr-path69" d="m92 30-12 1h12z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <path id="coulr-path71" d="m68 22h1v18h-1z" fill="#878787" fill-opacity=".33333"/>
+    <path id="coulr-path72" d="m75 22h1v18h-1z" fill="#ffffff" fill-opacity=".33333"/>
+    <path id="coulr-path73" d="m68 38h8v2h-8z" fill-opacity=".18824"/>
+    <path id="coulr-path74" d="m16 30c0 2.2109-1.7891 4-4 4s-4-1.7891-4-4 1.7891-4 4-4 4 1.7891 4 4z" fill-opacity=".22353"/>
+    <path id="coulr-path75" d="m10 63.996v0.0078c0 4.418 3.5781 7.9961 7.9961 7.9961h35.762c2.7148 0 5.3203-1.0781 7.2422-3 1.6562-1.6562 4.3438-1.6562 6 0 1.9219 1.9219 4.5273 3 7.2422 3h7.7578v-16h-7.7578c-2.7148 0-5.3203 1.0781-7.2422 3-1.6562 1.6562-4.3438 1.6562-6 0-1.9219-1.9219-4.5273-3-7.2422-3h-35.762c-4.418 0-7.9961 3.5781-7.9961 7.9961z" fill="url(#coulr-m)"/>
+    <path id="coulr-path76" d="m82 56 16-2v2l-4.2891 16h-11.711z" fill="#b5835a"/>
+    <path id="coulr-path77" d="m10 61.996v0.0078c0 4.418 3.5781 7.9961 7.9961 7.9961h35.762c2.7148 0 5.3203-1.0781 7.2422-3 1.6562-1.6562 4.3438-1.6562 6 0 1.9219 1.9219 4.5273 3 7.2422 3h7.7578v-16h-7.7578c-2.7148 0-5.3203 1.0781-7.2422 3-1.6562 1.6562-4.3438 1.6562-6 0-1.9219-1.9219-4.5273-3-7.2422-3h-35.762c-4.418 0-7.9961 3.5781-7.9961 7.9961z" fill="#2ec27e"/>
+    <path id="coulr-path78" d="m10.066 61.5c-0.027344 0.16406-0.050781 0.32812-0.066406 0.49219v0.01172c0 4.418 3.5781 7.9961 7.9961 7.9961h35.762c2.7148 0 5.3203-1.0781 7.2422-3 1.6562-1.6562 4.3438-1.6562 6 0 1.9219 1.9219 4.5273 3 7.2422 3h7.7578v-1h-7.7578c-2.7148 0-5.3203-1.0781-7.2422-3-1.6562-1.6562-4.3438-1.6562-6 0-1.9219 1.9219-4.5273 3-7.2422 3h-35.762c-4.207-0.02734-7.6719-3.3047-7.9297-7.5z" fill="#ffffff" fill-opacity=".13333"/>
+    <path id="coulr-path79" d="m82 54h16l-4.2891 16h-11.711z" fill="#cdab8f"/>
+    <path id="coulr-path80" d="m74 54h8v18h-8z" fill="url(#coulr-n)"/>
+    <path id="coulr-path81" d="m98 54-4.2891 16h-5.7109l-0.14453 2h5.8594l4.2852-16z" fill="#26a269"/>
+    <path id="coulr-path82" d="m90 54c-1.1055 0-2 0.89453-2 2s0.89453 2 2 2 2 0.89453 2 2-0.89453 2-2 2h-2.0273c-1.0898 0-1.9727 0.88281-1.9727 1.9727v0.027344c0 1.1055 0.89453 2 2 2 1.0977-0.0078 1.9961 0.87891 2 1.9766 0.0039 1.1133-0.89062 2.0156-2 2.0234h5.7148l4.2852-16z" fill="#2ec27e"/>
+    <g id="coulr-g84" clip-path="url(#coulr-o)">
+      <g id="coulr-g83" clip-path="url(#coulr-p)" stroke-width="1.9971">
+        <path id="coulr-path83" d="m98 56-14 2h14z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <g id="coulr-g86" clip-path="url(#coulr-q)">
+      <g id="coulr-g85" clip-path="url(#coulr-r)" stroke-width="1.9971">
+        <path id="coulr-path84" d="m98 60-12 1 12 1z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <g id="coulr-g88" clip-path="url(#coulr-s)">
+      <g id="coulr-g87" clip-path="url(#coulr-t)" stroke-width="1.9971">
+        <path id="coulr-path86" d="m98 66h-15l15 1z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <g id="coulr-g90" clip-path="url(#coulr-u)">
+      <g id="coulr-g89" clip-path="url(#coulr-v)" stroke-width="1.9971">
+        <path id="coulr-path88" d="m98 62-12 1h12z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <path id="coulr-path90" d="m74 54h1v18h-1z" fill="#878787" fill-opacity=".33333"/>
+    <path id="coulr-path91" d="m81 54h1v18h-1z" fill="#ffffff" fill-opacity=".33333"/>
+    <path id="coulr-path92" d="m74 70h8v2h-8z" fill-opacity=".18824"/>
+    <path id="coulr-path93" d="m22 62c0 2.2109-1.7891 4-4 4s-4-1.7891-4-4 1.7891-4 4-4 4 1.7891 4 4z" fill-opacity=".22353"/>
+    <path id="coulr-path94" d="m16 95.996v0.0078c0 4.418 3.5781 7.9961 7.9961 7.9961h35.762c2.7148 0 5.3203-1.0781 7.2422-3 1.6562-1.6562 4.3438-1.6562 6 0 1.9219 1.9219 4.5273 3 7.2422 3h7.7578v-16h-7.7578c-2.7148 0-5.3203 1.0781-7.2422 3-1.6562 1.6562-4.3438 1.6562-6 0-1.9219-1.9219-4.5273-3-7.2422-3h-35.762c-4.418 0-7.9961 3.5781-7.9961 7.9961z" fill="url(#coulr-w)"/>
+    <path id="coulr-path95" d="m88 88 16-2v2l-4.2891 16h-11.711z" fill="#b5835a"/>
+    <path id="coulr-path96" d="m16 93.996v0.0078c0 4.418 3.5781 7.9961 7.9961 7.9961h35.762c2.7148 0 5.3203-1.0781 7.2422-3 1.6562-1.6562 4.3438-1.6562 6 0 1.9219 1.9219 4.5273 3 7.2422 3h7.7578v-16h-7.7578c-2.7148 0-5.3203 1.0781-7.2422 3-1.6562 1.6562-4.3438 1.6562-6 0-1.9219-1.9219-4.5273-3-7.2422-3h-35.762c-4.418 0-7.9961 3.5781-7.9961 7.9961z" fill="#3584e4"/>
+    <path id="coulr-path97" d="m16.066 93.5c-0.027344 0.16406-0.050781 0.32812-0.066406 0.49609v0.01172c0 4.4141 3.582 7.9922 7.9961 7.9922h35.762c2.7188 0 5.3242-1.0781 7.2422-3 1.6562-1.6562 4.3438-1.6562 6 0 1.9219 1.9219 4.5273 3 7.2422 3h7.7578v-1h-7.7578c-2.7148 0-5.3203-1.0781-7.2422-3-1.6562-1.6562-4.3438-1.6562-6 0-1.918 1.9219-4.5234 3-7.2422 3h-35.762c-4.207-0.0273-7.6719-3.3047-7.9297-7.5z" fill="#ffffff" fill-opacity=".13333"/>
+    <path id="coulr-path98" d="m88 86h16l-4.2891 16h-11.711z" fill="#cdab8f"/>
+    <path id="coulr-path99" d="m80 86h8v18h-8z" fill="url(#coulr-x)"/>
+    <path id="coulr-path100" d="m104 86-4.2891 16h-5.7109l-0.14453 2h5.8594l4.2852-16z" fill="#1a5fb4"/>
+    <path id="coulr-path101" d="m96 86c-1.1055 0-2 0.89453-2 2s0.89453 2 2 2 2 0.89453 2 2-0.89453 2-2 2h-2.0273c-1.0898 0-1.9727 0.88281-1.9727 1.9727v0.027344c0 1.1055 0.89453 2 2 2 1.0977-0.0078 1.9961 0.87891 2 1.9805 0.0039 1.1094-0.89062 2.0117-2 2.0195h5.7148l4.2852-16z" fill="#3584e4"/>
+    <g id="coulr-g103" clip-path="url(#coulr-y)">
+      <g id="coulr-g102" clip-path="url(#coulr-z)" stroke-width="1.9971">
+        <path id="coulr-path102" d="m104 88-14 2h14z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <g id="coulr-g105" clip-path="url(#coulr-A)">
+      <g id="coulr-g104" clip-path="url(#coulr-B)" stroke-width="1.9971">
+        <path id="coulr-path103" d="m104 92-12 1 12 1z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <g id="coulr-g107" clip-path="url(#coulr-C)">
+      <g id="coulr-g106" clip-path="url(#coulr-D)" stroke-width="1.9971">
+        <path id="coulr-path105" d="m104 98h-15l15 1z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <g id="coulr-g109" clip-path="url(#coulr-E)">
+      <g id="coulr-g108" clip-path="url(#coulr-F)" stroke-width="1.9971">
+        <path id="coulr-path107" d="m104 94-12 1h12z" fill-opacity=".22353" stroke-width="1.9971"/>
+      </g>
+    </g>
+    <path id="coulr-path109" d="m80 86h1v18h-1z" fill="#878787" fill-opacity=".33333"/>
+    <path id="coulr-path110" d="m87 86h1v18h-1z" fill="#ffffff" fill-opacity=".33333"/>
+    <path id="coulr-path111" d="m80 102h8v2h-8z" fill-opacity=".18824"/>
+    <path id="coulr-path112" d="m28 94c0 2.2109-1.7891 4-4 4s-4-1.7891-4-4 1.7891-4 4-4 4 1.7891 4 4z" fill-opacity=".22353"/>
+    <path id="coulr-path113" d="m98 41c0 1.6562-1.3438 3-3 3s-3-1.3438-3-3 1.3438-3 3-3 3 1.3438 3 3z" fill="#ed333b"/>
+    <path id="coulr-path114" d="m94 29c0 1.6562 1.3438 3 3 3s3-1.3438 3-3-1.3438-3-3-3-3 1.3438-3 3z" fill="#ed333b"/>
+    <path id="coulr-path115" d="m91 15c0 1.1055-0.89453 2-2 2s-2-0.89453-2-2 0.89453-2 2-2 2 0.89453 2 2z" fill="#ed333b"/>
+    <path id="coulr-path116" d="m102 75c0 1.6562-1.3438 3-3 3s-3-1.3438-3-3 1.3438-3 3-3 3 1.3438 3 3z" fill="#2ec27e"/>
+    <path id="coulr-path117" d="m100 78c0 2.2109-1.7891 4-4 4s-4-1.7891-4-4 1.7891-4 4-4 4 1.7891 4 4z" fill="#2ec27e"/>
+    <path id="coulr-path118" d="m97 26c0 1.6562 1.3438 3 3 3s3-1.3438 3-3-1.3438-3-3-3-3 1.3438-3 3z" fill="#ed333b"/>
+    <g id="coulr-g123" fill="#3584e4">
+      <path id="coulr-path119" d="m88 110c0 2.2109 1.7891 4 4 4s4-1.7891 4-4-1.7891-4-4-4-4 1.7891-4 4z"/>
+      <path id="coulr-path120" d="m92 109c0 1.6562 1.3438 3 3 3s3-1.3438 3-3-1.3438-3-3-3-3 1.3438-3 3z"/>
+      <path id="coulr-path121" d="m82 79c0 1.6562 1.3438 3 3 3s3-1.3438 3-3-1.3438-3-3-3-3 1.3438-3 3z"/>
+      <path id="coulr-path122" d="m54 79c0 1.6562 1.3438 3 3 3s3-1.3438 3-3-1.3438-3-3-3-3 1.3438-3 3z"/>
+      <path id="coulr-path123" d="m58 78c0 2.2109 1.7891 4 4 4s4-1.7891 4-4-1.7891-4-4-4-4 1.7891-4 4z"/>
+    </g>
+    <path id="coulr-path124" d="m62 15c0 1.6562-1.3438 3-3 3s-3-1.3438-3-3 1.3438-3 3-3 3 1.3438 3 3z" fill="#ed333b"/>
+    <path id="coulr-path125" d="m64 17.5c0 1.3789-1.1211 2.5-2.5 2.5s-2.5-1.1211-2.5-2.5 1.1211-2.5 2.5-2.5 2.5 1.1211 2.5 2.5z" fill="#ed333b"/>
+    <path id="coulr-path126" d="m58 109c0 1.6562 1.3438 3 3 3s3-1.3438 3-3-1.3438-3-3-3-3 1.3438-3 3z" fill="#3584e4"/>
+    <path id="coulr-path127" d="m70 49c0 1.6562-1.3438 3-3 3s-3-1.3438-3-3 1.3438-3 3-3 3 1.3438 3 3z" fill="#2ec27e"/>
+  </g>
+</svg>
