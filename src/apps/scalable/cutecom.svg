@@ -1,4 +1,5 @@
-<svg id="svg1443" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="svg1443" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867">
  <defs id="defs1437">
   <linearGradient id="linearGradient1632" x1="143.32" x2="132.21" y1="45.121" y2="64.966" gradientTransform="matrix(.97573 0 0 .97573 -111.77 -37.183)" gradientUnits="userSpaceOnUse">
    <stop id="stop1626" stop-color="#d0d4d5" offset="0"/>
@@ -10,8 +11,8 @@
    <stop id="stop2049" stop-color="#9e9e9e" stop-opacity=".99296" offset="1"/>
   </linearGradient>
   <linearGradient id="linearGradient2869" x1="17.956" x2="17.956" y1="17.089" y2="2.8376" gradientUnits="userSpaceOnUse">
-   <stop id="stop2863" stop-color="#f70" offset="0"/>
-   <stop id="stop2865" stop-color="#ffb000" offset="1"/>
+   <stop id="stop2863" stop-color="#e08200" offset="0"/>
+   <stop id="stop2865" stop-color="#ff9300" offset="1"/>
   </linearGradient>
   <linearGradient id="linearGradient878" x1="23.706" x2="23.706" y1="71.492" y2="10.502" gradientUnits="userSpaceOnUse">
    <stop id="stop872" offset="0"/>
@@ -28,30 +29,30 @@
  </metadata>
  <g id="layer1">
   <g id="g1702" transform="matrix(.97573 0 0 .97573 -65.737 -37.183)" fill="none" opacity=".295" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".02">
-   <rect id="rect1634" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width=".1"/>
-   <rect id="rect1638" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width=".2"/>
-   <rect id="rect1640" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width=".3"/>
-   <rect id="rect1642" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width=".4"/>
-   <rect id="rect1644" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width=".5"/>
-   <rect id="rect1646" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width=".6"/>
-   <rect id="rect1648" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width=".7"/>
-   <rect id="rect1650" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width=".8"/>
-   <rect id="rect1652" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099"/>
-   <rect id="rect1654" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="1.2"/>
-   <rect id="rect1656" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="1.4"/>
-   <rect id="rect1658" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="1.6"/>
-   <rect id="rect1660" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="1.8"/>
-   <rect id="rect1662" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="2"/>
-   <rect id="rect1664" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="2.2"/>
-   <rect id="rect1666" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="2.6"/>
-   <rect id="rect1668" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="3"/>
-   <rect id="rect1670" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="3.4"/>
-   <rect id="rect1672" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="3.8"/>
-   <rect id="rect1674" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="4.2"/>
-   <rect id="rect1676" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="4.6"/>
-   <rect id="rect1678" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="5"/>
+   <rect id="rect1634" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width=".1"/>
+   <rect id="rect1638" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width=".2"/>
+   <rect id="rect1640" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width=".3"/>
+   <rect id="rect1642" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width=".4"/>
+   <rect id="rect1644" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width=".5"/>
+   <rect id="rect1646" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width=".6"/>
+   <rect id="rect1648" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width=".7"/>
+   <rect id="rect1650" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width=".8"/>
+   <rect id="rect1652" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503"/>
+   <rect id="rect1654" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="1.2"/>
+   <rect id="rect1656" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="1.4"/>
+   <rect id="rect1658" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="1.6"/>
+   <rect id="rect1660" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="1.8"/>
+   <rect id="rect1662" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="2"/>
+   <rect id="rect1664" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="2.2"/>
+   <rect id="rect1666" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="2.6"/>
+   <rect id="rect1668" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="3"/>
+   <rect id="rect1670" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="3.4"/>
+   <rect id="rect1672" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="3.8"/>
+   <rect id="rect1674" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="4.2"/>
+   <rect id="rect1676" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="4.6"/>
+   <rect id="rect1678" x="69.5421" y="40.277" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="5"/>
   </g>
-  <rect id="rect849" x="2.4074" y="2.5392" width="29.087" height="29.087" rx="6.4495" ry="6.4495" fill="url(#linearGradient1632)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
+  <rect id="rect849" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#linearGradient1632)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
   <path id="rect1085" d="m10.483 3.7095c-0.89509 0-1.6154 0.72032-1.6154 1.6154v5.5201c0 0.89509 0.72032 1.6159 1.6154 1.6159 0.89509 0 1.6159-0.72083 1.6159-1.6159v-5.5201c0-0.89509-0.72083-1.6154-1.6159-1.6154zm6.4683 0c-0.89509 0-1.6154 0.72032-1.6154 1.6154v5.5201c0 0.89509 0.72032 1.6159 1.6154 1.6159s1.6159-0.72083 1.6159-1.6159v-5.5201c0-0.89509-0.72083-1.6154-1.6159-1.6154zm6.4683 0c-0.89509 0-1.6154 0.72032-1.6154 1.6154v5.5201c0 0.89509 0.72032 1.6159 1.6154 1.6159 0.89509 0 1.6159-0.72083 1.6159-1.6159v-5.5201c0-0.89509-0.72083-1.6154-1.6159-1.6154z" fill="url(#linearGradient2869)"/>
   <path id="rect1807" d="m31.495 17.083v8.0943c0 3.573-2.8765 6.4495-6.4495 6.4495h-16.189c-3.573 0-6.4495-2.8765-6.4495-6.4495v-8.0943z" fill="url(#linearGradient878)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
   <circle id="path1965" cx="16.951" cy="24.355" r="5.3572" fill="#ededed" fill-opacity=".99608"/>

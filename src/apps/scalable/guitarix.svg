@@ -1,4 +1,5 @@
-<svg width="512" height="512" viewBox="0 0 33.867 33.867" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 33.867 33.867">
  <defs>
   <linearGradient id="g" x1="26.02" x2="7.86" y1="7.046" y2="28.024" gradientTransform="translate(-.025 .006)" gradientUnits="userSpaceOnUse">
    <stop stop-color="#4a5055" offset="0"/>
@@ -72,30 +73,30 @@
   </radialGradient>
  </defs>
  <g transform="translate(-65.774 -37.197) scale(.97573)" fill="none" opacity=".29676" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".02">
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width=".1"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width=".2"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width=".3"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width=".4"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width=".5"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width=".6"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width=".7"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width=".8"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="1.2"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="1.4"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="1.6"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="1.8"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="2"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="2.2"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="2.6"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="3"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="3.4"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="3.8"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="4.2"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="4.6"/>
-  <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width="5"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width=".1"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width=".2"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width=".3"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width=".4"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width=".5"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width=".6"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width=".7"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width=".8"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="1.2"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="1.4"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="1.6"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="1.8"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="2"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="2.2"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="2.6"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="3"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="3.4"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="3.8"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="4.2"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="4.6"/>
+  <rect x="69.5794" y="40.2926" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="5"/>
  </g>
- <rect x="2.371" y="2.524" width="29.087" height="29.087" rx="6.449" ry="6.449" fill="url(#g)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
+ <rect x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#g)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
  <g transform="translate(34.646 11.462) scale(.3008)">
   <path d="m-22.503-22.152a3.211 3.211 0 0 0-3.209 3.209 3.211 3.211 0 0 0 3.209 3.209 3.211 3.211 0 0 0 3.209-3.21 3.211 3.211 0 0 0-3.21-3.208z" color-rendering="auto" dominant-baseline="auto" fill="url(#h)" image-rendering="auto" shape-rendering="auto" style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;isolation:auto;mix-blend-mode:normal;shape-padding:0;text-decoration-color:#000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal"/>
   <circle cx="-22.537" cy="-19.381" r="2.953" fill="url(#i)" stroke="#1b1a1a" stroke-linecap="round" stroke-linejoin="round" stroke-width=".4"/>

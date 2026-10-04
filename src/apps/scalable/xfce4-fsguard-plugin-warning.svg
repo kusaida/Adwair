@@ -1,130 +1,136 @@
-<?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 64 64" width="64" height="64">
-	<g transform="translate(0,0) scale(1) translate(-0,-0)"><defs>
-		<image width="251" height="251" id="img1" href="data:image/png;base64,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" />
-		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-46.731,46.731,0,30.129,55.364)">
-			<stop offset="0" stop-color="#eaeef3" />
-			<stop offset="1" stop-color="#f8fafb" />
-		</linearGradient>
-		<linearGradient id="g2" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-56,56.001,0,28,60)">
-			<stop offset="0" stop-color="#1f1f1f" />
-			<stop offset="1" stop-color="#525252" />
-		</linearGradient>
-		<linearGradient id="g3" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(32.574,0,0,25.911,17.268,52.296)">
-			<stop offset="0" stop-color="#000000" />
-			<stop offset=".047" stop-color="#424048" />
-			<stop offset=".097" stop-color="#241f31" />
-			<stop offset=".9" stop-color="#241f31" />
-			<stop offset=".95" stop-color="#424048" />
-			<stop offset="1" stop-color="#000000" />
-		</linearGradient>
-		<linearGradient id="g4" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(32.574,0,0,25.911,17.37,34.426)">
-			<stop offset="0" stop-color="#424048" />
-			<stop offset=".047" stop-color="#f6f5f4" />
-			<stop offset=".097" stop-color="#949390" />
-			<stop offset=".9" stop-color="#d5d3cf" />
-			<stop offset=".95" stop-color="#f6f5f4" />
-			<stop offset="1" stop-color="#424048" />
-		</linearGradient>
-		<linearGradient id="g5" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,42.479,-35.944,0,33.606,6.651)">
-			<stop offset="0" stop-color="#deddda" />
-			<stop offset="1" stop-color="#f6f5f4" />
-		</linearGradient>
-		<radialGradient id="g6" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(33.757,-28.271,28.271,33.757,40.534,47.297)">
-			<stop offset="0" stop-color="#d5d3cf" />
-			<stop offset=".129" stop-color="#949390" />
-			<stop offset=".258" stop-color="#d5d3cf" />
-			<stop offset=".334" stop-color="#deddda" />
-			<stop offset=".446" stop-color="#949390" />
-			<stop offset=".515" stop-color="#deddda" />
-			<stop offset=".657" stop-color="#f6f5f4" />
-			<stop offset=".809" stop-color="#949390" />
-			<stop offset="1" stop-color="#ffffff" />
-		</radialGradient>
-		<linearGradient id="g7" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-5.427,-9.4,8.924,-5.152,35.132,28.273)">
-			<stop offset="0" stop-color="#dfddd9" />
-			<stop offset="1" stop-color="#f9f9f8" />
-		</linearGradient>
-		<radialGradient id="g8" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.634,0,0,1.634,20.535,48.577)">
-			<stop offset="0" stop-color="#000000" stop-opacity=".25" />
-			<stop offset="1" stop-color="#000000" stop-opacity=".03" />
-		</radialGradient>
-		<radialGradient id="g9" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.849,0,0,.849,17.31,48.731)">
-			<stop offset="0" stop-color="#949390" />
-			<stop offset="1" stop-color="#424048" />
-		</radialGradient>
-		<radialGradient id="g10" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.634,0,0,1.634,46.676,48.577)">
-			<stop offset="0" stop-color="#000000" stop-opacity=".25" />
-			<stop offset="1" stop-color="#000000" stop-opacity=".03" />
-		</radialGradient>
-		<radialGradient id="g11" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.124,0,0,1.124,46.676,48.595)">
-			<stop offset="0" stop-color="#949390" />
-			<stop offset="1" stop-color="#424048" />
-		</radialGradient>
-		<radialGradient id="g12" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.634,0,0,1.634,46.676,11.816)">
-			<stop offset="0" stop-color="#000000" stop-opacity=".25" />
-			<stop offset="1" stop-color="#000000" stop-opacity=".03" />
-		</radialGradient>
-		<radialGradient id="g13" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.124,0,0,1.124,46.676,11.834)">
-			<stop offset="0" stop-color="#949390" />
-			<stop offset="1" stop-color="#424048" />
-		</radialGradient>
-		<radialGradient id="g14" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.634,0,0,1.634,17.268,11.816)">
-			<stop offset="0" stop-color="#000000" stop-opacity=".25" />
-			<stop offset="1" stop-color="#000000" stop-opacity=".03" />
-		</radialGradient>
-		<radialGradient id="g15" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.124,0,0,1.124,17.268,11.834)">
-			<stop offset="0" stop-color="#949390" />
-			<stop offset="1" stop-color="#424048" />
-		</radialGradient>
-		<filter x="-50%" y="-50%" width="200%" height="200%" id="f1"> <feGaussianBlur stdDeviation="1.3" /> </filter>
-		<linearGradient id="g16" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-24.082,24.082,0,47.824,61.194)">
-			<stop offset="0" stop-color="#db4343" />
-			<stop offset="1" stop-color="#ff7070" />
-		</linearGradient>
-	</defs>
-	<style>
-		.s0 { fill: url(#g1) } 
-		.s1 { fill: url(#g2) } 
-		.s2 { fill: url(#g3) } 
-		.s3 { fill: url(#g4) } 
-		.s4 { fill: url(#g5) } 
-		.s5 { fill: url(#g6) } 
-		.s6 { fill: url(#g7) } 
-		.s7 { fill: url(#g8) } 
-		.s8 { fill: url(#g9) } 
-		.s9 { fill: url(#g10) } 
-		.s10 { fill: url(#g11) } 
-		.s11 { fill: url(#g12) } 
-		.s12 { fill: url(#g13) } 
-		.s13 { fill: url(#g14) } 
-		.s14 { fill: url(#g15) } 
-		.s15 { opacity: .35;filter: url(#f1);fill: #000000 } 
-		.s16 { fill: url(#g16) } 
-		.s17 { fill: #ffffff } 
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <image id="xfce4-fsguard-plugin-warning-shadow" width="251" height="251" href="data:image/png;base64,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"/>
+  </defs>
+  <use href="#xfce4-fsguard-plugin-warning-shadow" transform="matrix(.242558 0 0 .247016 1.5593 1.999)"/>
+  <g transform="translate(0,0) scale(1) translate(-0,-0)">
+    <defs>
+      <linearGradient id="xfce4-fsguard-plugin-warning-g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-46.731,46.731,0,30.129,55.364)">
+        <stop offset="0" stop-color="#eaeef3"/>
+        <stop offset="1" stop-color="#f8fafb"/>
+      </linearGradient>
+      <linearGradient id="xfce4-fsguard-plugin-warning-g2" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-56,56.001,0,28,60)">
+        <stop offset="0" stop-color="#1f1f1f"/>
+        <stop offset="1" stop-color="#525252"/>
+      </linearGradient>
+      <linearGradient id="xfce4-fsguard-plugin-warning-g3" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(32.574,0,0,25.911,17.268,52.296)">
+        <stop offset="0" stop-color="#000000"/>
+        <stop offset=".047" stop-color="#424048"/>
+        <stop offset=".097" stop-color="#241f31"/>
+        <stop offset=".9" stop-color="#241f31"/>
+        <stop offset=".95" stop-color="#424048"/>
+        <stop offset="1" stop-color="#000000"/>
+      </linearGradient>
+      <linearGradient id="xfce4-fsguard-plugin-warning-g4" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(32.574,0,0,25.911,17.37,34.426)">
+        <stop offset="0" stop-color="#424048"/>
+        <stop offset=".047" stop-color="#f6f5f4"/>
+        <stop offset=".097" stop-color="#949390"/>
+        <stop offset=".9" stop-color="#d5d3cf"/>
+        <stop offset=".95" stop-color="#f6f5f4"/>
+        <stop offset="1" stop-color="#424048"/>
+      </linearGradient>
+      <linearGradient id="xfce4-fsguard-plugin-warning-g5" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,42.479,-35.944,0,33.606,6.651)">
+        <stop offset="0" stop-color="#deddda"/>
+        <stop offset="1" stop-color="#f6f5f4"/>
+      </linearGradient>
+      <radialGradient id="xfce4-fsguard-plugin-warning-g6" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(33.757,-28.271,28.271,33.757,40.534,47.297)">
+        <stop offset="0" stop-color="#d5d3cf"/>
+        <stop offset=".129" stop-color="#949390"/>
+        <stop offset=".258" stop-color="#d5d3cf"/>
+        <stop offset=".334" stop-color="#deddda"/>
+        <stop offset=".446" stop-color="#949390"/>
+        <stop offset=".515" stop-color="#deddda"/>
+        <stop offset=".657" stop-color="#f6f5f4"/>
+        <stop offset=".809" stop-color="#949390"/>
+        <stop offset="1" stop-color="#ffffff"/>
+      </radialGradient>
+      <linearGradient id="xfce4-fsguard-plugin-warning-g7" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-5.427,-9.4,8.924,-5.152,35.132,28.273)">
+        <stop offset="0" stop-color="#dfddd9"/>
+        <stop offset="1" stop-color="#f9f9f8"/>
+      </linearGradient>
+      <radialGradient id="xfce4-fsguard-plugin-warning-g8" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.634,0,0,1.634,20.535,48.577)">
+        <stop offset="0" stop-color="#000000" stop-opacity=".25"/>
+        <stop offset="1" stop-color="#000000" stop-opacity=".03"/>
+      </radialGradient>
+      <radialGradient id="xfce4-fsguard-plugin-warning-g9" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.849,0,0,.849,17.31,48.731)">
+        <stop offset="0" stop-color="#949390"/>
+        <stop offset="1" stop-color="#424048"/>
+      </radialGradient>
+      <radialGradient id="xfce4-fsguard-plugin-warning-g10" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.634,0,0,1.634,46.676,48.577)">
+        <stop offset="0" stop-color="#000000" stop-opacity=".25"/>
+        <stop offset="1" stop-color="#000000" stop-opacity=".03"/>
+      </radialGradient>
+      <radialGradient id="xfce4-fsguard-plugin-warning-g11" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.124,0,0,1.124,46.676,48.595)">
+        <stop offset="0" stop-color="#949390"/>
+        <stop offset="1" stop-color="#424048"/>
+      </radialGradient>
+      <radialGradient id="xfce4-fsguard-plugin-warning-g12" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.634,0,0,1.634,46.676,11.816)">
+        <stop offset="0" stop-color="#000000" stop-opacity=".25"/>
+        <stop offset="1" stop-color="#000000" stop-opacity=".03"/>
+      </radialGradient>
+      <radialGradient id="xfce4-fsguard-plugin-warning-g13" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.124,0,0,1.124,46.676,11.834)">
+        <stop offset="0" stop-color="#949390"/>
+        <stop offset="1" stop-color="#424048"/>
+      </radialGradient>
+      <radialGradient id="xfce4-fsguard-plugin-warning-g14" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.634,0,0,1.634,17.268,11.816)">
+        <stop offset="0" stop-color="#000000" stop-opacity=".25"/>
+        <stop offset="1" stop-color="#000000" stop-opacity=".03"/>
+      </radialGradient>
+      <radialGradient id="xfce4-fsguard-plugin-warning-g15" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.124,0,0,1.124,17.268,11.834)">
+        <stop offset="0" stop-color="#949390"/>
+        <stop offset="1" stop-color="#424048"/>
+      </radialGradient>
+      <filter x="-50%" y="-50%" width="200%" height="200%" id="xfce4-fsguard-plugin-warning-f1">
+        <feGaussianBlur stdDeviation="1.3"/>
+      </filter>
+      <linearGradient id="xfce4-fsguard-plugin-warning-g16" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-24.082,24.082,0,47.824,61.194)">
+        <stop offset="0" stop-color="#db4343"/>
+        <stop offset="1" stop-color="#ff7070"/>
+      </linearGradient>
+    </defs>
+    <style>
+		.xfce4-fsguard-plugin-warning-s0 { fill: url(#xfce4-fsguard-plugin-warning-g1) } 
+		.xfce4-fsguard-plugin-warning-s1 { fill: url(#xfce4-fsguard-plugin-warning-g2) } 
+		.xfce4-fsguard-plugin-warning-s2 { fill: url(#xfce4-fsguard-plugin-warning-g3) } 
+		.xfce4-fsguard-plugin-warning-s3 { fill: url(#xfce4-fsguard-plugin-warning-g4) } 
+		.xfce4-fsguard-plugin-warning-s4 { fill: url(#xfce4-fsguard-plugin-warning-g5) } 
+		.xfce4-fsguard-plugin-warning-s5 { fill: url(#xfce4-fsguard-plugin-warning-g6) } 
+		.xfce4-fsguard-plugin-warning-s6 { fill: url(#xfce4-fsguard-plugin-warning-g7) } 
+		.xfce4-fsguard-plugin-warning-s7 { fill: url(#xfce4-fsguard-plugin-warning-g8) } 
+		.xfce4-fsguard-plugin-warning-s8 { fill: url(#xfce4-fsguard-plugin-warning-g9) } 
+		.xfce4-fsguard-plugin-warning-s9 { fill: url(#xfce4-fsguard-plugin-warning-g10) } 
+		.xfce4-fsguard-plugin-warning-s10 { fill: url(#xfce4-fsguard-plugin-warning-g11) } 
+		.xfce4-fsguard-plugin-warning-s11 { fill: url(#xfce4-fsguard-plugin-warning-g12) } 
+		.xfce4-fsguard-plugin-warning-s12 { fill: url(#xfce4-fsguard-plugin-warning-g13) } 
+		.xfce4-fsguard-plugin-warning-s13 { fill: url(#xfce4-fsguard-plugin-warning-g14) } 
+		.xfce4-fsguard-plugin-warning-s14 { fill: url(#xfce4-fsguard-plugin-warning-g15) } 
+		.xfce4-fsguard-plugin-warning-s15 { opacity: .35;filter: url(#xfce4-fsguard-plugin-warning-f1);fill: #000000 } 
+		.xfce4-fsguard-plugin-warning-s16 { fill: url(#xfce4-fsguard-plugin-warning-g16) } 
+		.xfce4-fsguard-plugin-warning-s17 { fill: #ffffff } 
 	</style>
-	<g>
-		<use href="#img1" transform="matrix(.243,0,0,.243,1.559,3)" />
-		<path fill-rule="evenodd" class="s0" d="m17.98 5.8h28.04c6.71 0 12.15 5.44 12.15 12.15v28.04c0 6.71-5.44 12.15-12.15 12.15h-28.04c-6.71 0-12.15-5.44-12.15-12.15v-28.04c0-6.71 5.44-12.15 12.15-12.15z" />
-		<path class="s1" d="m17 3.97c-1.71 0-3.4 0.33-4.98 0.98-1.58 0.65-3.01 1.61-4.22 2.82-1.21 1.21-2.17 2.64-2.82 4.22-0.65 1.58-0.98 3.27-0.98 4.98v30c0 1.71 0.33 3.4 0.98 4.98 0.65 1.58 1.61 3.01 2.82 4.22 1.21 1.21 2.64 2.17 4.22 2.82 1.58 0.65 3.27 0.98 4.98 0.98h30c1.71 0 3.4-0.33 4.98-0.98 1.58-0.65 3.01-1.61 4.22-2.82 1.21-1.21 2.17-2.64 2.82-4.22 0.65-1.58 0.99-3.27 0.98-4.98v-30c0.01-1.71-0.33-3.4-0.98-4.98-0.65-1.58-1.61-3.01-2.82-4.22-1.21-1.21-2.64-2.17-4.22-2.82-1.58-0.65-3.27-0.98-4.98-0.98z" />
-		<g>
-			<path class="s2" d="m17.27 26.16h29.41c1.81 0 3.26 1.45 3.26 3.26v22.06c0 1.81-1.45 3.27-3.26 3.27h-29.41c-1.81 0-3.27-1.46-3.27-3.27v-22.06c0-1.81 1.46-3.26 3.27-3.26z" />
-			<path class="s3" d="m17.27 23.7h29.41c1.81 0 3.26 1.46 3.26 3.27v22.06c0 1.81-1.45 3.27-3.26 3.27h-29.41c-1.81 0-3.27-1.46-3.27-3.27v-22.06c0-1.81 1.46-3.27 3.27-3.27z" />
-			<path class="s4" d="m17.27 9h29.41c1.81 0 3.26 1.54 3.26 3.45v35.57c0 1.92-1.45 3.46-3.26 3.46h-29.41c-1.81 0-3.27-1.54-3.27-3.46v-35.57c0-1.91 1.46-3.45 3.27-3.45z" />
-			<path class="s5" d="m21.35 10.63c-0.9 0-1.63 0.73-1.63 1.64 0 1.35-1.1 2.45-2.45 2.45-0.91 0-1.64 0.73-1.64 1.63v3.27c0 0.9 0.73 1.63 1.64 1.63 1.35 0 2.45 1.1 2.45 2.45 0 0.61-0.23 1.19-0.63 1.64-2.42 2.69-3.45 6.18-3.46 9.8 0 8.12 8.22 14.71 16.34 14.71 8.12 0 16.34-6.59 16.34-14.71-0.01-3.62-1.04-7.11-3.46-9.8-0.4-0.45-0.62-1.03-0.62-1.64 0-1.35 1.09-2.45 2.45-2.45 0.9 0 1.63-0.73 1.63-1.63v-3.27c0-0.9-0.73-1.63-1.63-1.63-1.36 0-2.45-1.1-2.45-2.45 0-0.91-0.73-1.64-1.64-1.64zm10.62 21.24c1.35 0 2.45 1.1 2.45 2.45 0 1.36-1.1 2.45-2.45 2.45-1.35 0-2.45-1.09-2.45-2.45 0-1.35 1.1-2.45 2.45-2.45z" />
-			<path class="s6" d="m21.35 9.82c-0.9 0-1.63 0.73-1.63 1.63 0 1.35-1.1 2.45-2.45 2.45-0.91 0-1.64 0.73-1.64 1.64v3.26c0 0.91 0.73 1.64 1.64 1.64 1.35 0 2.45 1.09 2.45 2.45 0 0.6-0.23 1.18-0.63 1.63-2.42 2.69-3.45 6.18-3.46 9.8 0 8.13 8.22 14.71 16.34 14.71 8.12 0 16.34-6.58 16.34-14.71-0.01-3.62-1.04-7.11-3.46-9.8-0.4-0.45-0.62-1.03-0.62-1.63 0-1.36 1.09-2.45 2.45-2.45 0.9 0 1.63-0.73 1.63-1.64v-3.26c0-0.91-0.73-1.64-1.63-1.64-1.36 0-2.45-1.1-2.45-2.45 0-0.9-0.73-1.63-1.64-1.63zm10.62 21.24c1.35 0 2.45 1.09 2.45 2.45 0 1.35-1.1 2.45-2.45 2.45-1.35 0-2.45-1.1-2.45-2.45 0-1.36 1.1-2.45 2.45-2.45z" />
-			<path fill-rule="evenodd" class="s7" d="m17.27 50.66c-0.91 0-1.64-0.73-1.64-1.63 0-0.9 0.73-1.64 1.64-1.64 0.9 0 1.63 0.74 1.63 1.64 0 0.9-0.73 1.63-1.63 1.63z" />
-			<path fill-rule="evenodd" class="s8" d="m17.27 49.85c-0.45 0-0.82-0.37-0.82-0.82 0-0.45 0.37-0.82 0.82-0.82 0.45 0 0.81 0.37 0.81 0.82 0 0.45-0.36 0.82-0.81 0.82z" />
-			<path fill-rule="evenodd" class="s9" d="m46.68 50.66c-0.91 0-1.64-0.73-1.64-1.63 0-0.9 0.73-1.64 1.64-1.64 0.9 0 1.63 0.74 1.63 1.64 0 0.9-0.73 1.63-1.63 1.63z" />
-			<path fill-rule="evenodd" class="s10" d="m46.68 49.85c-0.46 0-0.82-0.37-0.82-0.82 0-0.45 0.36-0.82 0.82-0.82 0.45 0 0.81 0.37 0.81 0.82 0 0.45-0.36 0.82-0.81 0.82z" />
-			<path fill-rule="evenodd" class="s11" d="m46.68 13.9c-0.91 0-1.64-0.73-1.64-1.63 0-0.91 0.73-1.64 1.64-1.64 0.9 0 1.63 0.73 1.63 1.64 0 0.9-0.73 1.63-1.63 1.63z" />
-			<path fill-rule="evenodd" class="s12" d="m46.68 13.08c-0.46 0-0.82-0.36-0.82-0.81 0-0.45 0.36-0.82 0.82-0.82 0.45 0 0.81 0.37 0.81 0.82 0 0.45-0.36 0.81-0.81 0.81z" />
-			<path fill-rule="evenodd" class="s13" d="m17.27 13.9c-0.91 0-1.64-0.73-1.64-1.63 0-0.91 0.73-1.64 1.64-1.64 0.9 0 1.63 0.73 1.63 1.64 0 0.9-0.73 1.63-1.63 1.63z" />
-			<path fill-rule="evenodd" class="s14" d="m17.27 13.08c-0.45 0-0.82-0.36-0.82-0.81 0-0.45 0.37-0.82 0.82-0.82 0.45 0 0.81 0.37 0.81 0.82 0 0.45-0.36 0.81-0.81 0.81z" />
-		</g>
-		<path fill-rule="evenodd" class="s15" d="m48 63c-7.74 0-14-6.26-14-14 0-7.74 6.26-14 14-14 7.74 0 14 6.26 14 14 0 7.74-6.26 14-14 14z" />
-		<path fill-rule="evenodd" class="s16" d="m48 63c-7.74 0-14-6.26-14-14 0-7.74 6.26-14 14-14 7.74 0 14 6.26 14 14 0 7.74-6.26 14-14 14z" />
-		<path fill-rule="evenodd" class="s17" d="m48 40c0.55 0 1 0.45 1 1v10c0 0.55-0.45 1-1 1-0.55 0-1-0.45-1-1v-10c0-0.55 0.45-1 1-1z" />
-		<path fill-rule="evenodd" class="s17" d="m48 56c-0.55 0-1-0.45-1-1 0-0.55 0.45-1 1-1 0.55 0 1 0.45 1 1 0 0.55-0.45 1-1 1z" />
-	</g>
-</g></svg>
+    <g>
+      <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s0" d="m17.98 5.8h28.04c6.71 0 12.15 5.44 12.15 12.15v28.04c0 6.71-5.44 12.15-12.15 12.15h-28.04c-6.71 0-12.15-5.44-12.15-12.15v-28.04c0-6.71 5.44-12.15 12.15-12.15z"/>
+      <path class="xfce4-fsguard-plugin-warning-s1" d="m17 3.97c-1.71 0-3.4 0.33-4.98 0.98-1.58 0.65-3.01 1.61-4.22 2.82-1.21 1.21-2.17 2.64-2.82 4.22-0.65 1.58-0.98 3.27-0.98 4.98v30c0 1.71 0.33 3.4 0.98 4.98 0.65 1.58 1.61 3.01 2.82 4.22 1.21 1.21 2.64 2.17 4.22 2.82 1.58 0.65 3.27 0.98 4.98 0.98h30c1.71 0 3.4-0.33 4.98-0.98 1.58-0.65 3.01-1.61 4.22-2.82 1.21-1.21 2.17-2.64 2.82-4.22 0.65-1.58 0.99-3.27 0.98-4.98v-30c0.01-1.71-0.33-3.4-0.98-4.98-0.65-1.58-1.61-3.01-2.82-4.22-1.21-1.21-2.64-2.17-4.22-2.82-1.58-0.65-3.27-0.98-4.98-0.98z"/>
+      <g>
+        <path class="xfce4-fsguard-plugin-warning-s2" d="m17.27 26.16h29.41c1.81 0 3.26 1.45 3.26 3.26v22.06c0 1.81-1.45 3.27-3.26 3.27h-29.41c-1.81 0-3.27-1.46-3.27-3.27v-22.06c0-1.81 1.46-3.26 3.27-3.26z"/>
+        <path class="xfce4-fsguard-plugin-warning-s3" d="m17.27 23.7h29.41c1.81 0 3.26 1.46 3.26 3.27v22.06c0 1.81-1.45 3.27-3.26 3.27h-29.41c-1.81 0-3.27-1.46-3.27-3.27v-22.06c0-1.81 1.46-3.27 3.27-3.27z"/>
+        <path class="xfce4-fsguard-plugin-warning-s4" d="m17.27 9h29.41c1.81 0 3.26 1.54 3.26 3.45v35.57c0 1.92-1.45 3.46-3.26 3.46h-29.41c-1.81 0-3.27-1.54-3.27-3.46v-35.57c0-1.91 1.46-3.45 3.27-3.45z"/>
+        <path class="xfce4-fsguard-plugin-warning-s5" d="m21.35 10.63c-0.9 0-1.63 0.73-1.63 1.64 0 1.35-1.1 2.45-2.45 2.45-0.91 0-1.64 0.73-1.64 1.63v3.27c0 0.9 0.73 1.63 1.64 1.63 1.35 0 2.45 1.1 2.45 2.45 0 0.61-0.23 1.19-0.63 1.64-2.42 2.69-3.45 6.18-3.46 9.8 0 8.12 8.22 14.71 16.34 14.71 8.12 0 16.34-6.59 16.34-14.71-0.01-3.62-1.04-7.11-3.46-9.8-0.4-0.45-0.62-1.03-0.62-1.64 0-1.35 1.09-2.45 2.45-2.45 0.9 0 1.63-0.73 1.63-1.63v-3.27c0-0.9-0.73-1.63-1.63-1.63-1.36 0-2.45-1.1-2.45-2.45 0-0.91-0.73-1.64-1.64-1.64zm10.62 21.24c1.35 0 2.45 1.1 2.45 2.45 0 1.36-1.1 2.45-2.45 2.45-1.35 0-2.45-1.09-2.45-2.45 0-1.35 1.1-2.45 2.45-2.45z"/>
+        <path class="xfce4-fsguard-plugin-warning-s6" d="m21.35 9.82c-0.9 0-1.63 0.73-1.63 1.63 0 1.35-1.1 2.45-2.45 2.45-0.91 0-1.64 0.73-1.64 1.64v3.26c0 0.91 0.73 1.64 1.64 1.64 1.35 0 2.45 1.09 2.45 2.45 0 0.6-0.23 1.18-0.63 1.63-2.42 2.69-3.45 6.18-3.46 9.8 0 8.13 8.22 14.71 16.34 14.71 8.12 0 16.34-6.58 16.34-14.71-0.01-3.62-1.04-7.11-3.46-9.8-0.4-0.45-0.62-1.03-0.62-1.63 0-1.36 1.09-2.45 2.45-2.45 0.9 0 1.63-0.73 1.63-1.64v-3.26c0-0.91-0.73-1.64-1.63-1.64-1.36 0-2.45-1.1-2.45-2.45 0-0.9-0.73-1.63-1.64-1.63zm10.62 21.24c1.35 0 2.45 1.09 2.45 2.45 0 1.35-1.1 2.45-2.45 2.45-1.35 0-2.45-1.1-2.45-2.45 0-1.36 1.1-2.45 2.45-2.45z"/>
+        <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s7" d="m17.27 50.66c-0.91 0-1.64-0.73-1.64-1.63 0-0.9 0.73-1.64 1.64-1.64 0.9 0 1.63 0.74 1.63 1.64 0 0.9-0.73 1.63-1.63 1.63z"/>
+        <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s8" d="m17.27 49.85c-0.45 0-0.82-0.37-0.82-0.82 0-0.45 0.37-0.82 0.82-0.82 0.45 0 0.81 0.37 0.81 0.82 0 0.45-0.36 0.82-0.81 0.82z"/>
+        <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s9" d="m46.68 50.66c-0.91 0-1.64-0.73-1.64-1.63 0-0.9 0.73-1.64 1.64-1.64 0.9 0 1.63 0.74 1.63 1.64 0 0.9-0.73 1.63-1.63 1.63z"/>
+        <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s10" d="m46.68 49.85c-0.46 0-0.82-0.37-0.82-0.82 0-0.45 0.36-0.82 0.82-0.82 0.45 0 0.81 0.37 0.81 0.82 0 0.45-0.36 0.82-0.81 0.82z"/>
+        <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s11" d="m46.68 13.9c-0.91 0-1.64-0.73-1.64-1.63 0-0.91 0.73-1.64 1.64-1.64 0.9 0 1.63 0.73 1.63 1.64 0 0.9-0.73 1.63-1.63 1.63z"/>
+        <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s12" d="m46.68 13.08c-0.46 0-0.82-0.36-0.82-0.81 0-0.45 0.36-0.82 0.82-0.82 0.45 0 0.81 0.37 0.81 0.82 0 0.45-0.36 0.81-0.81 0.81z"/>
+        <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s13" d="m17.27 13.9c-0.91 0-1.64-0.73-1.64-1.63 0-0.91 0.73-1.64 1.64-1.64 0.9 0 1.63 0.73 1.63 1.64 0 0.9-0.73 1.63-1.63 1.63z"/>
+        <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s14" d="m17.27 13.08c-0.45 0-0.82-0.36-0.82-0.81 0-0.45 0.37-0.82 0.82-0.82 0.45 0 0.81 0.37 0.81 0.82 0 0.45-0.36 0.81-0.81 0.81z"/>
+      </g>
+      <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s15" d="m48 63c-7.74 0-14-6.26-14-14 0-7.74 6.26-14 14-14 7.74 0 14 6.26 14 14 0 7.74-6.26 14-14 14z"/>
+      <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s16" d="m48 63c-7.74 0-14-6.26-14-14 0-7.74 6.26-14 14-14 7.74 0 14 6.26 14 14 0 7.74-6.26 14-14 14z"/>
+      <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s17" d="m48 40c0.55 0 1 0.45 1 1v10c0 0.55-0.45 1-1 1-0.55 0-1-0.45-1-1v-10c0-0.55 0.45-1 1-1z"/>
+      <path fill-rule="evenodd" class="xfce4-fsguard-plugin-warning-s17" d="m48 56c-0.55 0-1-0.45-1-1 0-0.55 0.45-1 1-1 0.55 0 1 0.45 1 1 0 0.55-0.45 1-1 1z"/>
+    </g>
+  </g>
+</svg>

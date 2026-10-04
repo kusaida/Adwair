@@ -1,4 +1,5 @@
-<svg id="svg1443" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="svg1443" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867">
  <defs id="defs1437">
   <radialGradient id="radialGradient1999" cx="17.076" cy="4.6282" r="14.544" gradientTransform="matrix(4.7283 0 0 1.6998 -63.506 -2.7937)" gradientUnits="userSpaceOnUse">
    <stop id="stop1993" stop-color="#5ed7ec" offset="0"/>
@@ -42,7 +43,7 @@
    <rect id="rect1676" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="4.6"/>
    <rect id="rect1678" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="5"/>
   </g>
-  <rect id="rect849" x="2.4074" y="2.5392" width="29.087" height="29.087" rx="6.4495" ry="6.4495" fill="url(#radialGradient1999)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
+  <rect id="rect849" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#radialGradient1999)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
   <g id="g3340" fill="#03002e" fill-opacity=".021321" stroke-width=".5803">
    <path id="path3118" d="m5.6745 11.186v11.606h2.3212v-6.3833h1.1606v4.0621h2.3212v-9.2848h-2.3212v2.9015h-1.1606v-2.9015zm11.606 0a4.6423 4.6423 0 0 0-4.6424 4.6424 4.6423 4.6423 0 0 0 4.6424 4.6424 4.6423 4.6423 0 0 0 4.6424-4.6424 4.6423 4.6423 0 0 0-4.6424-4.6424zm5.803 0v9.2848h2.3212v-4.9858l1.1606 2.0106v5.2964h2.3212v-11.606h-2.3212v1.9608l-1.1606-1.9608zm-5.803 2.3212a2.3212 2.3212 0 0 1 2.3212 2.3212 2.3212 2.3212 0 0 1-2.3212 2.3212 2.3212 2.3212 0 0 1-2.3212-2.3212 2.3212 2.3212 0 0 1 2.3212-2.3212zm-4.6424 8.1242v2.3212h9.2848v-2.3212z"/>
    <path id="path3318" d="m5.4895 11.032v11.606h2.3212v-6.3833h1.1606v4.0621h2.3212v-9.2848h-2.3212v2.9015h-1.1606v-2.9015zm11.606 0a4.6423 4.6423 0 0 0-4.6424 4.6424 4.6423 4.6423 0 0 0 4.6424 4.6424 4.6423 4.6423 0 0 0 4.6424-4.6424 4.6423 4.6423 0 0 0-4.6424-4.6424zm5.803 0v9.2848h2.3212v-4.9858l1.1606 2.0106v5.2964h2.3212v-11.606h-2.3212v1.9608l-1.1606-1.9608zm-5.803 2.3212a2.3212 2.3212 0 0 1 2.3212 2.3212 2.3212 2.3212 0 0 1-2.3212 2.3212 2.3212 2.3212 0 0 1-2.3212-2.3212 2.3212 2.3212 0 0 1 2.3212-2.3212zm-4.6424 8.1242v2.3212h9.2848v-2.3212z"/>

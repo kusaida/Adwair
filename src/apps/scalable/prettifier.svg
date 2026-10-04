@@ -1,4 +1,5 @@
-<svg id="svg4101" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg4101" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867">
  <defs id="defs4095"><linearGradient id="bgNew" x1="16.9273" x2="16.9273" y1="292.9779" y2="267.0091" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0e71de"/><stop offset="1" stop-color="#25c9ff"/></linearGradient>
   <linearGradient id="linearGradient1100">
    <stop id="stop1096" stop-color="#bed7f4" offset="0"/>
@@ -78,8 +79,8 @@
  </metadata>
  <g id="layer1" transform="translate(0 -263.13)">
   <image id="image983" x="-.0057709" y="263.06" width="33.867" height="33.867" preserveAspectRatio="none" xlink:href="data:image/png;base64,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 i8jbYvJO/gPDgGl5mBh/6QAAAABJRU5ErkJggg== "/>
-  <rect fill="url(#bgNew)" id="rect2233" x="2.3838" y="265.45" width="29.087" height="29.087" rx="6.4495" ry="6.4495"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
-  <g id="g1082" transform="matrix(1.1071 0 0 1.1071 -1.6014 -32.345)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4703">
+  <rect fill="url(#bgNew)" id="rect2233" x="2.1167" y="265.2467" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
+  <g transform="matrix(0.93133 0 0 0.93133 0.33066 19.23103)"><g id="g1082" transform="matrix(1.1071 0 0 1.1071 -1.6014 -32.345)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4703">
    <path id="path4921" d="m19.029 278.25-4.0047 8.0584" stroke="url(#linearGradient1102)"/>
    <path id="path4919" d="m11.753 278.2-5.2364 4.3163 6.0289 3.8965" stroke="url(#linearGradient1094)"/>
    <path id="path4932" d="m21.358 277.84 5.5431 3.9146-5.7222 4.3344" stroke="url(#linearGradient1104)"/>
@@ -106,5 +107,5 @@
     <rect id="rect436" x="370.97" y="1049.2" width="23.862" height="3.4876" rx="1.7438" fill="#060509"/>
    </g>
   </g>
- </g>
+ </g></g>
 </svg>

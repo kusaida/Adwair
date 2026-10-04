@@ -1,4 +1,5 @@
-<svg id="svg1443" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="svg1443" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867">
  <defs id="defs1437">
   <linearGradient id="linearGradient1632" x1="132.21" x2="132.21" y1="42.152" y2="70.68" gradientTransform="matrix(.97573 0 0 .97573 -111.77 -37.183)" gradientUnits="userSpaceOnUse">
    <stop id="stop1626" stop-color="#fafafc" offset="0"/>
@@ -70,7 +71,7 @@
    <rect id="rect1676" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="4.6"/>
    <rect id="rect1678" x="69.84" y="40.71" width="29.811" height="29.811" rx="6.6099" ry="6.6099" stroke-width="5"/>
   </g>
-  <rect id="rect849" x="2.4074" y="2.5392" width="29.087" height="29.087" rx="6.4495" ry="6.4495" fill="url(#linearGradient1632)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
+  <rect id="rect849" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#linearGradient1632)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
   <g id="g972" transform="matrix(.70659 0 0 .70659 29.904 -187.52)">
    <path id="path28682" d="m-21.185 292.77c-1.3974-0.0415-4.6165 0.41867-5.0202 0.61277-0.35555 0.12817-0.84436 0.58188-0.47239 1.1337 0.2685 0.37789 0.78007 0.78275 1.1112 1.112 0.32287 0.3056 0.55745 0.3965 0.92329 0.48359l2.4797 0.31141 5.0533-1.9686-1.3359-3.1344z" fill="#35d2be"/>
    <path id="path36306" d="m-17.93 292.53-2.1358 0.11317s-3.5326 0.87828-5.6725 2.8231c0.05913 0.0549 0.12068 0.11117 0.17259 0.16279 0.32287 0.30559 0.55764 0.39659 0.92348 0.48369l2.4799 0.31161 5.0529-1.9689z" fill="#3539d2" opacity=".49445"/>

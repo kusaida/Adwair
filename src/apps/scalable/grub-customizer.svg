@@ -1,143 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-39.969,42.602,-42.602,-39.969,49.299,11.993)">
-      <stop offset="0" stop-color="#000000"/>
-      <stop offset="1" stop-color="#000000"/>
-    </linearGradient>
-    <linearGradient id="g3" x2="1.131" gradientUnits="userSpaceOnUse" gradientTransform="matrix(6.525,-37.508,45.895,7.984,33.162,48.023)" x1="0.131" y1="0.36" y2="0.36">
-      <stop offset="0" stop-color="#0b95ff"/>
-      <stop offset="1" stop-color="#5dc3ef"/>
-    </linearGradient>
-    <filter x="-50%" y="-50%" width="200%" height="200%" id="f1">
-      <feGaussianBlur stdDeviation=".3"/>
-    </filter>
-    <linearGradient id="g4" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-0.194,-7.359,5.203,-0.137,32.605,34.707)">
+    <image id="grub-customizer-shadow" width="251" height="251" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPsAAAD7CAYAAACscuKmAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAA7DgAAOw4BzLahgwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABENSURBVHic7Z3tdqO4EgDbTt7/ie8k+2MuE6XdX8JgA111jg8gsCSyFN0SePYmvbm9uwPwcr7f3YF3ceWL/crnBvtyyRvCVYTY6jyu8veAH7YS9/Q3gDNf3JW+n/n84D1UpD6l+GeTIerv2n1bfgeOwRoZo+9k9Z1C/jNc0DMSW8d63z/DucM+eHJa5brsmZvCWznyBV+V9FZYn6kPrktV8u/C+kx9h+BoF/qs4JnokfxRe3BdsuhtrWdlXr1R+cs5ysVekTySubr02jrK3wH2oyp5dZmVVdp/KUe4yDP5IoG9da8sWoceVKK4JXi2P6o7KnsZ77zYZySP1rNtXZfVNtJfHy/troidbVvrXrte2e686yKvTLJ5IkeSR/t13VF/4HpUZLekjoSP9us2Z2b1d+HVF3kUzWckHz93p1x/32rL61NlHxyT6qMxT/ZM6q9gXzXdr/Z3U155MWcz6pngWupsm+gOC89GdS14tj0r/UuEf8UFPhPNI8GtdW9/JL21rPQZzkU2Kx5F9kh2a93b78nv9W9X6T/3rFxq0TwT3Vp6+/R3dRtWH7y+wnWoRvZx24ve4/L+/+VtKLsZ39X1e327Ocdswp6yz4quo7SWuyJ7NZXX/UP06+NNls2k8F/yW/ZR+FF6LfyX0ZebWi7sJvxeskeij9J5qbn+ZOVZGq/7YPXRK4Nzk0XTmUk5Lbq1vUg/Cu/VvZS/RPg9ZK+IriN6JHT02SKqW9twPaJJsTXRXcv+R+zrT6f2Osovbe4u/NayWxJZsnvj8LuIfIgt9odxrJX+Z2N1q59eGVyDSnRfltbY/S627OP2TR5vBH+Gct2OJb3u16bCbyn7GtEtoT3pPdm9qC7B0uszXJ/KZN2y/JZH0ccxuif7GOUt6ccbyHgjGK/HpR+bCb+V7BXRs1T9w1lGKbwlutW+1UevDK5NFOWjWfpFfC38XX7LPIo/Sq/TfD3Bt7RnTdxtIvwWsj8juiV4JnsldRdjafV15rzgPERi6P+uY0T1ZB/XF/H0LLyeoFuWi+RW2yKPUd4av4tTNsWzsmeiW4/TdKqeif4hj5Jnk3Fe32bOBc6LJXR07BhBx+OtCH9T68v1qFN4K6r/GdrRKfsY5a0bkO7rNM/IXhV9XHqR3BJdR/ZIcsbmEFG50VtS6aX+3NQxltxjmaj1hVH03YTfY8w+nvQipxXNLcm3EF2vR2UAIo+TYyMV4bXsVhqvpddt/JEf0bXkbx2zW2JZkutxuiW6F9krouv2vT4CRETjeOtY7wUZ7/q0BNcsqfw4LND9eUr+NbJXRbcm4fTnU+L03RNdt231Les7gIgtjR5Pe5mijvDj23PWdarH6h56ln7sx2rhZ2X3Tlp/ItE/pRbRtexjW2Isq/0FGLGierTf+r6etdf7reie1ftlHPO22XhrnG49YstS9y0iutcvgFl0VPf2WSyP0JZjs0iePfO3nsGPx0xF9xnZs/TdGqPPjNWtF2Ys2XVfrG2ALfDEHyflLEbprbo8rFd1R9csycvCPxvZI8mjMXom+ii8GEvdD4C9saLqsq2FHKXNGOX+MMpFHlP6XR+9WSm794mE12XRa7CW7F6fAF6FjqTRdXgv1Je9ohsNB6ai+0d2wFCZXuoxupb501nOpO9jm2NfEB3eiXUNRtdrhvduvt6v16c8qMgeRXUrdR+l/hRf9rWiAxyFtcJXJu088at9eSCTPZqUy8bokejWizOR6ERzOCre5PFsoLKidyXSRxPXv5iVPRubj3J7abz345ZIdICjUxHeO86Sem2Ed6nKPi6tN+S8GXcrskfp+9iWXgc4Opnw1fTde0nHi/AlTyLZK1Hde25eGatHj9jKJwBwMJ5J6S2ZPcG9SO96U5Hdi+qjuJH00ThdvwqbdhjgBFRTeo33+E2Mdf2d1RN0s2P12VdidZ2IDlcju6b1eF2GbU92ccqitv+RvVQTSR/NymdvxXmiA1wZK51fXq0dl/ozvidvuVN6uSaL7NWxuvWMXaf51qSc/gMgPlyJKJ2Pxuc6Ta/M1qdYr/N5wnlR3Yru2Yy71RaiwxXxrvEsQ9ZlUXactSsi8bu7XnSPOmndBEjdAX5TdcrzK3LKdUvLnj0iiO5E1R+1WHUjP1yZ6FqfdaqaKT9sV36VoztkRexM8iiyIzp0IErhs4zZ8m06U/Zk91L4sSySe1VnAJpS8Sea4C6l8pUxu+5QFtVnxuvcBKATlegeTXp7NwSvjV/cCwdFd5HZlB0AbKqpfZRte/WKSP7oLZJcz75bEwdRZ7gJQEe8jFnE9q3impW+P/gVjdmjDnh3m0h4swMAjckCa+RWFFhNstn4TPS1KTzSQ2fWDJlnPDPrrzx603efaAxhNcS4HSBGO+JJHz3lSj27DwdaHdAVVe461vFeGwDdeYVnN5HaG3RZA9XUPeoMQDcqnqzxz20je6nG64DXiN4HAHNEPln+eXU8UPnVW3ViIBqzA0CM5000ZzY1SZe9QZfdOaJUw2wQAFwqgdY6Th9vUv0hjG5YjKUE5UgP4BNN0uljosm5kOqjt0rDALAPlQCbOnivHKQqfKZBbgoAP1Rn5K3vzEb2W+Unrtl+Zt4B9mVmzO7un/nHKyplY8cAYB3Tj9UqVP8Nuk0aA4DNsCb1dPkvKr9ntyq0GuUmALA9kV9T82Qzj94qHSALAFhP1adVXs38u/ERSA2wH5v4tTayVzrADQBgnq28mnpdFgAuBLIDNGGN7KTnAO9n2kMiO0ATkB2gCcgO0ARkB2gCsgM0AdkBmoDsAE1AdoAmIDtAE5AdoAnIDtAEZAdoArIDNAHZAZqA7ABNQHaAJiA7QBOQHaAJyA7QBGQHaAKyAzQB2QGagOwATUB2gCYgO0ATkB2gCcgO0ARkB2gCsgM0AdkBmoDsAE1AdoAmIDtAE5AdoAnIDtAEZAdoArIDNAHZAZqA7ABNQHaAJiA7QBOQHaAJyA7QBGQHaAKyAzQB2QGagOwATUB2gCYgO0ATkB2gCcgO0ARkB2gCsgM0AdkBmoDsAE1AdoAmIDtAE5AdoAnIDtAEZAdoArIDNAHZAZqA7ABNQHaAJiA7QBOQHaAJyA7QBGQHaAKyAzQB2QGagOwATUB2gCYgO0ATkB2gCcgO0ARkB2gCsgM0AdkBmoDsAE1AdoAmIDtAE5AdoAnIDtAEZAdoArIDNAHZAZqA7ABNQHaAJiA7QBOQHaAJyA7QBGQHaAKyAzQB2QGagOwATUB2gCYgO0ATkB2gCcgO0ARkB2gCsgM0AdkBmoDsAE1AdoAmIDtAE5AdoAnIDtAEZAdowhrZvzfvBQDMMu0hkR2gCcgO0ARL9mp6kB1Hug8wz1ZePRy3VWRHbID92MSvtbJ/q6Uu97YBwKfq04xX/469W4XBl6xj1nQAAGpEfnlOmkSRfWzk2ygHgPehnUyD7jNjdq/SqbsNADwQObTaLU/27C6hoz5yA+yH9qzi5QP34IuzDSI9wLZYTq0NtN+VND5rUIz9UV0A8JdZb54KtDNjdi+yVx4PIDmAjzXZVgmwm87Gz4zZKzcCAPDxInZlCC2SyF95XdZq0LqrVF+0AYBHqhny7A3gH9lsvFXuRXXdQSQHmCfyyfLPq+MBLXsW1XWZdUwmOTcBgJona/xz27hbhUaZ18BXsUNeGwDdqXhm+WYdr+v7VZbNxlsVZeN3Lzt4aBwARMT3bFyvzJmFXlXH7FmDlc4AwF/WzInNeFYas1tfyBr/ctatSI/8AD9YblTd8jxzHcsevUVjB92RSHRSeYC/RMNcT/jMtVJgrfyePUotorsNqTxAnYpH2YS4V6+I1NJ43Rnd4JfxqaQdVhsAV0Zf+5HQnleWh14bv6j8xNW7i3idiO5AAPBIxR/LN+u7Io5v1R/CZJ2J7kBEd4BaVK86tSqYVt6g09tR+p6lHl7dCA9XJrrW93LqYXvm36CbuftUojtAV6pRPRsul1N4kbn/ScSM9Flab7XFDQCuSHS9Z4GzOumdtSsiIh/OgTe1tMpuw+eutnW5Pr7SDsDZsUS3JtdGmf84n69h6U3ShXwWOnsb1seK9R3pJnZUvw37bkankBu64GXFWXacDY3H+l28yC4yH92tjz6mUrdeBzgjWfpupetjBPei+ij+WJ/X9j8qsi/r1vaM6JUbAcLDFYjS92isruUet7PZ+DSNj2QXWRfddZm1Lc621xbAWaiIbqXqnuRa9mys7kpflX1Z97az6O0db7XhlQEcnUx0/XjaEt2K8DNPtVxmZdf7PKnF2WeVW/VmbQMcjWrqHqXtM6KXZuBHMtlF/LG6t62XUbpvtWHV4x0H8G68NHrmXZS1EV23v3o2fqQiXyR89t1oG+HhqKwV3XuW7ok+K73JrOzLeiRydb8lbVV4rwzgFVhirYno3nh97bvwIVXZReajejbxZm2vKUd6eCVRNF+W0csyUVS3Zt6ffplmYa3sa1PyNd9dUwfA1mRj5Wwyrpq+e4/aVk3KjczILuILV5mgs74XlWfHzWYFALN4YnnR3Ivq3ptx/xM/qlcftZXln5VdJH72rvdX6qge651UVBfiwyyRPJbkyzJL3bXsWnQtvE7hRWLpU7aQfeb42fpnyb6L/KDJhPGeny/LakQfZbdE934A83T6vrBGdpFc+C3H1NWTZBwPW1GdhItEj9L36s9Xteiro7rIetlFasJXs4DsJGZPjFl7mCG75iLJK6JHwlvR3Hrc9pToItvJHm17wmfPKr19HtF+RIeMNdF8jejem3JPP1rLeEZ2EVvwNe+0R3dRq7xah7dtwQ3huswGihnRKy/JeI/WrN+oL8ux3ZlzcXlWdpHnx+xemlKRPnscMXN33HQyBN7KzH9L67qzIncmePVHLdEjtt1EF8n/WaoK32Kn57dh/Uv+/nt0X873v+XvjWdZvw/bd+OztHlT694PcHR/RO3zzguuR2X4GEV07/Ha7CuwM4/YvH5PsYXsInXhx2fm1mcUXIv+IT83jeVzG8puYktvLcXZhutTSdmXZSb6uG6l55HoVuZg9c8rm2Yr2UVqwov8ln45zhJey77Ur2W/D3VG/5rt7ONCuA6ZQJbgy7YlZia7V2aNzXeP6Atbyi7iC2+xnOx9ONaSfPnoqD7KrqWP0noRInxHIoks4byIrlP4b4nTdOsGYX2yPj7N1rKL2MLr6D5G6VF67w9hiW7JrkWfSem9Mjg3z47RM9mzMbwVxV8uusg+sovUhBf5HYllOMaSXG9bonvCi8TRHcmvj5W2L+uVqO6l71akj8blluC7iy6yn+wideEXRvG/1fHjJFw1qi/DgyzCi7MN18GTyRurW3J6Y+7KePztoou85gKP0mVrMk0LG617+59J5aNyOA+eNLMpvBXdvbJMdKvdSp834ZUXtRdJ14gfRXMvfSey96Ua2cd1T/bKtlWf1a7Xv1149QU+E+XH9ehTGadHokd/A24A5yMSxxq3e6l8JcpnEfzt0XzkXRdzFFVnpI/2efVk7cM1sUQf1yuiZ/uteqw2re3deedFHkX5cT0St7Kt66q0DdciiqjVlD7attYrbb+UI1zgM9LrZSZ2JW0/wt8AXkMUXbP0u5KeH1LyhaNc6JVZ8eoNIFp6bR3l7wD7kcmXCVwV2xP6raKLHO8ir0g/bldvBl7dRzt/2J9Z6Sv7vXqj8pdz5It9VvxofaY+uC5VIatR+/CCj5zhQp95NDYTvc9w7rAPM5LOzKIfUvKFs13wa5+JrznPs/1t4Ic10j0j8aElXzjzBV3p+5nPD95DRdxTyK25igxbncdV/h7ww1ZinlLwkStf3Fc+N9iX04tt0V2I7uffkUuKXOE/2+1WpyDcm1gAAAAASUVORK5CYII="/>
+    <linearGradient id="grub-customizer-g4" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-0.194,-7.359,5.203,-0.137,32.605,34.707)">
       <stop offset="0" stop-color="#fcfcfc"/>
       <stop offset="1" stop-color="#eff0f1"/>
     </linearGradient>
-    <linearGradient id="g5" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-4.981,5.221,0,28.52,36.404)">
+    <linearGradient id="grub-customizer-g5" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-4.981,5.221,0,28.52,36.404)">
       <stop offset="0" stop-color="#f39c1f"/>
       <stop offset="1" stop-color="#fdbc4b"/>
     </linearGradient>
-    <linearGradient id="g6" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-0.074,-3.818,3.56,-0.069,35.591,36.15)">
+    <linearGradient id="grub-customizer-g6" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-0.074,-3.818,3.56,-0.069,35.591,36.15)">
       <stop offset="0" stop-color="#f39c1f"/>
       <stop offset="1" stop-color="#fdbc4b"/>
     </linearGradient>
-    <linearGradient id="g7" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.937,1.937,-1.209,1.209,30.273,25.676)">
+    <linearGradient id="grub-customizer-g7" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.937,1.937,-1.209,1.209,30.273,25.676)">
       <stop offset="0" stop-color="#000000" stop-opacity="1"/>
       <stop offset="1" stop-color="#000000" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="g8" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-0.149,-2.129,3.267,-0.228,31.84,26.444)">
+    <linearGradient id="grub-customizer-g8" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-0.149,-2.129,3.267,-0.228,31.84,26.444)">
       <stop offset="0" stop-color="#f39c1f"/>
       <stop offset="1" stop-color="#fdbc4b"/>
     </linearGradient>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="31.198" y1="6.501" x2="31.198" y2="48.141" id="gradient-0" gradientTransform="matrix(0.768531, -0.639813, 1.161498, 1.395171, -27.827337, 10.975295)">
-      <stop offset="0" style="stop-color: rgb(87, 87, 87);"/>
-      <stop offset="1" style="stop-color: rgb(0% 0% 0%)"/>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="31.198" y1="6.501" x2="31.198" y2="48.141" id="grub-customizer-gradient-0" gradientTransform="matrix(0.768531, -0.639813, 1.161498, 1.395171, -27.827337, 10.975295)">
+      <stop offset="0" style="stop-color: #575757;"/>
+      <stop offset="1" style="stop-color: #1c1c1c"/>
+    </linearGradient>
+    <linearGradient id="grub-customizer-bezel" x1="32" x2="32" y1="60" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cfcfd3"/>
+      <stop offset="1" stop-color="#e2e2e5"/>
+    </linearGradient>
+    <linearGradient id="grub-customizer-screen" x1="32" x2="32" y1="50" y2="4" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1c1c1c"/>
+      <stop offset="1" stop-color="#252525"/>
     </linearGradient>
   </defs>
   <style>
-		.s0 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: .4 } 
-		.s1 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: .6 } 
-		.s2 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: .7 } 
-		.s3 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: .9 } 
-		.s4 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.1 } 
-		.s5 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.3 } 
-		.s6 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.5 } 
-		.s7 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.8 } 
-		.s8 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.2 } 
-		.s9 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2.6 } 
-		.s10 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 3 } 
-		.s11 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 3.3 } 
-		.s12 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 3.7 } 
-		.s13 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 4.1 } 
-		.s14 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 4.8 } 
-		.s15 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 5.5 } 
-		.s16 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 6.3 } 
-		.s17 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 7 } 
-		.s18 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 7.7 } 
-		.s19 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 8.5 } 
-		.s20 { opacity: .02;fill: none;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width: 9.2 } 
-		.s21 { fill: url(#g1) } 
-		.s22 { fill: #dbdbde;stroke: #808080;stroke-width: .4 } 
-		.s23 { fill: #000000 } 
-		.s24 { fill: url(#g2);stroke: url(#g3);stroke-width: .4;stroke-dasharray: 0.0712745669,0.0712745669 } 
-		.s25 { filter: url(#f1);fill: #000000 } 
-		.s26 { opacity: .94;filter: url(#f1);fill: #000000 } 
-		.s27 { opacity: .2;filter: url(#f1);fill: #000000 } 
-		.s28 { opacity: .13;filter: url(#f1);fill: #000000 } 
-		.s29 { opacity: .94;fill: #fcfcfc } 
-		.s30 { fill: #232629 } 
-		.s31 { fill: url(#g4) } 
-		.s32 { fill: url(#g5) } 
-		.s33 { fill: url(#g6) } 
-		.s34 { opacity: .2;fill: url(#g7) } 
-		.s35 { fill: url(#g8) } 
-		.s36 { opacity: .13;fill: #eff0f1 } 
-		.s37 { fill: #000000;stroke: #ffffff;stroke-linecap: round;stroke-width: .5 } 
-		.s38 { fill: #ffffff } 
-	</style>
+    .grub-customizer-s23 { fill: #000000 }
+    .grub-customizer-s29 { opacity: .94;fill: #fcfcfc }
+    .grub-customizer-s30 { fill: #232629 }
+    .grub-customizer-s31 { fill: url(#grub-customizer-g4) }
+    .grub-customizer-s32 { fill: url(#grub-customizer-g5) }
+    .grub-customizer-s33 { fill: url(#grub-customizer-g6) }
+    .grub-customizer-s34 { opacity: .2;fill: url(#grub-customizer-g7) }
+    .grub-customizer-s35 { fill: url(#grub-customizer-g8) }
+    .grub-customizer-s36 { opacity: .13;fill: #eff0f1 }
+    .grub-customizer-s37 { fill: #000000;stroke: #ffffff;stroke-linecap: round;stroke-width: .5 }
+    .grub-customizer-s38 { fill: #ffffff }
+  </style>
+  <use href="#grub-customizer-shadow" transform="matrix(.242558 0 0 .247016 1.5593 1.999)"/>
   <g>
-    <g id="layer1">
-      <g id="g1702" style="opacity: .29">
-        <path id="rect1634" fill-rule="evenodd" class="s0" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1638" fill-rule="evenodd" class="s0" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1640" fill-rule="evenodd" class="s1" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1642" fill-rule="evenodd" class="s2" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1644" fill-rule="evenodd" class="s3" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1646" fill-rule="evenodd" class="s4" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1648" fill-rule="evenodd" class="s5" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1650" fill-rule="evenodd" class="s6" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1652" fill-rule="evenodd" class="s7" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1654" fill-rule="evenodd" class="s8" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1656" fill-rule="evenodd" class="s9" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1658" fill-rule="evenodd" class="s10" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1660" fill-rule="evenodd" class="s11" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1662" fill-rule="evenodd" class="s12" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1664" fill-rule="evenodd" class="s13" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1666" fill-rule="evenodd" class="s14" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1668" fill-rule="evenodd" class="s15" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1670" fill-rule="evenodd" class="s16" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1672" fill-rule="evenodd" class="s17" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1674" fill-rule="evenodd" class="s18" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1676" fill-rule="evenodd" class="s19" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-        <path id="rect1678" fill-rule="evenodd" class="s20" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-      </g>
-      <path id="rect849" fill-rule="evenodd" class="s21" d="m16.65 4.64h30.59c6.73 0 12.19 5.46 12.19 12.19v30.59c0 6.73-5.46 12.19-12.19 12.19h-30.59c-6.73 0-12.19-5.46-12.19-12.19v-30.59c0-6.73 5.46-12.19 12.19-12.19z"/>
-      <path id="rect901" class="s22" d="m16.65 4.64c-6.75 0-12.19 5.44-12.19 12.19v30.59c0 6.76 5.44 12.19 12.19 12.19h30.59c6.75 0 12.19-5.43 12.19-12.19v-30.59c0-6.75-5.44-12.19-12.19-12.19z"/>
-      <path id="rect897" class="s23" d="m16.65 4.64c-6.75 0-12.19 5.44-12.19 12.19v30.59q0 1.2 0.22 2.34h54.52q0.22-1.14 0.23-2.34v-30.59c0-6.75-5.44-12.19-12.19-12.19z"/>
-      <path id="rect1848" class="s24" d="m16.65 4.64c-6.54 0-11.85 5.1-12.18 11.56q-0.01 0.34-0.01 0.63v29.45h54.97v-29.45q0-0.32-0.02-0.63c-0.32-6.46-5.63-11.56-12.17-11.56z" style="fill: url(&quot;#gradient-0&quot;); stroke-width: 0px;"/>
+    <g id="grub-customizer-layer1">
+      <path id="grub-customizer-rect901" d="M17 4H47A13 13 0 0 1 60 17V47A13 13 0 0 1 47 60H17A13 13 0 0 1 4 47V17A13 13 0 0 1 17 4Z" fill="url(#grub-customizer-bezel)"/>
+      <path id="grub-customizer-rect897" d="M17 4H47A13 13 0 0 1 60 17V48.5A1.5 1.5 0 0 1 58.5 50H5.5A1.5 1.5 0 0 1 4 48.5V17A13 13 0 0 1 17 4Z" fill="url(#grub-customizer-screen)"/>
+      <path id="grub-customizer-rect1848" d="M17 4H47A13 13 0 0 1 60 17V45.8H4V17A13 13 0 0 1 17 4Z" style="fill: url(#grub-customizer-gradient-0)"/>
     </g>
     <g>
-      <g id="g17-5" style="opacity: .15">
-        <path id="path10-6" class="s25" d="m29.97 25.59c0.2-0.79 0.01-1.63 0.04-2.44 0.06-1.78 1.05-2.18 2.06-2.24 1.16-0.06 2.53 0.63 2.61 2.31 0.04 0.8-0.1 1.63 0.11 2.4 0.48 1.81 2.55 3.12 2.58 4.99 0.03 1.78-0.79 3.87-2.3 4.81-0.78 0.49-1.84-0.09-2.76-0.03-1.02 0.07-2.15 0.97-3.03 0.45-1.6-0.95-2.04-3.38-1.92-5.23 0.12-1.88 2.15-3.19 2.61-5.02z"/>
-        <path id="ellipse10" fill-rule="evenodd" class="s26" d="m32.81 25.17c-0.45 0-0.82-0.47-0.82-1.06 0-0.59 0.37-1.06 0.82-1.06 0.46 0 0.82 0.47 0.82 1.06 0 0.59-0.36 1.06-0.82 1.06z"/>
-        <path id="ellipse11" fill-rule="evenodd" class="s26" d="m30.87 25.01c-0.32 0-0.58-0.39-0.58-0.86 0-0.48 0.26-0.87 0.58-0.87 0.32 0 0.58 0.39 0.58 0.87 0 0.47-0.26 0.86-0.58 0.86z"/>
-        <path id="ellipse12" fill-rule="evenodd" class="s25" d="m32.71 24.84c-0.18 0-0.33-0.25-0.33-0.56 0-0.3 0.15-0.55 0.33-0.55 0.19 0 0.34 0.25 0.34 0.55 0 0.31-0.15 0.56-0.34 0.56z"/>
-        <path id="ellipse13" fill-rule="evenodd" class="s25" d="m30.87 24.7c-0.14 0-0.25-0.19-0.25-0.42 0-0.23 0.11-0.41 0.25-0.41 0.15 0 0.26 0.18 0.26 0.41 0 0.23-0.11 0.42-0.26 0.42z"/>
-        <path id="path13" class="s25" d="m32.71 25.2q-0.04 0-0.08 0-0.04 0-0.07 0-0.04 0-0.08 0-0.04 0-0.08 0c-0.68 0.04-1.41 0.31-1.77 0.64-0.59 0.51-0.24 1.02-0.5 1.75-0.25 0.72-0.89 1.68-1.08 2.59q-0.13 0.55-0.25 1.1l1.83 2.22c0.35 0.44-0.58 0.28-1.45-0.28 0.62 0.86 1.84 1.72 3.05 1.64 1.28-0.08 2.8-1.43 3.29-2.53-0.47-0.08-0.93-0.79-0.55-1.32 0.13-0.18 0.41-0.2 0.65-0.16-0.15-0.56-0.44-1.06-0.58-1.49-0.25-0.74-0.55-0.94-0.81-1.6-0.27-0.66 0.01-1.87-0.74-2.34q-0.33-0.2-0.78-0.22z"/>
-        <path id="path14" class="s25" d="m27.04 32.18c0.27-0.22 0.4-0.66 0.74-0.73 0.26-0.06 0.56 0.09 0.76 0.26 0.48 0.39 0.55 1.11 0.93 1.6 0.25 0.33 0.67 0.51 0.87 0.87 0.21 0.38 0.47 0.88 0.28 1.26-0.26 0.51-1.01 0.67-1.59 0.7-0.35 0.01-0.65-0.26-0.99-0.35-0.49-0.14-1.06-0.05-1.5-0.32-0.35-0.2-0.76-0.52-0.79-0.92-0.01-0.16 0.23-0.25 0.27-0.4 0.1-0.41-0.3-0.88-0.11-1.26 0.2-0.4 0.79-0.43 1.13-0.71zm7.81-0.61q-0.17 0.16-0.28 0.35c-0.3 0.54-0.1 1.24-0.26 1.84-0.11 0.39-0.44 0.72-0.49 1.13-0.05 0.42-0.12 0.98 0.21 1.27 0.43 0.38 1.18 0.25 1.73 0.06 0.33-0.12 0.51-0.48 0.79-0.69 0.41-0.31 0.97-0.45 1.28-0.85 0.24-0.32 0.51-0.77 0.39-1.15-0.05-0.15-0.3-0.15-0.4-0.28-0.24-0.34-0.05-0.92-0.36-1.2-0.24-0.21-0.58-0.18-0.91-0.19-0.16 0.34-0.68 0.57-1.03 0.47-0.3-0.08-0.61-0.43-0.67-0.76z"/>
-        <path id="path15" class="s27" d="m33.5 25.01l1.84 1.84-2.58 1.32-2.49-2.49"/>
-        <path id="path16-2" class="s25" d="m31.69 24.31c0.37-0.02 0.7 0.22 1.03 0.38 0.32 0.15 0.86 0.2 0.91 0.55 0.05 0.4-0.51 0.63-0.84 0.86-0.29 0.21-0.62 0.45-0.98 0.45-0.36-0.01-0.68-0.27-0.97-0.47-0.25-0.18-0.63-0.33-0.64-0.63-0.01-0.32 0.38-0.52 0.64-0.72 0.25-0.19 0.54-0.4 0.85-0.42z"/>
-        <path id="path17-9" class="s28" d="m27.98 31.44q-0.03-0.01-0.05-0.01-0.03 0-0.05 0-0.03 0-0.05 0.01-0.03 0-0.05 0.01c-0.34 0.07-0.47 0.51-0.74 0.73-0.35 0.28-0.93 0.31-1.13 0.71-0.08 0.17-0.05 0.36 0.01 0.55 0.2-0.39 0.78-0.43 1.12-0.71 0.27-0.21 0.4-0.65 0.74-0.73 0.26-0.06 0.56 0.09 0.76 0.26 0.48 0.39 0.55 1.12 0.93 1.61 0.25 0.32 0.67 0.51 0.87 0.87 0.11 0.19 0.23 0.42 0.3 0.65 0.15-0.37-0.1-0.84-0.3-1.21-0.2-0.36-0.62-0.54-0.87-0.87-0.38-0.49-0.45-1.21-0.93-1.6-0.15-0.13-0.36-0.25-0.56-0.27zm-2.01 2.78c-0.07 0.12-0.22 0.2-0.22 0.33q0.02 0.18 0.13 0.34 0.1-0.08 0.14-0.19c0.03-0.15 0-0.31-0.05-0.48zm8.88-2.65q-0.17 0.16-0.28 0.35c-0.3 0.54-0.1 1.24-0.26 1.84-0.12 0.39-0.44 0.72-0.49 1.13-0.03 0.24-0.05 0.51-0.02 0.76q0.01-0.11 0.02-0.21c0.05-0.41 0.37-0.74 0.49-1.13 0.16-0.59-0.04-1.29 0.26-1.84q0.11-0.19 0.28-0.34c0.06 0.33 0.37 0.67 0.67 0.75 0.35 0.1 0.87-0.13 1.03-0.47 0.33 0.01 0.67-0.01 0.91 0.19 0.31 0.28 0.12 0.87 0.36 1.21 0.09 0.11 0.28 0.13 0.36 0.23q0.1-0.26 0.04-0.51c-0.05-0.15-0.3-0.15-0.4-0.28-0.24-0.34-0.05-0.92-0.36-1.2-0.24-0.21-0.58-0.18-0.91-0.19-0.16 0.34-0.68 0.57-1.03 0.47-0.3-0.08-0.61-0.43-0.67-0.76z"/>
+      <g id="grub-customizer-g26">
+        <path id="grub-customizer-path18-1" class="grub-customizer-s23" d="m29.97 25.59c0.2-0.79 0.01-1.63 0.04-2.44 0.06-1.78 1.05-2.18 2.06-2.24 1.16-0.06 2.53 0.63 2.61 2.31 0.04 0.8-0.1 1.63 0.11 2.4 0.48 1.81 2.55 3.12 2.58 4.99 0.03 1.78-0.79 3.87-2.3 4.81-0.78 0.49-1.84-0.09-2.76-0.03-1.02 0.07-2.15 0.97-3.03 0.45-1.6-0.95-2.04-3.38-1.92-5.23 0.12-1.88 2.15-3.19 2.61-5.02z"/>
+        <path id="grub-customizer-ellipse18" fill-rule="evenodd" class="grub-customizer-s29" d="m32.81 25.17c-0.45 0-0.82-0.47-0.82-1.06 0-0.59 0.37-1.06 0.82-1.06 0.46 0 0.82 0.47 0.82 1.06 0 0.59-0.36 1.06-0.82 1.06z"/>
+        <path id="grub-customizer-ellipse19-2" fill-rule="evenodd" class="grub-customizer-s29" d="m30.87 25.01c-0.32 0-0.58-0.39-0.58-0.86 0-0.48 0.26-0.87 0.58-0.87 0.32 0 0.58 0.39 0.58 0.87 0 0.47-0.26 0.86-0.58 0.86z"/>
+        <path id="grub-customizer-ellipse20" fill-rule="evenodd" class="grub-customizer-s30" d="m32.71 24.84c-0.18 0-0.33-0.25-0.33-0.56 0-0.3 0.15-0.55 0.33-0.55 0.19 0 0.34 0.25 0.34 0.55 0 0.31-0.15 0.56-0.34 0.56z"/>
+        <path id="grub-customizer-ellipse21" fill-rule="evenodd" class="grub-customizer-s30" d="m30.87 24.7c-0.14 0-0.25-0.19-0.25-0.42 0-0.23 0.11-0.41 0.25-0.41 0.15 0 0.26 0.18 0.26 0.41 0 0.23-0.11 0.42-0.26 0.42z"/>
+        <path id="grub-customizer-path21" class="grub-customizer-s31" d="m32.71 25.2q-0.04 0-0.08 0-0.04 0-0.07 0-0.04 0-0.08 0-0.04 0-0.08 0c-0.68 0.04-1.41 0.31-1.77 0.64-0.59 0.51-0.24 1.02-0.5 1.75-0.25 0.72-0.89 1.68-1.08 2.59q-0.13 0.55-0.25 1.1l1.83 2.22c0.35 0.44-0.58 0.28-1.45-0.28 0.62 0.86 1.84 1.72 3.05 1.64 1.28-0.08 2.8-1.43 3.29-2.53-0.47-0.08-0.93-0.79-0.55-1.32 0.13-0.18 0.41-0.2 0.65-0.16-0.15-0.56-0.44-1.06-0.58-1.49-0.25-0.74-0.55-0.94-0.81-1.6-0.27-0.66 0.01-1.87-0.74-2.34q-0.33-0.2-0.78-0.22z"/>
+        <path id="grub-customizer-path22" class="grub-customizer-s32" d="m27.04 32.18c0.27-0.22 0.4-0.66 0.74-0.73 0.26-0.06 0.56 0.09 0.76 0.26 0.48 0.39 0.55 1.11 0.93 1.6 0.25 0.33 0.67 0.51 0.87 0.87 0.21 0.38 0.47 0.88 0.28 1.26-0.26 0.51-1.01 0.67-1.59 0.7-0.35 0.01-0.65-0.26-0.99-0.35-0.49-0.14-1.06-0.05-1.5-0.32-0.35-0.2-0.76-0.52-0.79-0.92-0.01-0.16 0.23-0.25 0.27-0.4 0.1-0.41-0.3-0.88-0.11-1.26 0.2-0.4 0.79-0.43 1.13-0.71z"/>
+        <path id="grub-customizer-path23-1" class="grub-customizer-s33" d="m34.85 31.57q-0.17 0.16-0.28 0.35c-0.3 0.54-0.1 1.24-0.26 1.84-0.11 0.39-0.44 0.72-0.49 1.13-0.05 0.42-0.12 0.98 0.21 1.27 0.43 0.38 1.18 0.25 1.73 0.06 0.33-0.12 0.51-0.48 0.79-0.69 0.41-0.31 0.97-0.45 1.28-0.85 0.24-0.32 0.51-0.77 0.39-1.15-0.05-0.15-0.3-0.15-0.4-0.28-0.24-0.34-0.05-0.92-0.36-1.2-0.24-0.21-0.58-0.18-0.91-0.19-0.16 0.34-0.68 0.57-1.03 0.47-0.3-0.08-0.61-0.43-0.67-0.76z"/>
+        <path id="grub-customizer-path24-8" class="grub-customizer-s34" d="m33.5 25.01l1.84 1.84-2.58 1.32-2.49-2.49"/>
+        <path id="grub-customizer-path25" class="grub-customizer-s35" d="m31.69 24.31c0.37-0.02 0.7 0.22 1.03 0.38 0.32 0.15 0.86 0.2 0.91 0.55 0.05 0.4-0.51 0.63-0.84 0.86-0.29 0.21-0.62 0.45-0.98 0.45-0.36-0.01-0.68-0.27-0.97-0.47-0.25-0.18-0.63-0.33-0.64-0.63-0.01-0.32 0.38-0.52 0.64-0.72 0.25-0.19 0.54-0.4 0.85-0.42z"/>
+        <path id="grub-customizer-path26" class="grub-customizer-s36" d="m27.98 31.44q-0.03-0.01-0.05-0.01-0.03 0-0.05 0-0.03 0-0.05 0.01-0.03 0-0.05 0.01c-0.34 0.07-0.47 0.51-0.74 0.73-0.35 0.28-0.93 0.31-1.13 0.71-0.08 0.17-0.05 0.36 0.01 0.55 0.2-0.39 0.78-0.43 1.12-0.71 0.27-0.21 0.4-0.65 0.74-0.73 0.26-0.06 0.56 0.09 0.76 0.26 0.48 0.39 0.55 1.12 0.93 1.61 0.25 0.32 0.67 0.51 0.87 0.87 0.11 0.19 0.23 0.42 0.3 0.65 0.15-0.37-0.1-0.84-0.3-1.21-0.2-0.36-0.62-0.54-0.87-0.87-0.38-0.49-0.45-1.21-0.93-1.6-0.15-0.13-0.36-0.25-0.56-0.27zm-2.01 2.78c-0.07 0.12-0.22 0.2-0.22 0.33q0.02 0.18 0.13 0.34 0.1-0.08 0.14-0.19c0.03-0.15 0-0.31-0.05-0.48zm8.88-2.65q-0.17 0.16-0.28 0.35c-0.3 0.54-0.1 1.24-0.26 1.84-0.12 0.39-0.44 0.72-0.49 1.13-0.03 0.24-0.05 0.51-0.02 0.76q0.01-0.11 0.02-0.21c0.05-0.41 0.37-0.74 0.49-1.13 0.16-0.59-0.04-1.29 0.26-1.84q0.11-0.19 0.28-0.34c0.06 0.33 0.37 0.67 0.67 0.75 0.35 0.1 0.87-0.13 1.03-0.47 0.33 0.01 0.67-0.01 0.91 0.19 0.31 0.28 0.12 0.87 0.36 1.21 0.09 0.11 0.28 0.13 0.36 0.23q0.1-0.26 0.04-0.51c-0.05-0.15-0.3-0.15-0.4-0.28-0.24-0.34-0.05-0.92-0.36-1.2-0.24-0.21-0.58-0.18-0.91-0.19-0.16 0.34-0.68 0.57-1.03 0.47-0.3-0.08-0.61-0.43-0.67-0.76z"/>
       </g>
-      <g id="g26">
-        <path id="path18-1" class="s23" d="m29.97 25.59c0.2-0.79 0.01-1.63 0.04-2.44 0.06-1.78 1.05-2.18 2.06-2.24 1.16-0.06 2.53 0.63 2.61 2.31 0.04 0.8-0.1 1.63 0.11 2.4 0.48 1.81 2.55 3.12 2.58 4.99 0.03 1.78-0.79 3.87-2.3 4.81-0.78 0.49-1.84-0.09-2.76-0.03-1.02 0.07-2.15 0.97-3.03 0.45-1.6-0.95-2.04-3.38-1.92-5.23 0.12-1.88 2.15-3.19 2.61-5.02z"/>
-        <path id="ellipse18" fill-rule="evenodd" class="s29" d="m32.81 25.17c-0.45 0-0.82-0.47-0.82-1.06 0-0.59 0.37-1.06 0.82-1.06 0.46 0 0.82 0.47 0.82 1.06 0 0.59-0.36 1.06-0.82 1.06z"/>
-        <path id="ellipse19-2" fill-rule="evenodd" class="s29" d="m30.87 25.01c-0.32 0-0.58-0.39-0.58-0.86 0-0.48 0.26-0.87 0.58-0.87 0.32 0 0.58 0.39 0.58 0.87 0 0.47-0.26 0.86-0.58 0.86z"/>
-        <path id="ellipse20" fill-rule="evenodd" class="s30" d="m32.71 24.84c-0.18 0-0.33-0.25-0.33-0.56 0-0.3 0.15-0.55 0.33-0.55 0.19 0 0.34 0.25 0.34 0.55 0 0.31-0.15 0.56-0.34 0.56z"/>
-        <path id="ellipse21" fill-rule="evenodd" class="s30" d="m30.87 24.7c-0.14 0-0.25-0.19-0.25-0.42 0-0.23 0.11-0.41 0.25-0.41 0.15 0 0.26 0.18 0.26 0.41 0 0.23-0.11 0.42-0.26 0.42z"/>
-        <path id="path21" class="s31" d="m32.71 25.2q-0.04 0-0.08 0-0.04 0-0.07 0-0.04 0-0.08 0-0.04 0-0.08 0c-0.68 0.04-1.41 0.31-1.77 0.64-0.59 0.51-0.24 1.02-0.5 1.75-0.25 0.72-0.89 1.68-1.08 2.59q-0.13 0.55-0.25 1.1l1.83 2.22c0.35 0.44-0.58 0.28-1.45-0.28 0.62 0.86 1.84 1.72 3.05 1.64 1.28-0.08 2.8-1.43 3.29-2.53-0.47-0.08-0.93-0.79-0.55-1.32 0.13-0.18 0.41-0.2 0.65-0.16-0.15-0.56-0.44-1.06-0.58-1.49-0.25-0.74-0.55-0.94-0.81-1.6-0.27-0.66 0.01-1.87-0.74-2.34q-0.33-0.2-0.78-0.22z"/>
-        <path id="path22" class="s32" d="m27.04 32.18c0.27-0.22 0.4-0.66 0.74-0.73 0.26-0.06 0.56 0.09 0.76 0.26 0.48 0.39 0.55 1.11 0.93 1.6 0.25 0.33 0.67 0.51 0.87 0.87 0.21 0.38 0.47 0.88 0.28 1.26-0.26 0.51-1.01 0.67-1.59 0.7-0.35 0.01-0.65-0.26-0.99-0.35-0.49-0.14-1.06-0.05-1.5-0.32-0.35-0.2-0.76-0.52-0.79-0.92-0.01-0.16 0.23-0.25 0.27-0.4 0.1-0.41-0.3-0.88-0.11-1.26 0.2-0.4 0.79-0.43 1.13-0.71z"/>
-        <path id="path23-1" class="s33" d="m34.85 31.57q-0.17 0.16-0.28 0.35c-0.3 0.54-0.1 1.24-0.26 1.84-0.11 0.39-0.44 0.72-0.49 1.13-0.05 0.42-0.12 0.98 0.21 1.27 0.43 0.38 1.18 0.25 1.73 0.06 0.33-0.12 0.51-0.48 0.79-0.69 0.41-0.31 0.97-0.45 1.28-0.85 0.24-0.32 0.51-0.77 0.39-1.15-0.05-0.15-0.3-0.15-0.4-0.28-0.24-0.34-0.05-0.92-0.36-1.2-0.24-0.21-0.58-0.18-0.91-0.19-0.16 0.34-0.68 0.57-1.03 0.47-0.3-0.08-0.61-0.43-0.67-0.76z"/>
-        <path id="path24-8" class="s34" d="m33.5 25.01l1.84 1.84-2.58 1.32-2.49-2.49"/>
-        <path id="path25" class="s35" d="m31.69 24.31c0.37-0.02 0.7 0.22 1.03 0.38 0.32 0.15 0.86 0.2 0.91 0.55 0.05 0.4-0.51 0.63-0.84 0.86-0.29 0.21-0.62 0.45-0.98 0.45-0.36-0.01-0.68-0.27-0.97-0.47-0.25-0.18-0.63-0.33-0.64-0.63-0.01-0.32 0.38-0.52 0.64-0.72 0.25-0.19 0.54-0.4 0.85-0.42z"/>
-        <path id="path26" class="s36" d="m27.98 31.44q-0.03-0.01-0.05-0.01-0.03 0-0.05 0-0.03 0-0.05 0.01-0.03 0-0.05 0.01c-0.34 0.07-0.47 0.51-0.74 0.73-0.35 0.28-0.93 0.31-1.13 0.71-0.08 0.17-0.05 0.36 0.01 0.55 0.2-0.39 0.78-0.43 1.12-0.71 0.27-0.21 0.4-0.65 0.74-0.73 0.26-0.06 0.56 0.09 0.76 0.26 0.48 0.39 0.55 1.12 0.93 1.61 0.25 0.32 0.67 0.51 0.87 0.87 0.11 0.19 0.23 0.42 0.3 0.65 0.15-0.37-0.1-0.84-0.3-1.21-0.2-0.36-0.62-0.54-0.87-0.87-0.38-0.49-0.45-1.21-0.93-1.6-0.15-0.13-0.36-0.25-0.56-0.27zm-2.01 2.78c-0.07 0.12-0.22 0.2-0.22 0.33q0.02 0.18 0.13 0.34 0.1-0.08 0.14-0.19c0.03-0.15 0-0.31-0.05-0.48zm8.88-2.65q-0.17 0.16-0.28 0.35c-0.3 0.54-0.1 1.24-0.26 1.84-0.12 0.39-0.44 0.72-0.49 1.13-0.03 0.24-0.05 0.51-0.02 0.76q0.01-0.11 0.02-0.21c0.05-0.41 0.37-0.74 0.49-1.13 0.16-0.59-0.04-1.29 0.26-1.84q0.11-0.19 0.28-0.34c0.06 0.33 0.37 0.67 0.67 0.75 0.35 0.1 0.87-0.13 1.03-0.47 0.33 0.01 0.67-0.01 0.91 0.19 0.31 0.28 0.12 0.87 0.36 1.21 0.09 0.11 0.28 0.13 0.36 0.23q0.1-0.26 0.04-0.51c-0.05-0.15-0.3-0.15-0.4-0.28-0.24-0.34-0.05-0.92-0.36-1.2-0.24-0.21-0.58-0.18-0.91-0.19-0.16 0.34-0.68 0.57-1.03 0.47-0.3-0.08-0.61-0.43-0.67-0.76z"/>
-      </g>
-      <g id="g29">
-        <path id="rect29" fill-rule="evenodd" class="s37" d="m23.88 42.52h15.15v2.52h-15.15z"/>
-        <path id="rect29-9" fill-rule="evenodd" class="s38" d="m25.12 43h7.85c0.43 0 0.78 0.35 0.78 0.78 0 0.44-0.35 0.79-0.78 0.79h-7.85c-0.43 0-0.78-0.35-0.78-0.79 0-0.43 0.35-0.78 0.78-0.78z"/>
+      <g id="grub-customizer-g29">
+        <path id="grub-customizer-rect29" fill-rule="evenodd" class="grub-customizer-s37" d="m23.88 42.52h15.15v2.52h-15.15z"/>
+        <path id="grub-customizer-rect29-9" fill-rule="evenodd" class="grub-customizer-s38" d="m25.12 43h7.85c0.43 0 0.78 0.35 0.78 0.78 0 0.44-0.35 0.79-0.78 0.79h-7.85c-0.43 0-0.78-0.35-0.78-0.79 0-0.43 0.35-0.78 0.78-0.78z"/>
       </g>
     </g>
   </g>
