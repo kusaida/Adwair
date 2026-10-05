@@ -29,8 +29,6 @@ After installation, select **Adwair** as your icon theme.
 
 The installer supports colored folder variants and custom installation names.
 
-![Adwair folder variants](preview/folders.png)
-
 ```text
    -c, --color COLOR    Use a colored places variant. Accepts the full name
                         or an unambiguous prefix, case-insensitive:
@@ -47,6 +45,22 @@ The installer supports colored folder variants and custom installation names.
    -f, --folder-icons   Run the custom folder icons generator after install
    -h, --help           Show this help message
 ```
+
+#### Colored folders
+
+```bash
+./install.sh -c COLOR
+```
+
+![Adwair folder variants](preview/folders.png)
+
+#### Colored folders and app icons
+
+```bash
+./install.sh -c COLOR -a
+```
+
+![Adwair colored app icons](preview/apps-recolor-preview.png)
 
 ## Custom folders
 
