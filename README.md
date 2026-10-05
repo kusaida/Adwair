@@ -93,12 +93,17 @@ Then select **Adwair** from your desktop environment's icon theme settings.
 
 ## Credits
 
-Based on **WhiteSur** and **Hatter icon** themes.
+Adwair is a derivative work based on and incorporating modified artwork from the following projects:
 
-* App icons: based on WhiteSur, with extensive modifications and additions.
-* Symbolic icons: Adwaita and MoreWaita.
-* Folder icons: modified Adwaita artwork with Adwaita symbolic icons.
-* Some app icons: based on Hatter and adapted to the WhiteSur style.
-* Several app icons are original artwork.
+- [WhiteSur Icon Theme](https://github.com/vinceliuice/WhiteSur-icon-theme) by vinceliuice — GPL-3.0
+- [Hatter](https://github.com/Mibea/Hatter) by Mibea — GPL-3.0
+- [MoreWaita](https://github.com/somepaulo/MoreWaita) by somepaulo — GPL-3.0
+- [Adwaita Icon Theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) by the [GNOME Project](https://www.gnome.org) — used under LGPL-3.0
 
+### Modifications
 
+- **App icons:** based on WhiteSur, with extensive modifications and additions.
+- **Some app icons:** based on Hatter and adapted to the WhiteSur style.
+- **Symbolic icons:** from Adwaita and MoreWaita.
+- **Folder icons:** modified Adwaita artwork combined with Adwaita symbolic icons.
+- Several app icons are original artwork.
