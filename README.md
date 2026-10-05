@@ -42,7 +42,8 @@ The installer supports colored folder variants and custom installation names.
                         The theme is installed into PATH/NAME
    -a, --apps           Also install colored app icons into apps/scalable,
                         using the color from -c (requires -c).
-                        Currently only provides a recolored file-manager icon
+   -d, --dark           Install the dark icons. (beta)
+                        Cannot be combined with -a
    -f, --folder-icons   Run the custom folder icons generator after install
    -h, --help           Show this help message
 ```

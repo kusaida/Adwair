@@ -3,7 +3,9 @@ from copy import deepcopy
 from lxml import etree
 from PIL import Image
 import base64
+import colorsys
 import io
+import math
 import os
 import re
 
@@ -15,6 +17,39 @@ APPS = Path("apps")
 APP_OUTPUT_ROOT = APPS
 
 APP_ICONS = ["file-manager"]
+
+RED = [(340, 360, 0.5), (0, 12, 0.5)]
+BLUE = (195, 235, 0.45)
+
+APP_SPEC = {
+    "calc":                    [(195, 240, 0.4)],
+    "gnome-tweak-tool":        [BLUE],
+    "internet-mail":           [(195, 235, 0.5)],
+    "page.tesk.Refine":        [(195, 235, 0.5)],
+    "softwarecenter":          [(195, 235, 0.5)],
+    "software-properties":     [(195, 235, 0.5)],
+    "system-file-manager":     [(195, 235, 0.25)],
+    "calendar":                RED,
+    "cheese":                  [(175, 200, 0.8)],
+    "extensions":              [(125, 150, 0.5)],
+    "gnome-books":             [(265, 295, 0.3)],
+    "gnome-music":             [(335, 350, 0.8)],
+    "gnome-sound-recorder":    [(350, 360, 0.9), (0, 10, 0.9)],
+    "preferences-system-time": RED,
+}
+
+APP_PALETTE = {
+    "yellow": ("#f5a831", "#f9c46a"),
+}
+
+APP_COLOR_OVERRIDES = {
+    "softwarecenter":      {"red": {"light": "#e94c5e"}},
+    "software-properties": {"red": {"light": "#e94c5e"}},
+}
+
+APP_TWEAKS = {
+    "slate": {"spread": 1.5, "chroma": 1.7},
+}
 
 SVG_NS = "http://www.w3.org/2000/svg"
 XLINK_NS = "http://www.w3.org/1999/xlink"
@@ -355,11 +390,8 @@ def load_recolored_base(base_path, main_color, light_color):
 
 PNG_DATA_PREFIX = "data:image/png;base64,"
 
-# цвет, в который в исходнике покрашено встроенное PNG-свечение (#62a0ea),
-# в палитре папок это основа градиента — берём её же для нового цвета
 GLOW_BASE = "#62a0ea"
 
-# PNG с меньшей средней насыщенностью (чёрные тени и т.п.) не трогаем
 TINT_MIN_SATURATION = 0.25
 
 
@@ -397,7 +429,6 @@ def recolor_embedded_images(root, main_color, light_color):
         if not _is_colored_png(img):
             continue
 
-        # заменяем цвет целиком, альфа-канал (форма свечения) остаётся
         tinted = Image.new("RGBA", img.size, tint_rgb + (255,))
         tinted.putalpha(img.getchannel("A"))
 
@@ -408,7 +439,6 @@ def recolor_embedded_images(root, main_color, light_color):
 
 
 def strip_metadata(root):
-    # c2pa-манифест после перекраски всё равно недействителен
     for element in list(root):
         if isinstance(element.tag, str) and etree.QName(element).localname == "metadata":
             root.remove(element)
@@ -499,6 +529,252 @@ def make_app_icon(app_name, color_name, main_color, light_color):
     print(f"✓ {output_file}")
 
 
+HEX_RE = re.compile(r"#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})(?![0-9a-fA-F])")
+
+HIGHLIGHT_L = 0.85
+
+RGB_RE = re.compile(r"rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)", re.IGNORECASE)
+
+
+def rgb_to_hex_text(text):
+    return RGB_RE.sub(
+        lambda m: "#%02x%02x%02x" % tuple(min(int(v), 255) for v in m.groups()), text
+    )
+
+
+def norm_hex(raw):
+    raw = raw.lstrip("#").lower()
+    if len(raw) == 3:
+        raw = "".join(c * 2 for c in raw)
+    return "#" + raw
+
+
+def hex_to_hls(value):
+    r, g, b = (int(value[i:i + 2], 16) / 255 for i in (1, 3, 5))
+    return colorsys.rgb_to_hls(r, g, b)
+
+
+def in_window(value, windows):
+    h, l, s = hex_to_hls(value)
+    deg = h * 360
+    for w in windows:
+        hmin, hmax, smin = w[0], w[1], w[2]
+        lmin, lmax = (w[3], w[4]) if len(w) > 3 else (0.0, 1.0)
+        hue_ok = hmin <= deg <= hmax if hmin <= hmax else (deg >= hmin or deg <= hmax)
+        if hue_ok and s >= smin and lmin <= l <= lmax:
+            return True
+    return False
+
+
+def find_accent_colors(text, windows):
+    found = {}
+    for raw in HEX_RE.findall(text):
+        value = norm_hex(raw)
+        if in_window(value, windows):
+            found[value] = found.get(value, 0) + 1
+    return found
+
+
+def _lin(c):
+    return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+
+
+def _gam(c):
+    c = min(max(c, 0.0), 1.0)
+    return 12.92 * c if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055
+
+
+def hex_to_oklab(value):
+    r, g, b = (_lin(int(value[i:i + 2], 16) / 255) for i in (1, 3, 5))
+    l = (0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b) ** (1 / 3)
+    m = (0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b) ** (1 / 3)
+    s = (0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b) ** (1 / 3)
+    return (0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s,
+            1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s,
+            0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s)
+
+
+def _oklab_rgb(L, a, b):
+    l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3
+    m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3
+    s = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3
+    return (4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
+            -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+            -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s)
+
+
+def oklab_to_hex(L, a, b):
+    L = min(max(L, 0.0), 1.0)
+    k = 1.0
+    for _ in range(24):
+        rgb = _oklab_rgb(L, a * k, b * k)
+        if all(-0.002 <= c <= 1.002 for c in rgb):
+            break
+        k *= 0.92
+    return "#%02x%02x%02x" % tuple(round(_gam(c) * 255) for c in rgb)
+
+
+SHAPE_TAGS = {"path", "rect", "circle", "ellipse", "polygon", "polyline", "line", "text", "use"}
+XLINK_HREF = "{http://www.w3.org/1999/xlink}href"
+
+
+def _style_value(element, name):
+    value = element.get(name)
+    style = element.get("style")
+    if style:
+        m = re.search(rf"(?:^|;)\s*{name}\s*:\s*([^;]+)", style)
+        if m:
+            value = m.group(1).strip()
+    return value
+
+
+def _number(value, default=1.0):
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def color_visibility(text):
+    try:
+        root = etree.fromstring(text.encode("utf-8"))
+    except Exception:
+        return {}
+
+    gradients = {}
+    for g in root.iter():
+        if not isinstance(g.tag, str) or etree.QName(g).localname not in ("linearGradient", "radialGradient"):
+            continue
+        stops = []
+        for stop in g:
+            if isinstance(stop.tag, str) and etree.QName(stop).localname == "stop":
+                color = _style_value(stop, "stop-color")
+                if color and HEX_RE.fullmatch(color.strip()):
+                    stops.append(norm_hex(color.strip()))
+        gradients[g.get("id")] = (stops, (g.get(XLINK_HREF) or "").lstrip("#"))
+
+    def stops_of(gid, depth=0):
+        stops, parent = gradients.get(gid, ([], ""))
+        if not stops and parent and depth < 5:
+            return stops_of(parent, depth + 1)
+        return stops
+
+    vis = {}
+
+    def walk(element, inherited):
+        if not isinstance(element.tag, str):
+            return
+        local = etree.QName(element).localname
+        if local in ("defs", "style", "metadata", "title", "desc", "linearGradient", "radialGradient"):
+            return
+        weight = inherited * min(_number(_style_value(element, "opacity")), 1.0)
+        if element.get("filter") or (element.get("style") and "filter" in element.get("style")):
+            weight *= 0.4
+        if local in SHAPE_TAGS:
+            for attr, mult in (("fill", 1.0), ("stroke", 0.6)):
+                value = _style_value(element, attr)
+                if not value or value == "none":
+                    continue
+                value = value.strip()
+                w = weight * mult * min(_number(_style_value(element, f"{attr}-opacity")), 1.0)
+                m = re.fullmatch(r"url\(#([^)]+)\)", value)
+                colors = stops_of(m.group(1)) if m else ([norm_hex(value)] if HEX_RE.fullmatch(value) else [])
+                for c in colors:
+                    vis[c] = max(vis.get(c, 0.0), w)
+        for child in element:
+            walk(child, weight)
+
+    walk(root, 1.0)
+    return vis
+
+
+def build_map_inherit(accent, target_main, vis=None, spread=1.0, chroma=1.0):
+    if not accent:
+        return {}
+    vis = vis or {}
+    tL, ta, tb = hex_to_oklab(target_main)
+    t_chroma, t_hue = math.hypot(ta, tb), math.atan2(tb, ta)
+    lab = {c: hex_to_oklab(c) for c in accent}
+
+    def pick(lo, hi):
+        return [c for c in accent if lo <= lab[c][0] <= hi and vis.get(c, 1.0) >= 0.6]
+
+    body = pick(0.4, 0.82) or pick(0.25, 0.92) or \
+           [c for c in accent if 0.4 <= lab[c][0] <= 0.82] or list(accent)
+    l_ref = sum(lab[c][0] for c in body) / len(body)
+    c_ref = sum(math.hypot(*lab[c][1:]) for c in body) / len(body) or 1.0
+
+    mapping = {}
+    for c in accent:
+        L, a, b = lab[c]
+        if L > HIGHLIGHT_L:
+            new_l = L
+        else:
+            new_l = tL + (L - l_ref) * spread
+        ratio = min(max(math.hypot(a, b) / c_ref, 0.1), 1.0)
+        nc = t_chroma * chroma * ratio
+        mapping[c] = oklab_to_hex(new_l, nc * math.cos(t_hue), nc * math.sin(t_hue))
+    return mapping
+
+
+def replace_accent_colors(text, mapping):
+    return HEX_RE.sub(lambda m: mapping.get(norm_hex(m.group(0)), m.group(0)), text)
+
+
+def strip_metadata_text(text):
+    return re.sub(r"<metadata\b.*?</metadata>", "", text, flags=re.S)
+
+
+def prepare_app_accents():
+    accents = {}
+
+    for app_name, windows in APP_SPEC.items():
+
+        if app_name in APP_ICONS:
+            continue
+
+        source = APPS / f"{app_name}.svg"
+
+        if not source.exists():
+            print(f"! пропуск: нет файла {source}")
+            FAILED.append((source.name, "файл не найден"))
+            continue
+
+        text = rgb_to_hex_text(strip_metadata_text(source.read_text(encoding="utf-8", errors="ignore")))
+        accent = find_accent_colors(text, windows)
+
+        if not accent:
+            print(f"! {app_name}: акцентные цвета не найдены — проверьте окна в APP_SPEC")
+            FAILED.append((source.name, "акцентные цвета не найдены"))
+            continue
+
+        accents[app_name] = (text, accent, color_visibility(text))
+        print(f"✓ {app_name}: акцентных цветов — {len(accent)}")
+
+    return accents
+
+
+def make_accent_app_icon(app_name, text, accent, vis, color_name, main_color):
+    mapping = build_map_inherit(accent, main_color, vis, **APP_TWEAKS.get(color_name, {}))
+
+    override = APP_COLOR_OVERRIDES.get(app_name, {}).get(color_name, {})
+
+    if "light" in override:
+        body = [
+            c for c in accent
+            if hex_to_oklab(c)[0] <= HIGHLIGHT_L and vis.get(c, 1.0) >= 0.6
+        ] or list(accent)
+        lightest = max(body, key=lambda c: hex_to_oklab(c)[0])
+        mapping[lightest] = override["light"].lower()
+
+    output_dir = APP_OUTPUT_ROOT / color_name
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    output_file = output_dir / f"{app_name}.svg"
+    output_file.write_text(replace_accent_colors(text, mapping), encoding="utf-8")
+    print(f"✓ {output_file}")
+
+
 def make_symlink(output_dir: Path, link_name: str, target_name: str):
     if link_name == target_name:
         return
@@ -532,6 +808,9 @@ print(f"  из них с открытым вариантом: {open_count}")
 print()
 
 OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
+
+APP_ACCENTS = prepare_app_accents()
+print()
 
 for color_name, colors in COLORS.items():
 
@@ -569,8 +848,13 @@ for color_name, colors in COLORS.items():
     for alias_name, target_base in GLOBAL_ALIASES:
         make_symlink(output_dir, alias_name, target_base)
 
+    app_main, app_light = APP_PALETTE.get(color_name, (main_color, light_color))
+
     for app_name in APP_ICONS:
-        make_app_icon(app_name, color_name, main_color, light_color)
+        make_app_icon(app_name, color_name, app_main, app_light)
+
+    for app_name, (app_text, app_accent, app_vis) in APP_ACCENTS.items():
+        make_accent_app_icon(app_name, app_text, app_accent, app_vis, color_name, app_main)
 
     print()
 
