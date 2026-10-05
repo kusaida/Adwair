@@ -154,45 +154,61 @@ BASE_GRADIENT = {
 PER_COLOR_ALIASES = [
     ("folder-downloads", "folder-download"),
     ("folder-desktop", "user-desktop"),
-    ("folder-public", "folder-image-people"),
-    ("folder-videos", "folder-video"),
+    ("folder-public", "folder-publicshare"),
+    ("folder-video", "folder-videos"),
     ("folder-images", "folder-pictures"),
-    ("folder-photos", "folder-photo"),
+    ("folder-photo", "folder-camera"),
+    ("folder-photos", "folder-camera"),
 ]
 
 GLOBAL_ALIASES = [
     ("desktop", "user-desktop"),
-    ("certificate-server", "folder-locked"),
+    ("certificate-server", "folder-private"),
     ("gtk-directory", "folder"),
     ("inode-directory", "folder"),
     ("stock_folder", "folder"),
     ("stock_open", "folder-open"),
     ("folder_open", "folder-open"),
-    ("gtk-network", "folder-network"),
-    ("network", "folder-network"),
-    ("repository", "folder-network"),
+    ("folder-network", "folder-remote"),
+    ("gtk-network", "folder-remote"),
+    ("network", "folder-remote"),
+    ("repository", "folder-remote"),
     ("knetattach", "folder-remote"),
     ("library-music", "folder-music"),
     ("insync-folder", "folder-google-drive"),
-    ("gnome-home", "user-home"),
-    ("folder-home", "user-home"),
-    ("folder_home", "user-home"),
-    ("folder_home2", "folder-image-people"),
+    ("user-home", "folder-user"),
+    ("gnome-home", "folder-user"),
+    ("folder-home", "folder-user"),
+    ("folder_home", "folder-user"),
+    ("folder_home2", "folder-user"),
     ("folder-text", "folder-documents"),
     ("folder-txt", "folder-documents"),
     ("folder_man", "folder-documents"),
     ("folder_wordprocessing", "folder-documents"),
-    ("folder-temp", "folder-recent"),
-    ("folder-encrypted", "folder-locked"),
-    ("folder-decrypted", "folder-unlocked"),
-    ("folder-camera", "folder-photo"),
+    ("folder-encrypted", "folder-private"),
+    ("folder-locked", "folder-private"),
+    ("folder-decrypted", "folder"),
+    ("folder-unlocked", "folder"),
     ("folder-picture", "folder-pictures"),
     ("folder-image", "folder-images"),
     ("folder-sound", "folder-music"),
-    ("folder-videocamera", "folder-video"),
+    ("folder-videocamera", "folder-videos"),
     ("folder-gdrive", "folder-google-drive"),
-    ("folder-cloud", "folder-mail-cloud"),
-    ("folder-html", "folder-network"),
+    ("folder-html", "folder-remote"),
+    # issue #13
+    ("folder-comic", "folder-books"),
+    ("folder-book", "folder-books"),
+    ("folder-extension", "folder-extensions"),
+    ("folder-development", "folder-code"),
+    ("folder-build", "folder-code"),
+    ("folder-drawing", "folder-pictures"),
+    ("folder-paint", "folder-pictures"),
+    ("folder-dropbox", "folder-cloud"),
+    ("folder-owncloud", "folder-cloud"),
+    ("folder-favorites", "folder-user-bookmarks"),
+    ("folder-bookmark", "folder-user-bookmarks"),
+    ("folder-trash", "folder-user-trash"),
+    ("folder-root", "folder"),
 ]
 
 PAINT_ATTRS = ("fill", "stroke", "stop-color")
@@ -784,6 +800,10 @@ def make_symlink(output_dir: Path, link_name: str, target_name: str):
     target_path = output_dir / target_filename
 
     generated_here = GENERATED.get(output_dir, set())
+
+    if link_name in generated_here:
+        print(f"! пропуск symlink {output_dir.name}/{link_name}.svg: это реальная иконка, не перезаписываю")
+        return
 
     if target_name not in generated_here and not target_path.exists():
         print(f"! пропуск symlink {output_dir.name}/{link_name}.svg -> {target_filename}: цели нет")
