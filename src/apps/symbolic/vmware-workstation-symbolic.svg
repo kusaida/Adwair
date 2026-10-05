@@ -8,6 +8,11 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs8">
     <linearGradient
@@ -108,12 +113,12 @@
      stroke-width="1.57151"
      id="circle5662"
      style="display:inline;fill:url(#linearGradient1062);enable-background:new" />
-  <path
+  <path class="ColorScheme-Text"
      id="rect3480"
-     style="display:inline;fill:#000000;fill-opacity:0.5;fill-rule:evenodd;stroke-width:0.24285;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;paint-order:stroke fill markers;enable-background:new"
+     style="display:inline;fill:currentColor;fill-opacity:0.5;fill-rule:evenodd;stroke-width:0.24285;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;paint-order:stroke fill markers;enable-background:new"
      d="M 5.409894,-7.28253e-8 C 4.5596187,-7.28253e-8 3.8750971,0.6873746 3.8750971,1.5411947 V 3.8246914 H 6.2540325 V 3.3253082 c 0,-0.5187769 0.4159477,-0.9364564 0.9325707,-0.9364564 h 5.5018908 c 0.516623,0 0.932569,0.4176795 0.932569,0.9364564 v 5.5248219 c 0,0.5187769 -0.415946,0.9364564 -0.932569,0.9364564 H 7.1866032 c -0.516623,0 -0.9325707,-0.4176795 -0.9325707,-0.9364564 V 6.2134143 H 3.8750971 v 4.4208297 c 0,0.85382 0.6845216,1.541194 1.5347969,1.541194 h 9.055307 C 15.315478,12.175438 16,11.488064 16,10.634244 V 1.5411947 C 16,0.6873746 15.315478,-7.28253e-8 14.465201,-7.28253e-8 Z" />
-  <path
+  <path class="ColorScheme-Text"
      id="rect3480-0"
-     style="display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.24285;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;paint-order:stroke fill markers;enable-background:new"
+     style="display:inline;fill:currentColor;fill-opacity:1;fill-rule:evenodd;stroke-width:0.24285;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;paint-order:stroke fill markers;enable-background:new"
      d="m 10.590106,16 c 0.850276,0 1.534797,-0.687374 1.534797,-1.541194 V 12.175311 H 9.7459678 v 0.499382 c 0,0.518777 -0.4159477,0.936456 -0.9325708,0.936456 H 3.3115064 c -0.5166231,0 -0.9325692,-0.417679 -0.9325692,-0.936456 V 7.149872 c 0,-0.5187771 0.4159461,-0.9364577 0.9325692,-0.9364577 H 8.813397 c 0.5166231,0 0.9325708,0.4176806 0.9325708,0.9364577 V 9.7865865 H 12.124903 V 5.3657571 c 0,-0.8538202 -0.684521,-1.5411946 -1.534797,-1.5411946 H 1.5347987 C 0.68452184,3.8245625 3.199212e-7,4.5119369 3.199212e-7,5.3657571 V 14.458806 C 3.199212e-7,15.312626 0.68452184,16 1.5347987,16 Z" />
 </svg>

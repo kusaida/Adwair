@@ -7,6 +7,11 @@
    id="svg135"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs139">
     <linearGradient
@@ -90,16 +95,16 @@
   <g
      id="g3044"
      transform="matrix(0.21052632,0,0,0.21052632,16.816871,7.1038646)">
-    <path
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2"
+    <path class="ColorScheme-Text"
+       style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2"
        d="m -41.880138,-33.743356 a 38,38 0 0 0 -38,38 38,38 0 0 0 38,37.999998 38,38 0 0 0 13.449498,-2.50753 l -2.051618,-7.925504 a 29.857142,29.857142 0 0 1 -11.39788,2.290178 29.857142,29.857142 0 0 1 -29.857142,-29.857142 29.857142,29.857142 0 0 1 29.857142,-29.857142 29.857142,29.857142 0 0 1 11.413782,2.284878 l 2.062224,-7.941408 a 38,38 0 0 0 -13.476006,-2.486328 z"
        id="path1540" />
-    <path
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2"
+    <path class="ColorScheme-Text"
+       style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2"
        d="m -41.880138,-21.743356 a 26,26 0 0 0 -26,26 26,26 0 0 0 26,26 26,26 0 0 0 10.26797,-2.117578 l -1.985548,-7.678124 a 18.2,18.2 0 0 1 -8.282422,1.995702 18.2,18.2 0 0 1 -18.2,-18.2 18.2,18.2 0 0 1 18.2,-18.2 18.2,18.2 0 0 1 8.282422,2.016016 l 1.985548,-7.667968 a 26,26 0 0 0 -10.26797,-2.148048 z"
        id="path1544" />
-    <path
-       style="fill:#000000;stroke:none;stroke-width:2"
+    <path class="ColorScheme-Text"
+       style="fill:currentColor;stroke:none;stroke-width:2"
        d="m -35.015282,-7.954212 a 14.008405,14.008405 0 0 0 -13.72316,0.0128 l 1.905636,7.245288 -7.258188,-1.912088 a 14.008405,14.008405 0 0 0 0.0128,13.72316 l 7.245286,-1.905636 -1.912086,7.258188 a 14.008405,14.008405 0 0 0 13.723158,-0.0128 l -1.905636,-7.245286 7.258186,1.912086 a 14.008405,14.008405 0 0 0 -0.0128,-13.723158 l -7.245288,1.905636 z"
        id="path1548" />
   </g>

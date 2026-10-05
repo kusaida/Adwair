@@ -7,6 +7,11 @@
    id="svg135"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs139">
     <linearGradient
@@ -27,7 +32,7 @@
          id="stop648" />
     </linearGradient>
   </defs>
-  <path
+  <path class="ColorScheme-Text" fill="currentColor"
      d="M 1.631327,14.72819 6.5328183,8.3196444 1.4866412,1.273281 4.7300149,1.2759741 8.7509251,6.816554 2.738835,14.728189 Z m 9.59356,0.0045 L 7.2317376,9.1826308 13.29389,1.2672776 h 1.080108 L 9.4525029,7.7060602 14.468313,14.732722 Z"
      id="path653"
      style="stroke-width:0.0441191" />

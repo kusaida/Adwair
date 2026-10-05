@@ -13,6 +13,11 @@
    id="svg8"
    sodipodi:docname="org.gnome.tweaks-symbolic.svg"
    inkscape:version="0.92.2 2405546, 2018-03-11">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <metadata
      id="metadata14">
     <rdf:RDF>
@@ -47,19 +52,19 @@
        type="xygrid"
        id="grid831" />
   </sodipodi:namedview>
-  <path
+  <path class="ColorScheme-Text"
      inkscape:connector-curvature="0"
-     style="display:inline;fill:#2e3436;enable-background:new"
+     style="display:inline;fill:currentColor;enable-background:new"
      d="M 3,1 C 1.892,1 1,1.892 1,3 v 10 c 0,1.108 0.892,2 2,2 h 10 c 1.108,0 2,-0.892 2,-2 V 3 C 15,1.892 14.108,1 13,1 Z m 3,2 h 4 c 1.108,0 2,0.892 2,2 0,1.108 -0.892,2 -2,2 H 6 C 4.892,7 4,6.108 4,5 4,3.892 4.892,3 6,3 Z m 0,6 h 4 c 1.108,0 2,0.892 2,2 0,1.108 -0.892,2 -2,2 H 6 C 4.892,13 4,12.108 4,11 4,9.892 4.892,9 6,9 Z"
      id="path2-3" />
-  <circle
+  <circle class="ColorScheme-Text"
      r="1"
      cy="11.000001"
      cx="6.0000005"
      id="circle1120"
-     style="display:inline;opacity:1;vector-effect:none;fill:#2e3436;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new" />
-  <circle
-     style="display:inline;opacity:1;vector-effect:none;fill:#2e3436;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new"
+     style="display:inline;opacity:1;vector-effect:none;fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new" />
+  <circle class="ColorScheme-Text"
+     style="display:inline;opacity:1;vector-effect:none;fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new"
      id="circle1124"
      cx="-10.000001"
      cy="5"

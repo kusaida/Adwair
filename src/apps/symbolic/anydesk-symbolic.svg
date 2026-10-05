@@ -7,24 +7,29 @@
    id="svg135"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs139" />
-  <g
+  <g class="ColorScheme-Text"
      id="g4726"
      transform="matrix(0.51053003,0,0,0.51053003,-28.183652,-33.113989)"
-     style="display:inline;fill:#000000;enable-background:new">
-    <polygon
+     style="display:inline;fill:currentColor;enable-background:new">
+    <polygon class="ColorScheme-Text"
        points="28.8,13.13 26.4,15.54 34.85,23.99 26.4,32.44 28.8,34.85 39.66,23.99 "
-       style="fill:#000000"
+       style="fill:currentColor"
        id="polygon4"
        transform="translate(46.884669,56.541969)" />
-    <rect
+    <rect class="ColorScheme-Text"
        x="-111.33328"
        y="-17.91206"
        width="15.35"
        height="15.35"
        transform="rotate(-135)"
-       style="fill:#000000"
+       style="fill:currentColor"
        id="rect6" />
   </g>
 </svg>

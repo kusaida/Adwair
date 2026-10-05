@@ -7,6 +7,11 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs570">
     <pattern
@@ -52,50 +57,50 @@
   <g
      id="g2679"
      transform="translate(0,17.06736)">
-    <rect
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.83456;stroke-miterlimit:3.3;paint-order:stroke fill markers"
+    <rect class="ColorScheme-Text"
+       style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:5.83456;stroke-miterlimit:3.3;paint-order:stroke fill markers"
        id="rect2448-3"
        width="8.3956566"
        height="3.2"
        x="3.1000004"
        y="-17.06736" />
-    <rect
-       style="opacity:0.6;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.83456;stroke-miterlimit:3.3;paint-order:stroke fill markers"
+    <rect class="ColorScheme-Text"
+       style="opacity:0.6;fill:currentColor;fill-opacity:1;stroke:none;stroke-width:5.83456;stroke-miterlimit:3.3;paint-order:stroke fill markers"
        id="rect2448-6"
        width="8.3956566"
        height="3.2"
        x="3.1000004"
        y="-10.66736" />
-    <rect
-       style="opacity:0.8;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.37186;stroke-miterlimit:3.3;paint-order:stroke fill markers"
+    <rect class="ColorScheme-Text"
+       style="opacity:0.8;fill:currentColor;fill-opacity:1;stroke:none;stroke-width:3.37186;stroke-miterlimit:3.3;paint-order:stroke fill markers"
        id="rect2448-6-5-3"
        width="2.8039932"
        height="3.2"
        x="10.096006"
        y="-13.86736" />
-    <rect
-       style="opacity:0.8;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.37186;stroke-miterlimit:3.3;paint-order:stroke fill markers"
+    <rect class="ColorScheme-Text"
+       style="opacity:0.8;fill:currentColor;fill-opacity:1;stroke:none;stroke-width:3.37186;stroke-miterlimit:3.3;paint-order:stroke fill markers"
        id="rect2448-6-5-5"
        width="2.8039932"
        height="3.2"
        x="3.1000004"
        y="-13.86736" />
-    <rect
-       style="opacity:0.4;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.37186;stroke-miterlimit:3.3;paint-order:stroke fill markers"
+    <rect class="ColorScheme-Text"
+       style="opacity:0.4;fill:currentColor;fill-opacity:1;stroke:none;stroke-width:3.37186;stroke-miterlimit:3.3;paint-order:stroke fill markers"
        id="rect2448-6-5-6"
        width="2.8039932"
        height="3.2"
        x="3.0999999"
        y="-7.4673605" />
-    <rect
-       style="opacity:0.4;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.37186;stroke-miterlimit:3.3;paint-order:stroke fill markers"
+    <rect class="ColorScheme-Text"
+       style="opacity:0.4;fill:currentColor;fill-opacity:1;stroke:none;stroke-width:3.37186;stroke-miterlimit:3.3;paint-order:stroke fill markers"
        id="rect2448-6-5-2"
        width="2.8039932"
        height="3.2"
        x="10.096006"
        y="-7.4673605" />
-    <rect
-       style="opacity:0.2;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.83456;stroke-miterlimit:3.3;paint-order:stroke fill markers"
+    <rect class="ColorScheme-Text"
+       style="opacity:0.2;fill:currentColor;fill-opacity:1;stroke:none;stroke-width:5.83456;stroke-miterlimit:3.3;paint-order:stroke fill markers"
        id="rect2448-6-7"
        width="8.3956566"
        height="3.2"

@@ -14,6 +14,11 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs3" />
   <sodipodi:namedview
@@ -36,9 +41,9 @@
      inkscape:current-layer="svg3" />
   <title
      id="title1">Gnome Symbolic Icon Theme</title>
-  <path
+  <path class="ColorScheme-Text"
      id="path25389"
-     style="fill:#2e3436;fill-opacity:1"
+     style="fill:currentColor;fill-opacity:1"
      d="m 3,15.999904 c -0.55228,0 -1,-0.44772 -1,-1 V 3.9999037 H 1 0 v -1 h 0.006 c -0.002,-0.26436 0.10186,-0.51856 0.28711,-0.70703 l 2,-2.00000002 c 0.39053,-0.39037 1.02353,-0.39037 1.41406,0 l 2,2.00000002 c 0.18539,0.18847 0.28911,0.44267 0.28711,0.70703 h 0.006 v 1 h -1 -1 V 14.999904 c 0,0.55228 -0.44772,1 -1,1 z m 3.5,-2 c -0.277,0 -0.5,-0.223 -0.5,-0.5 v -1 c 0,-0.277 0.223,-0.5 0.5,-0.5 h 5 c 0.277,0 0.5,0.223 0.5,0.5 v 1 c 0,0.277 -0.223,0.5 -0.5,0.5 z m 0,-3 c -0.277,0 -0.5,-0.223 -0.5,-0.5 V 9.4999037 c 0,-0.277 0.223,-0.5 0.5,-0.5 h 7 c 0.277,0 0.5,0.223 0.5,0.5 v 1.0000003 c 0,0.277 -0.223,0.5 -0.5,0.5 z m 0,-3.0000003 c -0.277,0 -0.5,-0.223 -0.5,-0.5 v -1 c 0,-0.277 0.223,-0.5 0.5,-0.5 h 9 c 0.277,0 0.5,0.223 0.5,0.5 v 1 c 0,0.277 -0.223,0.5 -0.5,0.5 z" />
   <metadata
      id="metadata3">

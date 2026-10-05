@@ -6,6 +6,11 @@
    id="svg7339"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs7343">
     <linearGradient
@@ -94,22 +99,22 @@
          id="stop278" />
     </linearGradient>
   </defs>
-  <rect
+  <rect class="ColorScheme-Text"
      height="16"
      id="rect7580"
      rx="0"
      ry="0"
-     style="display:inline;opacity:0;fill:#000000;fill-opacity:1;stroke:none"
+     style="display:inline;opacity:0;fill:currentColor;fill-opacity:1;stroke:none"
      width="15.9375"
      x="-16.920727"
      y="1.86189" />
   <path
-     style="color:#dfdfdf;fill:#000000;stroke-width:0.727273"
+     style="fill:currentColor;stroke-width:0.727273"
      class="ColorScheme-Text"
      d="M -1.5074354e-7,5.090909 2.207386,10.909091 H 3.8622159 L 6.0696021,5.090909 H 4.4133519 L 3.0340908,8.5823861 1.6548297,5.090909 Z M 7.7244319,5.090909 9.103693,8.7272727 9.9318181,6.5454545 9.379261,5.090909 Z m 4.4133521,0 2.207386,5.818182 H 16 L 13.792614,5.090909 Z M 6.8963068,7.4176138 5.517045,10.909091 H 7.1718748 L 7.7244319,9.5127839 Z m 4.4133522,0 -1.3792613,3.4914772 h 0.00145 1.6548293 l 0.551136,-1.3963071 z"
      id="path1922" />
   <path
-     style="color:#dfdfdf;opacity:0.35;fill:#000000;stroke-width:0.727273"
+     style="opacity:0.35;fill:currentColor;stroke-width:0.727273"
      class="ColorScheme-Text"
      d="M 6.0696021,5.090909 3.8622159,10.909091 H 5.517045 L 6.8963068,7.4176138 8.2755679,10.909091 H 9.9303977 L 11.309659,7.4176138 12.690341,10.909091 H 14.34517 L 12.137784,5.090909 h -1.65483 L 9.103693,8.7272727 7.7244319,5.090909 Z"
      id="path1924" />

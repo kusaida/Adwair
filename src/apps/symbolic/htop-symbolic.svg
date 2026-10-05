@@ -8,6 +8,11 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs290">
     <pattern
@@ -688,20 +693,20 @@
   <g
      id="g3452"
      transform="matrix(1.1428571,0,0,1.1428571,140.8102,148.58987)">
-    <path
-       style="fill:#000000"
+    <path class="ColorScheme-Text"
+       style="fill:currentColor"
        d="m -120.20893,-120.01614 v 4 h 1 v -4 z m 0,-5 v 4 h 1 v -4 z m 0,-5 v 4 h 1 v -4 z"
        id="path2879" />
-    <path
-       style="fill:#000000"
+    <path class="ColorScheme-Text"
+       style="fill:currentColor"
        d="m -118.20893,-125.01614 v 4 h 1 v -4 z m 3,0 v 4 h 1 v -4 z"
        id="path2881" />
-    <path
-       style="fill:#000000"
+    <path class="ColorScheme-Text"
+       style="fill:currentColor"
        d="m -113.20893,-120.01614 v 4 h 1 v -4 z m 0,-5 v 4 h 1 v -4 z m 0,-5 v 4 h 1 v -4 z"
        id="path2883" />
-    <path
-       style="fill:#000000"
+    <path class="ColorScheme-Text"
+       style="fill:currentColor"
        d="m -111.20893,-120.01614 v 4 h 1 v -4 z m 0,-5 v 4 h 1 v -4 z m 0,-5 v 4 h 1 v -4 z m -11,10 v 4 h 1 v -4 z m 0,-5 v 4 h 1 v -4 z m 0,-5 v 4 h 1 v -4 z"
        id="path2885" />
   </g>

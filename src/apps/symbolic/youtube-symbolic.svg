@@ -6,13 +6,18 @@
    id="svg566"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs570" />
   <g
      id="g4039"
      transform="matrix(0.48106175,0,0,0.48000998,-88.718766,-8.6263699)"
      style="display:inline" />
-  <path
+  <path class="ColorScheme-Text" fill="currentColor"
      id="path1412"
      clip-path="none"
      style="display:inline;stroke-width:0.00273755;enable-background:new"

@@ -3,8 +3,6 @@ Name=Adwair
 Comment=A refined WhiteSur icon theme blending its polished look with the clean, native feel of Adwaita.
 Inherits=Adwaita,AdwaitaLegacy,hicolor,breeze
 Example=folder
-FollowsColorScheme=true
-KDE-Extensions=.svg
 
 Directories=actions/symbolic,apps/scalable,apps/symbolic,categories/32,categories/symbolic,devices/scalable,devices/symbolic,legacy/symbolic,mimetypes/scalable,mimetypes/symbolic,places/scalable,places/symbolic,status/scalable,status/symbolic,ui/symbolic
 

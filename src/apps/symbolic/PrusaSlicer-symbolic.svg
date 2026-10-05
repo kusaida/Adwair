@@ -6,16 +6,21 @@
    id="svg566"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs570" />
-  <path
+  <path class="ColorScheme-Text"
      d="m 13.600212,1.9888801 c -2.65184,-2.65184003 -6.9501366,-2.65184003 -9.6019766,0 -2.6518401,2.6518401 -2.6518401,6.9501367 0,9.6019769 z"
-     fill="#363636"
+     fill="currentColor"
      id="path1"
-     style="stroke-width:0.0282411;fill:#000000;opacity:0.6" />
-  <path
+     style="stroke-width:0.0282411;fill:currentColor;opacity:0.6" />
+  <path class="ColorScheme-Text"
      d="m 2.3997887,14.01112 c 2.65184,2.65184 6.9501367,2.65184 9.6019763,0 2.65184,-2.65184 2.65184,-6.9501369 0,-9.6019769"
-     fill="#ed6b21"
+     fill="currentColor"
      id="path2"
-     style="stroke-width:0.0282411;fill:#000000" />
+     style="stroke-width:0.0282411;fill:currentColor" />
 </svg>

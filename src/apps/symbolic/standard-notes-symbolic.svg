@@ -7,16 +7,21 @@
    id="svg489"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs493" />
-  <path
+  <path class="ColorScheme-Text"
      d="m 0.972,1 v 14 h 10.027 l 4.029,-4.013 V 1 Z m 2.027,3.0099607 h 10 V 10 h -3 v 3 h -7 z"
-     style="color:#000000;font-weight:400;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-transform:none;fill:#000000;marker:none"
+     style="font-weight:400;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-transform:none;fill:currentColor;marker:none"
      overflow="visible"
      id="path453" />
-  <path
+  <path class="ColorScheme-Text"
      d="m 4.944,5.9884711 v 1 h 6.055 v -1 z m 0.02,2 v 1 h 6.035 v -1 z m 0.035,2 v 1.0000219 h 4 V 9.9884711 Z"
-     style="color:#000000;font-weight:400;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-transform:none;fill:#000000"
+     style="font-weight:400;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-transform:none;fill:currentColor"
      fill-rule="evenodd"
      overflow="visible"
      id="path455" />

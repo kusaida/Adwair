@@ -7,6 +7,11 @@
    id="svg135"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs139">
     <linearGradient
@@ -87,32 +92,32 @@
          id="stop4167" />
     </linearGradient>
   </defs>
-  <path
-     style="fill:#000000;fill-opacity:1;stroke-width:0.307698;opacity:0.9"
+  <path class="ColorScheme-Text"
+     style="fill:currentColor;fill-opacity:1;stroke-width:0.307698;opacity:0.9"
      d="M 9.64175,0.34264719 7.7125047,5.7570836 15.308866,4.4967675 C 14.183935,2.3663531 12.11069,0.80080429 9.64175,0.34264719 Z"
      id="path6882" />
-  <path
-     style="fill:#000000;fill-opacity:1;stroke-width:0.307698"
+  <path class="ColorScheme-Text"
+     style="fill:currentColor;fill-opacity:1;stroke-width:0.307698"
      d="m 15.547021,5.5730825 -5.7202241,1.060007 4.9050791,5.8562855 c 1.308747,-2.025983 1.647458,-4.5786159 0.815145,-6.9163541 z"
      id="path6884" />
-  <path
-     style="fill:#000000;fill-opacity:1;stroke-width:0.307698;opacity:0.5"
+  <path class="ColorScheme-Text"
+     style="fill:currentColor;fill-opacity:1;stroke-width:0.307698;opacity:0.5"
      d="M 13.905163,13.230364 10.113938,8.8761207 7.4224739,15.992476 c 2.4339235,0.104498 4.8454471,-0.882651 6.4825051,-2.762112 z"
      id="path6886" />
-  <path
-     style="fill:#000000;fill-opacity:1;stroke-width:0.307698;opacity:0.6"
+  <path class="ColorScheme-Text"
+     style="fill:currentColor;fill-opacity:1;stroke-width:0.307698;opacity:0.6"
      d="M 6.3580349,15.657458 8.2872793,10.243267 0.69092142,11.503584 C 1.8160976,13.634059 3.8889107,15.199548 6.3584043,15.657765 Z"
      id="path6888" />
-  <path
-     style="fill:#000000;fill-opacity:1;stroke-width:0.307698;opacity:0.7"
+  <path class="ColorScheme-Text"
+     style="fill:currentColor;fill-opacity:1;stroke-width:0.307698;opacity:0.7"
      d="M 0.45295017,10.427269 6.1734179,9.3669543 1.2681535,3.5109763 C -0.0406544,5.5367746 -0.37930451,8.0894071 0.45295017,10.42733 Z"
      id="path6890" />
-  <path
-     style="fill:#000000;fill-opacity:1;stroke-width:0.307698;opacity:0.8"
+  <path class="ColorScheme-Text"
+     style="fill:currentColor;fill-opacity:1;stroke-width:0.307698;opacity:0.8"
      d="M 2.0944999,2.7697403 5.8860313,7.1238622 8.5771273,0.00750656 C 6.1432646,-0.09686352 3.7317388,0.89028188 2.0946226,2.7697403 Z"
      id="path6892" />
-  <circle
-     style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0350892"
+  <circle class="ColorScheme-Text"
+     style="display:inline;fill:currentColor;fill-opacity:1;stroke:none;stroke-width:0.0350892"
      id="path4204-3-4"
      cx="7.9998918"
      cy="8.0001755"

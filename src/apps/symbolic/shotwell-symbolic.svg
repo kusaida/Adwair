@@ -7,6 +7,11 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text { color:#232629; }
+    </style>
+  </defs>
   <defs
      id="defs10195">
     <linearGradient
@@ -71,12 +76,12 @@
          style="stop-color:#000000;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <path
+  <path class="ColorScheme-Text"
      d="m 10.41157,1.6347023 v -0.651425 a 1,1 45 0 0 -1,-1 H 1.179915 a 1,1 135 0 0 -1,1 V 11.656169 a 1,1 45 0 0 1,1 l 3.308065,0 L 3.482765,9.1379161 H 1.18513 V 1.0602936 h 8.113523 v 0.8616131 z"
      id="rect3118"
-     style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.14882;marker:none;enable-background:new" />
-  <path
+     style="display:inline;overflow:visible;visibility:visible;fill:currentColor;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.14882;marker:none;enable-background:new" />
+  <path class="ColorScheme-Text"
      d="m 3.7119329,5.4976011 2.6199892,9.7779399 a 1.0000003,1.0000003 30.000019 0 0 1.2247448,0.707107 L 15.078905,13.967075 A 0.99999876,0.99999876 119.99999 0 0 15.786011,12.74233 L 13.166012,2.9643895 A 1.0000009,1.0000009 29.999982 0 0 11.941266,2.2572828 L 4.4190399,4.2728563 a 1.0000001,1.0000001 120.00001 0 0 -0.707107,1.2247448 z m 0.9366521,-0.2196426 7.49693,-2.0087877 1.999907,7.4637522 -7.49693,2.008799 z"
      id="path3123"
-     style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.14882;marker:none;enable-background:new" />
+     style="display:inline;overflow:visible;visibility:visible;fill:currentColor;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.14882;marker:none;enable-background:new" />
 </svg>
