@@ -1,14 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
- <defs id="defs3051">
-   <style type="text/css" id="current-color-scheme">
-     .ColorScheme-Text { color:#232629; }
-   </style>
- </defs>
- <path class="ColorScheme-Text" d="m1.2096 13.104 0.70561 1.2188c0.14662 0.25659 0.35739 0.45819 0.60481 0.60481l2.52-4.362h-5.0401c0 0.28408 0.07331 0.56816 0.21993 0.82474z" fill="currentColor"/>
- <path class="ColorScheme-Text" d="m8 5.4341-2.52-4.362c-0.24742 0.14662-0.45819 0.34822-0.60481 0.60481l-4.6552 8.0641a1.6605 1.6605 0 0 0-0.21993 0.82474h5.0401z" fill="currentColor"/>
- <path class="ColorScheme-Text" d="m13.48 14.928c0.24742-0.14662 0.45819-0.34822 0.60481-0.60481l0.29324-0.50401 1.4021-2.4284c0.14662-0.25659 0.21993-0.54066 0.21993-0.82474h-5.0405l1.0725 2.1077z" fill="currentColor"/>
- <path class="ColorScheme-Text" d="m8 5.4341 2.52-4.362c-0.24742-0.14662-0.5315-0.21993-0.82474-0.21993h-3.3906c-0.29324 0-0.57732 0.082474-0.82474 0.21993z" fill="currentColor"/>
- <path class="ColorScheme-Text" d="m10.96 10.566h-5.9198l-2.52 4.362c0.24742 0.14662 0.5315 0.21993 0.82474 0.21993h9.3104c0.29324 0 0.57732-0.08247 0.82474-0.21993z" fill="currentColor"/>
- <path class="ColorScheme-Text" d="m13.452 5.709-2.3276-4.0321c-0.14662-0.25659-0.35739-0.45819-0.60481-0.60481l-2.52 4.362 2.9599 5.1317h5.0309c0-0.28408-0.07331-0.56816-0.21993-0.82474z" fill="currentColor"/>
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+ <defs id="defs3051"><style type="text/css" id="current-color-scheme">.ColorScheme-Text { color:#232629; }</style></defs><path d="m1.2096 13.104 0.70561 1.2188c0.14662 0.25659 0.35739 0.45819 0.60481 0.60481l2.52-4.362h-5.0401c0 0.28408 0.07331 0.56816 0.21993 0.82474z" fill="currentColor" class="ColorScheme-Text"/>
+ <path d="m8 5.4341-2.52-4.362c-0.24742 0.14662-0.45819 0.34822-0.60481 0.60481l-4.6552 8.0641a1.6605 1.6605 0 0 0-0.21993 0.82474h5.0401z" fill="currentColor" class="ColorScheme-Text"/>
+ <path d="m13.48 14.928c0.24742-0.14662 0.45819-0.34822 0.60481-0.60481l0.29324-0.50401 1.4021-2.4284c0.14662-0.25659 0.21993-0.54066 0.21993-0.82474h-5.0405l1.0725 2.1077z" fill="currentColor" class="ColorScheme-Text"/>
+ <path d="m8 5.4341 2.52-4.362c-0.24742-0.14662-0.5315-0.21993-0.82474-0.21993h-3.3906c-0.29324 0-0.57732 0.082474-0.82474 0.21993z" fill="currentColor" class="ColorScheme-Text"/>
+ <path d="m10.96 10.566h-5.9198l-2.52 4.362c0.24742 0.14662 0.5315 0.21993 0.82474 0.21993h9.3104c0.29324 0 0.57732-0.08247 0.82474-0.21993z" fill="currentColor" class="ColorScheme-Text"/>
+ <path d="m13.452 5.709-2.3276-4.0321c-0.14662-0.25659-0.35739-0.45819-0.60481-0.60481l-2.52 4.362 2.9599 5.1317h5.0309c0-0.28408-0.07331-0.56816-0.21993-0.82474z" fill="currentColor" class="ColorScheme-Text"/>
 </svg>

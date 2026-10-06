@@ -187,8 +187,7 @@ GLOBAL_ALIASES = [
     ("folder_wordprocessing", "folder-documents"),
     ("folder-encrypted", "folder-private"),
     ("folder-locked", "folder-private"),
-    ("folder-decrypted", "folder"),
-    ("folder-unlocked", "folder"),
+    ("folder-decrypted", "folder-unlocked"),
     ("folder-picture", "folder-pictures"),
     ("folder-image", "folder-images"),
     ("folder-sound", "folder-music"),
@@ -208,7 +207,6 @@ GLOBAL_ALIASES = [
     ("folder-favorites", "folder-user-bookmarks"),
     ("folder-bookmark", "folder-user-bookmarks"),
     ("folder-trash", "folder-user-trash"),
-    ("folder-root", "folder"),
 ]
 
 PAINT_ATTRS = ("fill", "stroke", "stop-color")
@@ -462,7 +460,16 @@ def strip_metadata(root):
     etree.cleanup_namespaces(root)
 
 
+def remove_stale_symlink(path):
+    path = Path(path)
+
+    if path.is_symlink():
+        path.unlink()
+
+
 def write_svg(root, path):
+    remove_stale_symlink(path)
+
     etree.ElementTree(root).write(
         str(path),
         encoding="UTF-8",
@@ -787,6 +794,7 @@ def make_accent_app_icon(app_name, text, accent, vis, color_name, main_color):
     output_dir.mkdir(parents=True, exist_ok=True)
 
     output_file = output_dir / f"{app_name}.svg"
+    remove_stale_symlink(output_file)
     output_file.write_text(replace_accent_colors(text, mapping), encoding="utf-8")
     print(f"✓ {output_file}")
 
@@ -802,7 +810,6 @@ def make_symlink(output_dir: Path, link_name: str, target_name: str):
     generated_here = GENERATED.get(output_dir, set())
 
     if link_name in generated_here:
-        print(f"! пропуск symlink {output_dir.name}/{link_name}.svg: это реальная иконка, не перезаписываю")
         return
 
     if target_name not in generated_here and not target_path.exists():
