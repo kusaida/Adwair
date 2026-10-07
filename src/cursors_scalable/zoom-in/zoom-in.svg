@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" version="1.1" viewBox="-1.3043 -1.3043 34.4086 34.4086">
+  <defs>
+    <filter id="shadow-blur" filterUnits="userSpaceOnUse" x="-4" y="-4" width="40" height="40" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="0.65531483"/>
+    </filter>
+  </defs>
+  <!-- shadow -->
+  <g transform="translate(0.3,0.8)" opacity="0.2" filter="url(#shadow-blur)" stroke="#000000" stroke-linecap="round">
+    <circle cx="13.0" cy="13.0" r="7.0" fill="#000000" stroke-width="5.467"/>
+    <path d="M18.16,18.16 L25.6,25.6" fill="none" stroke-width="5.667"/>
+  </g>
+  <!-- white outline + white lens -->
+  <circle cx="13.0" cy="13.0" r="7.0" fill="#ffffff" stroke="#ffffff" stroke-width="5.467"/>
+  <path d="M18.16,18.16 L25.6,25.6" fill="none" stroke="#ffffff" stroke-width="5.667" stroke-linecap="round"/>
+  <!-- black body -->
+  <circle cx="13.0" cy="13.0" r="7.0" fill="none" stroke="#000000" stroke-width="2.8"/>
+  <path d="M18.16,18.16 L25.6,25.6" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 13,9.1 V 16.9 M 9.1,13 H 16.9" fill="none" stroke="#000000" stroke-width="2.6"/>
+</svg>

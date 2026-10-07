@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" version="1.1" viewBox="2.4912 1.5912 28.0702 28.0702">
+  <defs>
+    <filter id="shadow-blur" filterUnits="userSpaceOnUse" x="-4" y="-4" width="40" height="40" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="0.65531483"/>
+    </filter>
+    <path id="cursor-shape" d="M 6.0,5.0 V 22.33 L 11.33,17.0 H 18.0 Z"/>
+  </defs>
+  <!-- cursor shadow -->
+  <g filter="url(#shadow-blur)" opacity="0.2" transform="translate(0.3 0.8)">
+    <use xlink:href="#cursor-shape" fill="#000000" stroke="#000000" stroke-width="2.667" stroke-linejoin="round"/>
+  </g>
+  <!-- cursor: white outline, black body -->
+  <use xlink:href="#cursor-shape" fill="none" stroke="#ffffff" stroke-width="2.667" stroke-linejoin="round" stroke-linecap="round"/>
+  <use xlink:href="#cursor-shape" fill="#000000"/>
+  <!-- badge shadow -->
+  <circle cx="22.0" cy="19.67" r="7.65" fill="#000000" opacity="0.2" filter="url(#shadow-blur)" transform="translate(0.3 0.8)"/>
+  <!-- badge -->
+  <circle cx="22.0" cy="19.67" r="6.9" fill="#3584e4" stroke="#ffffff" stroke-width="1.5"/>
+  <!-- spinner -->
+  <circle cx="22.0" cy="19.67" r="4.1" fill="none" stroke="#78aeed" stroke-width="2.2"/>
+  <path d="M18.3381,17.8259 A4.1,4.1 0 0 1 21.0116,15.6909" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

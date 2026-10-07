@@ -25,6 +25,17 @@ The theme will be installed to:
 
 After installation, select **Adwair** as your icon theme.
 
+### Manual installation
+
+If you prefer not to use the installer, copy the contents of `src` directly into your local icon theme directory:
+
+```bash
+mkdir -p ~/.local/share/icons/Adwair
+cp -r src/. ~/.local/share/icons/Adwair/
+```
+
+Then select **Adwair** as your icon theme.
+
 ### Installation options
 
 The installer supports colored folder variants and custom installation names.
@@ -35,15 +46,19 @@ The installer supports colored folder variants and custom installation names.
                           b, blue     g, green    o, orange
                           p, pink     pu, purple  r, red
                           s, slate    t, teal     y, yellow
+                          
    -n, --name NAME      Theme folder name (default: Adwair)
+   
    -p, --path PATH      Base installation path (default: ~/.local/share/icons)
                         The theme is installed into PATH/NAME
+                        
    -a, --apps           Also install colored app icons into apps/scalable,
                         using the color from -c (requires -c).
+                        
    -d, --dark           Install the dark icons. (beta)
                         Cannot be combined with -a
+                        
    -f, --folder-icons   Run the custom folder icons generator after install
-   -h, --help           Show this help message
 ```
 
 #### Colored folders
@@ -62,6 +77,19 @@ The installer supports colored folder variants and custom installation names.
 
 ![Adwair colored app icons](preview/apps-recolor-preview.png)
 
+## Cursor theme
+
+A modernized Adwaita cursor theme with HiDPI support. It is already included and installed with the icon theme, just select **Adwair** as the cursor theme in **Refine** or **GNOME Tweaks**, the same way as the icon theme.
+
+![Adwair cursor preview](preview/preview_cursor.png)
+
+<details>
+<summary>Animated cursors</summary>
+
+![Adwair animated cursors](preview/preview_cursor.gif)
+
+</details>
+
 ## Custom folders
 
 The `-f` / `--folder-icons` option runs the custom folder icon generator after installation.
@@ -75,21 +103,10 @@ For example:
 
 This allows folders to automatically receive themed icons without manually changing them one by one.
 
-```
-# Teal folders with a custom theme name and run the folder generator 
+```bash
+# Teal folders with a custom theme name and run the folder generator
 ./install.sh -c t -n MyIcons -f
 ```
-
-### Manual installation
-
-If you prefer not to use the installer, copy the contents of `src` directly into your local icon theme directory:
-
-```bash
-mkdir -p ~/.local/share/icons/Adwair
-cp -r src/. ~/.local/share/icons/Adwair/
-```
-
-Then select **Adwair** from your desktop environment's icon theme settings.
 
 ## Credits
 
@@ -105,5 +122,10 @@ Adwair is a derivative work based on and incorporating modified artwork from the
 - **App icons:** based on WhiteSur, with extensive modifications and additions.
 - **Some app icons:** based on Hatter and adapted to the WhiteSur style.
 - **Symbolic icons:** from Adwaita and MoreWaita.
+- **Cursors:** modernized Adwaita cursor theme with HiDPI support.
 - **Folder icons:** modified Adwaita artwork combined with Adwaita symbolic icons.
 - Several app icons are original artwork.
+
+## License
+
+Adwair is licensed under the [GPL-3.0](LICENSE).

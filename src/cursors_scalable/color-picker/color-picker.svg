@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" version="1.1" viewBox="-1.1881 2.7119 30.4762 30.4762">
+  <defs>
+    <filter id="shadow-blur" filterUnits="userSpaceOnUse" x="-4" y="-4" width="40" height="40" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="0.65531483"/>
+    </filter>
+    <path id="cursor-shape" d="M 4.51,26.51 L 5.92,23.68 L 12.71,16.61 L 11.58,15.47 L 13.41,13.64 L 13.84,14.06 L 18.58,9.32 A 2.9,2.9 0 0 1 22.68,13.42 L 17.94,18.16 L 18.36,18.59 L 16.53,20.42 L 15.39,19.29 L 8.32,26.08 L 5.49,27.49 Z"/>
+  </defs>
+  <!-- shadow -->
+  <use xlink:href="#cursor-shape" transform="translate(0.3,0.8)" fill="#000000" stroke="#000000" stroke-width="2.667" stroke-linejoin="round" stroke-linecap="round" opacity="0.2" filter="url(#shadow-blur)"/>
+  <!-- white outline (rounded) -->
+  <use xlink:href="#cursor-shape" fill="none" stroke="#ffffff" stroke-width="2.667" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- black body -->
+  <use xlink:href="#cursor-shape" fill="#000000"/>
+  <!-- glass highlight -->
+  <path d="M 8.68,23.32 L 12.92,19.08" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-linecap="round"/>
+</svg>
