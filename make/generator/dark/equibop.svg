@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 64 64" width="64" height="64">
+	<defs>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-50,50,0,30,57)">
+			<stop offset="0" stop-color="#f1efeb"/>
+			<stop offset="1" stop-color="#fdfcfc"/>
+		</linearGradient>
+		<linearGradient id="g2" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,.135,-0.135,0,9.375,9.397)">
+			<stop offset="0" stop-color="#f2f2f2"/>
+			<stop offset="1" stop-color="#c4c4c4"/>
+		</linearGradient>
+		<linearGradient id="g3" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,.135,-0.298,0,9.375,9.397)">
+			<stop offset="0" stop-color="#f2f2f2"/>
+			<stop offset="1" stop-color="#c4c4c4"/>
+		</linearGradient>
+		<linearGradient id="g4" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,.135,-0.135,0,9.375,9.397)">
+			<stop offset="0" stop-color="#f2f2f2"/>
+			<stop offset="1" stop-color="#c4c4c4"/>
+		</linearGradient>
+	<linearGradient id="blackTileGradient" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0" stop-color="#363636"/><stop offset="1" stop-color="#525252"/></linearGradient></defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+		.s1 { fill: url(#g2) } 
+		.s2 { fill: none;stroke: url(#g3);stroke-width: 5 } 
+		.s3 { fill: none;stroke: #8c8c8c;stroke-width: 6.3 } 
+		.s4 { fill: none;stroke: url(#g4);stroke-linecap: round;stroke-width: 6.4;stroke-dasharray: 10.6015625,39.171875,179.5078125 } 
+		.s5 { fill: none;stroke: #8c8c8c;stroke-linecap: round;stroke-width: 5 } 
+	</style>
+	<rect x="4.0000" y="5.0000" width="56.0000" height="56.0000" rx="13.0000" ry="13.0000" fill="#000" fill-opacity="0.2"/><path id="rect2" fill-rule="evenodd" class="s0" d="m17 4h30c7.18 0 13 5.82 13 13v30c0 7.18-5.82 13-13 13h-30c-7.18 0-13-5.82-13-13v-30c0-7.18 5.82-13 13-13z" fill="url(#blackTileGradient)" style="fill:url(#blackTileGradient)"/>
+	<g>
+		<path fill-rule="evenodd" class="s1" d="m32.38 38.18c-3.21 0-5.81-2.6-5.81-5.8 0-3.21 2.6-5.81 5.8-5.81 3.21 0 5.81 2.6 5.81 5.8 0 3.21-2.6 5.81-5.81 5.81z"/>
+		<path fill-rule="evenodd" class="s2" d="m32.37 32.38l13.12-5.93"/>
+		<path fill-rule="evenodd" class="s3" d="m32.37 46.75c-7.94 0-14.37-6.43-14.37-14.38 0-7.94 6.43-14.37 14.37-14.37 7.95 0 14.38 6.43 14.38 14.38 0 7.94-6.43 14.37-14.38 14.37z"/>
+		<path fill-rule="evenodd" class="s4" d="m32.37 46.75c-7.94 0-14.37-6.43-14.37-14.38 0-7.94 6.43-14.37 14.37-14.37 7.95 0 14.38 6.43 14.38 14.38 0 7.94-6.43 14.37-14.38 14.37z"/>
+		<path fill-rule="evenodd" class="s5" d="m19.26 38.3l13.11-5.92"/>
+	</g>
+</svg>
