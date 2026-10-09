@@ -17,13 +17,14 @@ chmod +x install.sh
 ./install.sh
 ```
 
-The theme will be installed to:
+Two themes are installed:
 
 ```text
-~/.local/share/icons/Adwair
+~/.local/share/icons/Adwair       # light app icons
+~/.local/share/icons/Adwair-dark  # dark app icons, inherits Adwair
 ```
 
-After installation, select **Adwair** as your icon theme.
+After installation, select **Adwair** as your icon theme, or **Adwair-dark** for dark app icons.
 
 ### Manual installation
 
@@ -36,27 +37,28 @@ cp -r src/. ~/.local/share/icons/Adwair/
 
 Then select **Adwair** as your icon theme.
 
+This installs the light theme only. The installer additionally builds `Adwair-dark` from `make/generator/dark`.
+
 ### Installation options
 
-The installer supports colored folder variants and custom installation names.
+The installer supports colored folder variants and custom installation names. Dark app icons are always installed as a separate `NAME-dark` theme that inherits the base theme.
 
 ```text
-   -c, --color COLOR    Use a colored places variant. Accepts the full name
-                        or an unambiguous prefix, case-insensitive:
+   -c, --color COLOR    Use a colored places variant (default: blue).
+                        Accepts the full name or an unambiguous prefix,
+                        case-insensitive:
                           b, blue     g, green    o, orange
                           p, pink     pu, purple  r, red
                           s, slate    t, teal     y, yellow
                           
    -n, --name NAME      Theme folder name (default: Adwair)
+                        The dark variant is installed as NAME-dark
    
    -p, --path PATH      Base installation path (default: ~/.local/share/icons)
                         The theme is installed into PATH/NAME
                         
    -a, --apps           Also install colored app icons into apps/scalable,
-                        using the color from -c (requires -c).
-                        
-   -d, --dark           Install the dark icons. (beta)
-                        Cannot be combined with -a
+                        using the color from -c (default: blue)
                         
    -f, --folder-icons   Run the custom folder icons generator after install
 ```
@@ -66,6 +68,8 @@ The installer supports colored folder variants and custom installation names.
 ```bash
 ./install.sh -c COLOR
 ```
+
+`-c` defaults to blue, so a plain `./install.sh` already installs blue folders.
 
 ![Adwair folder variants](preview/folders.png)
 

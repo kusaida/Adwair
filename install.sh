@@ -6,21 +6,24 @@
 #   ./install.sh [OPTIONS]
 #
 # Options:
-#   -c, --color COLOR    Use a colored places variant. Accepts the full name
-#                        or an unambiguous prefix, case-insensitive:
+#   -c, --color COLOR    Use a colored places variant (default: blue).
+#                        Accepts the full name or an unambiguous prefix,
+#                        case-insensitive:
 #                          b, blue     g, green    o, orange
 #                          p, pink     pu, purple  r, red
 #                          s, slate    t, teal     y, yellow
 #   -a, --apps           Also install colored app icons into apps/scalable,
-#                        using the color from -c (requires -c).
+#                        using the color from -c (default: blue).
 #                        Currently only provides a recolored file-manager icon
-#   -d, --dark           Install the dark icons.
-#                        Cannot be combined with -a
 #   -n, --name NAME      Theme folder name (default: Adwair)
+#                        The dark variant is installed as NAME-dark
 #   -p, --path PATH      Base installation path (default: ~/.local/share/icons)
 #                        The theme is installed into PATH/NAME
 #   -f, --folder-icons   Run the custom folder icons generator after install
 #   -h, --help           Show this help message
+#
+# Dark app icons are installed as a separate theme (Adwair-dark by default)
+# that inherits the base theme.
 #
 #
 # Examples:
@@ -31,8 +34,6 @@
 #   ./install.sh --color teal --name MyIcons --folder-icons
 #   ./install.sh -c r -a
 #   ./install.sh --color teal --apps
-#   ./install.sh --dark
-#   ./install.sh -c teal -d
 #   ./install.sh -p ~/.icons
 #   sudo ./install.sh --path /usr/share/icons
 
@@ -47,12 +48,11 @@ DARK_DIR="$MAKE_DIR/generator/dark"
 
 AVAILABLE_COLORS=(blue green orange pink purple red slate teal yellow)
 
-COLOR=""
+COLOR="blue"
 THEME_NAME="Adwair"
 INSTALL_PATH="$HOME/.local/share/icons"
 RUN_FOLDER_ICONS=0
 INSTALL_APPS=0
-INSTALL_DARK=0
 
 usage() {
     awk 'NR==1{next} /^[[:space:]]*#/{print; next} {exit}' "$0" \
@@ -116,7 +116,6 @@ while [[ $# -gt 0 ]]; do
             ;;
         --folder-icons) ARGS+=(-f) ;;
         --apps)         ARGS+=(-a) ;;
-        --dark)         ARGS+=(-d) ;;
         --help)         ARGS+=(-h) ;;
         --)             shift; ARGS+=("$@"); break ;;
         --*)            die "Unknown option: $1 (use -h for help)" ;;
@@ -126,13 +125,12 @@ while [[ $# -gt 0 ]]; do
 done
 set -- ${ARGS[@]+"${ARGS[@]}"}
 
-while getopts ":c:n:p:adfh" opt; do
+while getopts ":c:n:p:afh" opt; do
     case "$opt" in
         c) COLOR="$OPTARG" ;;
         n) THEME_NAME="$OPTARG" ;;
         p) INSTALL_PATH="$OPTARG" ;;
         a) INSTALL_APPS=1 ;;
-        d) INSTALL_DARK=1 ;;
         f) RUN_FOLDER_ICONS=1 ;;
         h) usage 0 ;;
         \?) die "Unknown option: -$OPTARG (use -h for help)" ;;
@@ -141,6 +139,7 @@ while getopts ":c:n:p:adfh" opt; do
 done
 
 [[ -d "$SRC_DIR" ]] || die "Source directory not found: $SRC_DIR"
+[[ -d "$DARK_DIR" ]] || die "Dark icons directory not found: $DARK_DIR"
 
 RESOLVED_COLOR=""
 if [[ -n "$COLOR" ]]; then
@@ -153,11 +152,6 @@ if [[ "$INSTALL_APPS" -eq 1 ]]; then
     [[ -n "$RESOLVED_COLOR" ]] || die "Option -a requires a color (-c)"
     [[ -d "$APPS_COLORS_DIR/$RESOLVED_COLOR" ]] \
         || die "App color directory not found: $APPS_COLORS_DIR/$RESOLVED_COLOR (run generate_icons.py first)"
-fi
-
-if [[ "$INSTALL_DARK" -eq 1 ]]; then
-    [[ "$INSTALL_APPS" -eq 0 ]] || die "Options -d and -a cannot be used together"
-    [[ -d "$DARK_DIR" ]] || die "Dark icons directory not found: $DARK_DIR"
 fi
 
 FOLDER_ICONS_SCRIPT="$MAKE_DIR/generator/folder_icons.sh"
@@ -173,6 +167,8 @@ INSTALL_PATH="${INSTALL_PATH%/}"
 [[ -n "$INSTALL_PATH" ]] || die "Installation path must not be empty or '/'"
 
 DEST_BASE="$INSTALL_PATH/$THEME_NAME"
+DARK_THEME_NAME="${THEME_NAME}-dark"
+DARK_BASE="$INSTALL_PATH/$DARK_THEME_NAME"
 
 mkdir -p "$DEST_BASE" 2>/dev/null \
     || die "Cannot create $DEST_BASE (permission denied? try sudo for system paths)"
@@ -239,26 +235,43 @@ if [[ "$INSTALL_APPS" -eq 1 ]]; then
     log "  replaced ${#app_files[@]} file(s) in $APPS_DEST"
 fi
 
-if [[ "$INSTALL_DARK" -eq 1 ]]; then
-    DARK_DEST="$DEST_BASE/apps/scalable"
+mkdir -p "$DARK_BASE/apps/scalable" 2>/dev/null \
+    || die "Cannot create $DARK_BASE (permission denied? try sudo for system paths)"
+log "Installing dark theme to: $DARK_BASE"
 
-    log "Installing dark icons to apps/scalable"
-    mkdir -p "$DARK_DEST"
+cat > "$DARK_BASE/index.theme" <<EOF
+[Icon Theme]
+Name=$DARK_THEME_NAME
+Comment=Dark app icons for $THEME_NAME. Inherits the base theme.
+Inherits=$THEME_NAME
+Example=folder
+FollowsColorScheme=true
+KDE-Extensions=.svg
 
-    dark_count=0
-    while IFS= read -r -d '' f; do
-        cp -af "$f" "$DARK_DEST/"
-        dark_count=$((dark_count + 1))
-    done < <(find "$DARK_DIR" -maxdepth 1 \( -type f -o -type l \) \
-                  \( -name '*.svg' -o -name '*.svgz' \) -print0)
+Directories=apps/scalable
 
-    [[ "$dark_count" -gt 0 ]] || die "No icons found in $DARK_DIR"
-    log "  copied $dark_count file(s) to $DARK_DEST"
-fi
+[apps/scalable]
+Size=64
+Context=Applications
+Type=Scalable
+MinSize=16
+MaxSize=512
+EOF
+
+dark_count=0
+while IFS= read -r -d '' f; do
+    cp -af "$f" "$DARK_BASE/apps/scalable/"
+    dark_count=$((dark_count + 1))
+done < <(find "$DARK_DIR" -maxdepth 1 \( -type f -o -type l \) \
+              \( -name '*.svg' -o -name '*.svgz' \) -print0)
+
+[[ "$dark_count" -gt 0 ]] || die "No icons found in $DARK_DIR"
+log "  copied $dark_count file(s) to $DARK_BASE/apps/scalable"
 
 if command -v gtk-update-icon-cache >/dev/null 2>&1; then
     log "Updating icon cache"
     gtk-update-icon-cache -f -t "$DEST_BASE" >/dev/null 2>&1 || true
+    gtk-update-icon-cache -f -t "$DARK_BASE" >/dev/null 2>&1 || true
 fi
 
 log "Done."
