@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   id="svg1"
+   width="128"
+   height="128"
+   version="1.1"
+   viewBox="0 0 128 128"
+   sodipodi:docname="dev.lunarsrl.NovaMusic.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="9.046875"
+     inkscape:cx="63.944732"
+     inkscape:cy="64"
+     inkscape:window-width="2560"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="e"
+       x1="7.937"
+       x2="7.937"
+       y1="15.081"
+       y2="1.852"
+       gradientTransform="matrix(7.5589 0 0 7.5589 .00028597 .062284)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         id="stop11"
+         stop-color="#f1efeb"
+         offset="0" />
+      <stop
+         id="stop12"
+         stop-color="#f7f6f4"
+         offset="1" />
+    </linearGradient>
+    <filter
+       id="filter2"
+       x="-0.048"
+       y="-0.048"
+       width="1.096"
+       height="1.096"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur2"
+         stdDeviation="2.24" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1">
+      <rect
+         id="rect1"
+         x="16.000002"
+         y="16.000002"
+         width="96"
+         height="96"
+         rx="22.285713"
+         ry="22.285713"
+         fill="url(#e)"
+         stroke-width="1.7142"
+         style="fill:url(#linearGradient1)" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#e"
+       id="linearGradient1"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.479057,0,0,6.479057,9.1431049,9.196246)"
+       x1="7.937"
+       y1="15.081"
+       x2="7.937"
+       y2="1.852" />
+  <linearGradient id="blackTileGradient" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0" stop-color="#363636"/><stop offset="1" stop-color="#525252"/></linearGradient></defs>
+  <rect
+     id="rect12-7"
+     x="8"
+     y="10.624"
+     width="112"
+     height="112"
+     rx="26"
+     ry="26"
+     filter="url(#filter2)"
+     opacity=".25"
+     stroke-width="1.9999" /><rect id="rect12" x="8" y="8" width="112" height="112" rx="26" ry="26" fill="url(#blackTileGradient)"/>
+  <g id="g1">
+    <!--LOGO--><g id="logo-vector" transform="translate(16 16) scale(0.75)"><defs><linearGradient id="nv" gradientUnits="userSpaceOnUse" x1="16" y1="0" x2="112" y2="0"><stop offset="0" stop-color="#f6fafe"/><stop offset="1" stop-color="#d3d9e6"/></linearGradient></defs><circle cx="64" cy="64.5" r="48" fill="url(#nv)"/><g fill="#b2b8c9"><circle cx="74.1" cy="29" r="2.6"/><circle cx="91.5" cy="33.5" r="2"/><circle cx="40.7" cy="35.3" r="2.9"/><circle cx="66.6" cy="38.2" r="3.2"/><circle cx="47.8" cy="45.5" r="3"/><circle cx="86.5" cy="48" r="2.3"/><circle cx="38.5" cy="72" r="1.6"/><circle cx="41" cy="86.5" r="2.4"/><circle cx="80" cy="86.5" r="1.6"/><circle cx="88.4" cy="89" r="2.3"/><circle cx="54" cy="99" r="2.6"/></g><circle cx="64.5" cy="64" r="12" fill="#e08a78"/><circle cx="64.5" cy="64" r="1.8" fill="#b9bccb"/><g fill="none" stroke="#8c95a8" stroke-linecap="butt" stroke-linejoin="round"><path d="M0 24.5H25" stroke-width="4.6"/><path d="M25 24.5L38 58" stroke-width="4.2"/></g><circle cx="25" cy="24.5" r="3.3" fill="#6f788d"/></g><!--/LOGO-->
+  </g>
+</svg>

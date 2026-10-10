@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" id="svg1" width="128" height="128" version="1.1" viewBox="0 0 128 128" sodipodi:docname="io.github.electronstudio.WeylusCommunityEdition.svg" inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)">
+  <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#999999" borderopacity="1" inkscape:showpageshadow="2" inkscape:pageopacity="0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:zoom="9.046875" inkscape:cx="63.944732" inkscape:cy="73.063903" inkscape:window-width="2560" inkscape:window-height="1371" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="1" inkscape:current-layer="svg1"/>
+  <defs id="defs1"><linearGradient id="bgNew" x1="64.0000" x2="64.0000" y1="113.9968" y2="14.0032" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0e71de"/><stop offset="1" stop-color="#25c9ff"/></linearGradient>
+    <linearGradient id="e" x1="7.937" x2="7.937" y1="15.081" y2="1.852" gradientTransform="matrix(7.5589 0 0 7.5589 .00028597 .062284)" gradientUnits="userSpaceOnUse">
+      <stop id="stop11" stop-color="#f1efeb" offset="0"/>
+      <stop id="stop12" stop-color="#f7f6f4" offset="1"/>
+    </linearGradient>
+    <filter id="filter2" x="-0.048" y="-0.048" width="1.096" height="1.096" color-interpolation-filters="sRGB">
+      <feGaussianBlur id="feGaussianBlur2" stdDeviation="2.24"/>
+    </filter>
+    <linearGradient inkscape:collect="always" xlink:href="#linearGradient1" id="linearGradient2" x1="64" y1="120" x2="64" y2="8" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="linearGradient1" inkscape:collect="always">
+      <stop style="stop-color:#000000;stop-opacity:0.2;" offset="0" id="stop1"/>
+      <stop style="stop-color:#ffffff;stop-opacity:0.2;" offset="1" id="stop2"/>
+    </linearGradient>
+  <linearGradient id="blackTileGradient" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0" stop-color="#363636"/><stop offset="1" stop-color="#525252"/></linearGradient></defs>
+  <rect id="rect12-7" x="8" y="10.624" width="112" height="112" rx="26" ry="26" filter="url(#filter2)" opacity=".25" stroke-width="1.9999"/>
+  <rect fill="url(#blackTileGradient)" id="rect12" x="8" y="8" width="112" height="112" rx="26" ry="26" stroke-width="1.9999"/>
+  <g id="g1" transform="matrix(1.3333333,0,0,1.3333333,-21.333333,-21.333333)">
+    <!--LOGO--><g id="logo-vector" transform="translate(16 16) scale(0.75)"><g fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" stroke-linecap="butt"><path d="M55 60.5H28.5V30.5H71.5V55"/><rect x="56.5" y="56.5" width="44" height="35" rx="2.2"/></g><g fill="#ffffff"><rect x="22" y="62" width="36" height="3" rx="1.5"/><circle cx="41.5" cy="69" r="1.9"/><circle cx="46" cy="74" r="2.1"/><circle cx="50.2" cy="79" r="2.3"/><path d="M81.5 71.37L77.5 73.63L94.16 103.23L99.6 108.2L98.17 100.97Z"/></g></g><!--/LOGO-->
+  </g>
+  <g id="g1-5">
+    <rect id="rect12-3" x="8" y="8" width="112" height="112" rx="26" ry="26" fill="url(#e)" stroke-width="1.9999" style="mix-blend-mode:normal;fill:url(#linearGradient2)"/>
+  </g>
+</svg>
