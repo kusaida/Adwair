@@ -40,26 +40,17 @@ Then select **Adwair** as your icon theme.
 
 The installer supports colored folder variants and custom installation names.
 
-```text
-   -c, --color COLOR    Use a colored places variant. Accepts the full name
-                        or an unambiguous prefix, case-insensitive:
-                          b, blue     g, green    o, orange
-                          p, pink     pu, purple  r, red
-                          s, slate    t, teal     y, yellow
-                          
-   -n, --name NAME      Theme folder name (default: Adwair)
-   
-   -p, --path PATH      Base installation path (default: ~/.local/share/icons)
-                        The theme is installed into PATH/NAME
-                        
-   -a, --apps           Also install colored app icons into apps/scalable,
-                        using the color from -c (requires -c).
-                        
-   -d, --dark           Install the dark icons. (beta)
-                        Cannot be combined with -a
-                        
-   -f, --folder-icons   Run the custom folder icons generator after install
-```
+|  OPTIONS:                  |                                                                              |
+|:---------------------------|:-----------------------------------------------------------------------------|
+| -c, --color [COLOR]        | Specify color variant [blue/green/orange/pink/purple/red/slate/teal/yellow] (Default: blue) |
+| -a, --apps                 | Install colored app icons (requires -c)                                      |
+| -d, --dark                 | Install dark icons (cannot be combined with -a)                              |
+| -n, --name NAME            | Specify theme name (Default: Adwair)                                         |
+| -p, --path PATH            | Specify installation directory (Default: $HOME/.local/share/icons)           |
+| -f, --folder-icons         | Assign folder icons by name after install (requires gio)                     |
+| -r, --remove, -u, --uninstall | Uninstall (remove) the theme                                              |
+| -F, --folder-name          | With -r/-u: also reset folder icons set by -f                                |
+| -h, --help                 | Show this help                                                               |
 
 #### Colored folders
 
