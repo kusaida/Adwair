@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 64 64" width="64" height="64">
+	<defs><linearGradient id="darkTile02" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#525252"/><stop offset="1" stop-color="#363636"/></linearGradient></defs><g transform="translate(0,0) scale(1) translate(-0,-0)"><defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m0 0h64v64h-64z"/>
+		</clipPath>
+		</defs>
+	<style>
+		.s0 { fill: none;stroke: #eeeeee;stroke-linecap: round;stroke-linejoin: round;stroke-width: 3 } 
+	</style>
+	<g>
+		<g id="Clip-Path: g3" clip-path="url(#cp1)">
+			<g id="g3">
+				<rect x="4.0000" y="5.0000" width="56.0000" height="55.7500" rx="13.0000" ry="13.0000" fill="#000" fill-opacity="0.2"/><rect x="4.0000" y="4.0000" width="56.0000" height="55.7500" rx="13.0000" ry="13.0000" fill="url(#darkTile02)"/><path id="path3" class="s0" d="m10 43h10.7c1.66 0 2.98-1.35 3.13-2.99 0.84-9.47 5.5-14.41 9.12-16.85 1.87-1.26 3.82 0.48 3.44 2.7-1.99 11.7 0.42 17.14 6.87 17.14h11.74"/>
+			</g>
+		</g>
+	</g>
+</g></svg>

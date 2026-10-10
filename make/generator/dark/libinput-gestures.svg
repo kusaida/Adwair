@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="darkTile02" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#525252"/>
+      <stop offset="1" stop-color="#363636"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="23.115" y1="23" x2="23.115" y2="31" id="gradient-0" gradientTransform="matrix(-0.024219, -0.999707, 2.346903, -0.056851, -40.966208, 51.815309)">
+      <stop offset="0" style="stop-color: rgb(255, 255, 255); stop-opacity: 0;"/>
+      <stop offset="1" style="stop-color: rgb(56.687% 56.687% 56.687%)"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0,0) scale(1) translate(-0,-0)">
+    <defs>
+      <filter x="-50%" y="-50%" width="200%" height="200%" id="f1">
+        <feGaussianBlur stdDeviation=".9"/>
+      </filter>
+      <linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-34.808,0,0,-24.001,47.258,36.25)">
+        <stop offset="0.283" stop-color="#000000" stop-opacity="1"/>
+        <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+      </linearGradient>
+      <filter x="-50%" y="-50%" width="200%" height="200%" id="f2">
+        <feGaussianBlur stdDeviation="1.1"/>
+      </filter>
+    </defs>
+    <style>
+		.s0 { opacity: .35;filter: url(#f1);fill: url(#g1) } 
+		.s1 { opacity: .15;filter: url(#f2);fill: #000000 } 
+		.s2 { fill: url(#g2) } 
+		.s3 { fill: #ffffff } 
+	</style>
+    <g>
+      <rect x="4.0000" y="5.0000" width="56.0000" height="55.7500" rx="13.0000" ry="13.0000" fill="#000" fill-opacity="0.2"/>
+      <rect x="4.0000" y="4.0000" width="56.0000" height="55.7500" rx="13.0000" ry="13.0000" fill="url(#darkTile02)"/>
+      <path id="path13-5" class="s0" d="m34.18 24.25q-0.2 0-0.4 0.06v-0.06h-21.33v8h19.88v5.99c-6.22-6.22-7.74-1.75-7.74-1.75 4.22 2.85 6.8 11.79 10.43 11.76l10.98-0.07 1.24-12.43c0.26-2.52-2.86-3.57-3.73-1.24 0.01-2.8-2.86-3.15-3.73-1.25 0.11-2.31-2.82-3.2-3.73-1.24v-4.97c0-1.87-0.93-2.81-1.87-2.8z"/>
+      <path id="path11" class="s1" d="m35.02 48l10.98-0.07 1.24-12.43c0.26-2.52-2.86-3.57-3.73-1.24 0.01-2.8-2.86-3.15-3.73-1.25 0.11-2.31-2.82-3.2-3.73-1.24v-4.97c0-3.73-3.72-3.73-3.72 0v11.19c-6.22-6.22-7.74-1.75-7.74-1.75 4.22 2.85 6.8 11.78 10.43 11.76z"/>
+      <path id="path13" fill-rule="evenodd" class="s2" d="m12.45 23h21.33v8h-21.33z" style="fill: url(&quot;#gradient-0&quot;);"/>
+      <path id="path14" class="s3" d="m35.02 47l10.98-0.07 1.24-12.43c0.26-2.52-2.86-3.57-3.73-1.24 0.01-2.8-2.86-3.15-3.73-1.25 0.11-2.31-2.82-3.2-3.73-1.24v-4.97c0-3.73-3.72-3.73-3.72 0v11.19c-6.22-6.22-7.74-1.75-7.74-1.75 4.22 2.85 6.8 11.78 10.43 11.76z"/>
+    </g>
+  </g>
+</svg>
