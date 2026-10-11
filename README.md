@@ -17,13 +17,14 @@ chmod +x install.sh
 ./install.sh
 ```
 
-The theme will be installed to:
+Two themes are installed:
 
 ```text
-~/.local/share/icons/Adwair
+~/.local/share/icons/Adwair       # light app icons
+~/.local/share/icons/Adwair-dark  # dark app icons, inherits Adwair
 ```
 
-After installation, select **Adwair** as your icon theme.
+After installation, select **Adwair** as your icon theme, or **Adwair-dark** for dark app icons.
 
 ### Manual installation
 
@@ -36,6 +37,8 @@ cp -r src/. ~/.local/share/icons/Adwair/
 
 Then select **Adwair** as your icon theme.
 
+This installs the light theme only. The installer additionally builds `Adwair-dark` from `make/generator/dark`.
+
 ### Installation options
 
 The installer supports colored folder variants and custom installation names.
@@ -44,11 +47,10 @@ The installer supports colored folder variants and custom installation names.
 |:---------------------------|:-----------------------------------------------------------------------------|
 | -c, --color [COLOR]        | Specify color variant [blue/green/orange/pink/purple/red/slate/teal/yellow] (Default: blue) |
 | -a, --apps                 | Install colored app icons (requires -c)                                      |
-| -d, --dark                 | Install dark icons (cannot be combined with -a)                              |
 | -n, --name NAME            | Specify theme name (Default: Adwair)                                         |
 | -p, --path PATH            | Specify installation directory (Default: $HOME/.local/share/icons)           |
 | -f, --folder-icons         | Assign folder icons by name after install (requires gio)                     |
-| -r, --remove, -u, --uninstall | Uninstall (remove) the theme                                              |
+| -r, --remove, -u, --uninstall | Uninstall (remove) the theme and its dark variant                         |
 | -F, --folder-name          | With -r/-u: also reset folder icons set by -f                                |
 | -h, --help                 | Show this help                                                               |
 

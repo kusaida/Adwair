@@ -12,19 +12,21 @@
 #                          p, pink     pu, purple  r, red
 #                          s, slate    t, teal     y, yellow
 #   -a, --apps           Also install colored app icons. Requires -c. (default: blue).
-#   -d, --dark           Install the dark icons.
-#                        Cannot be combined with -a
 #   -n, --name NAME      Theme folder name (default: Adwair)
 #   -p, --path PATH      Base installation path (default: ~/.local/share/icons)
 #                        The theme is installed into PATH/NAME
 #   -f, --folder-icons   After install, assign folder icons BY NAME.
 #                        Requires gio. Cannot be combined with -r.
 #   -r, --remove,
-#   -u, --uninstall      Uninstall (remove) the theme PATH/NAME.
+#   -u, --uninstall      Uninstall (remove) the theme PATH/NAME and its
+#                        dark variant PATH/NAME-dark.
 #                        Respects -p and -n;
 #   -F, --folder-name    Only with -r/-u: after removing the theme, also reset
 #                        the folder icons set by -f.
 #   -h, --help           Show this help message
+#
+# Dark app icons are installed as a separate theme (NAME-dark) that
+# inherits the base theme.
 
 set -euo pipefail
 
@@ -43,7 +45,6 @@ THEME_NAME="Adwair"
 INSTALL_PATH="$HOME/.local/share/icons"
 RUN_FOLDER_ICONS=0
 INSTALL_APPS=0
-INSTALL_DARK=0
 REMOVE=0
 RESET_FOLDERS=0
 INCLUDE_MOUNTS="${INCLUDE_MOUNTS:-1}"
@@ -123,8 +124,8 @@ while [[ $# -gt 0 ]]; do
             long="${1%%=*}"
             ARGS+=("-${long:2:1}" "${1#*=}")
             ;;
-        --color|-c|-[adfruF]*c)
-            if [[ "$1" =~ ^-[adfruF]+c$ ]]; then
+        --color|-c|-[afruF]*c)
+            if [[ "$1" =~ ^-[afruF]+c$ ]]; then
                 ARGS+=("${1%c}")
             elif [[ "$1" != "-c" && "$1" != "--color" ]]; then
                 ARGS+=("$1"); shift; continue
@@ -143,7 +144,6 @@ while [[ $# -gt 0 ]]; do
             ;;
         --folder-icons) ARGS+=(-f) ;;
         --apps)         ARGS+=(-a) ;;
-        --dark)         ARGS+=(-d) ;;
         --remove)       ARGS+=(-r) ;;
         --uninstall)    ARGS+=(-u) ;;
         --folder-name)  ARGS+=(-F) ;;
@@ -156,13 +156,12 @@ while [[ $# -gt 0 ]]; do
 done
 set -- ${ARGS[@]+"${ARGS[@]}"}
 
-while getopts ":c:n:p:adfruFh" opt; do
+while getopts ":c:n:p:afruFh" opt; do
     case "$opt" in
         c) COLOR="$OPTARG"; COLOR_SET=1 ;;
         n) THEME_NAME="$OPTARG" ;;
         p) INSTALL_PATH="$OPTARG" ;;
         a) INSTALL_APPS=1 ;;
-        d) INSTALL_DARK=1 ;;
         f) RUN_FOLDER_ICONS=1 ;;
         r|u) REMOVE=1 ;;
         F) RESET_FOLDERS=1 ;;
@@ -180,15 +179,22 @@ INSTALL_PATH="${INSTALL_PATH%/}"
 [[ -n "$INSTALL_PATH" ]] || die "Installation path must not be empty or '/'"
 
 DEST_BASE="$INSTALL_PATH/$THEME_NAME"
+DARK_THEME_NAME="${THEME_NAME}-dark"
+DARK_BASE="$INSTALL_PATH/$DARK_THEME_NAME"
 
 uninstall() {
     [[ -n "$THEME_NAME" && "$THEME_NAME" != *"/"* && "$THEME_NAME" != "." && "$THEME_NAME" != ".." ]] \
         || die "Invalid theme name '$THEME_NAME'"
 
-    if [[ -d "$DEST_BASE" ]]; then
-        log "Uninstalling '$DEST_BASE'..."
-        rm -rf -- "$DEST_BASE" \
-            || die "Cannot remove $DEST_BASE (permission denied? try sudo for system paths)"
+    local dir found=0
+    for dir in "$DEST_BASE" "$DARK_BASE"; do
+        [[ -d "$dir" ]] || continue
+        found=1
+        log "Uninstalling '$dir'..."
+        rm -rf -- "$dir" \
+            || die "Cannot remove $dir (permission denied? try sudo for system paths)"
+    done
+    if [[ "$found" -eq 1 ]]; then
         log "Done."
     else
         log "Nothing to uninstall: '$DEST_BASE' does not exist"
@@ -437,6 +443,7 @@ if [[ "$REMOVE" -eq 1 ]]; then
 fi
 
 [[ -d "$SRC_DIR" ]] || die "Source directory not found: $SRC_DIR"
+[[ -d "$DARK_DIR" ]] || die "Dark icons directory not found: $DARK_DIR"
 
 RESOLVED_COLOR="$(resolve_color "${COLOR:-blue}")"
 [[ -d "$COLORS_DIR/$RESOLVED_COLOR" ]] \
@@ -446,11 +453,6 @@ if [[ "$INSTALL_APPS" -eq 1 ]]; then
     [[ "$COLOR_SET" -eq 1 ]] || die "Option -a requires -c (COLOR may be omitted: -c -a = blue)"
     [[ -d "$APPS_COLORS_DIR/$RESOLVED_COLOR" ]] \
         || die "App color directory not found: $APPS_COLORS_DIR/$RESOLVED_COLOR (run generate_icons.py first)"
-fi
-
-if [[ "$INSTALL_DARK" -eq 1 ]]; then
-    [[ "$INSTALL_APPS" -eq 0 ]] || die "Options -d and -a cannot be used together"
-    [[ -d "$DARK_DIR" ]] || die "Dark icons directory not found: $DARK_DIR"
 fi
 
 FI_CATALOG=""
@@ -523,26 +525,83 @@ if [[ "$INSTALL_APPS" -eq 1 ]]; then
     log "  replaced ${#app_files[@]} file(s) in $APPS_DEST"
 fi
 
-if [[ "$INSTALL_DARK" -eq 1 ]]; then
-    DARK_DEST="$DEST_BASE/apps/scalable"
+mkdir -p "$DARK_BASE/apps/scalable" 2>/dev/null \
+    || die "Cannot create $DARK_BASE (permission denied? try sudo for system paths)"
+log "Installing dark theme to: $DARK_BASE"
 
-    log "Installing dark icons to apps/scalable"
-    mkdir -p "$DARK_DEST"
+cat > "$DARK_BASE/index.theme" <<EOF
+[Icon Theme]
+Name=$DARK_THEME_NAME
+Comment=Dark app icons for $THEME_NAME. Inherits the base theme.
+Inherits=$THEME_NAME
+Example=folder
+FollowsColorScheme=true
+KDE-Extensions=.svg
 
-    dark_count=0
-    while IFS= read -r -d '' f; do
-        cp -af "$f" "$DARK_DEST/"
-        dark_count=$((dark_count + 1))
-    done < <(find "$DARK_DIR" -maxdepth 1 \( -type f -o -type l \) \
-                  \( -name '*.svg' -o -name '*.svgz' \) -print0)
+Directories=apps/scalable
 
-    [[ "$dark_count" -gt 0 ]] || die "No icons found in $DARK_DIR"
-    log "  copied $dark_count file(s) to $DARK_DEST"
-fi
+[apps/scalable]
+Size=64
+Context=Applications
+Type=Scalable
+MinSize=16
+MaxSize=512
+EOF
+
+# Copy dark icons in a single cp call instead of one cp per file.
+dark_files=()
+while IFS= read -r -d '' f; do
+    dark_files+=("$f")
+done < <(find "$DARK_DIR" -maxdepth 1 \( -type f -o -type l \) \
+              \( -name '*.svg' -o -name '*.svgz' \) -print0)
+
+dark_count=${#dark_files[@]}
+[[ "$dark_count" -gt 0 ]] || die "No icons found in $DARK_DIR"
+cp -at "$DARK_BASE/apps/scalable/" "${dark_files[@]}"
+log "  copied $dark_count file(s) to $DARK_BASE/apps/scalable"
+
+# Symlinked icon names in the base theme must exist in the dark theme too,
+# otherwise lookups for them fall back to the base theme via Inherits and
+# return light artwork. Link them to the dark variant of their target.
+#
+# Performance: one find collects all base symlinks (name -> direct target);
+# chains (alias -> alias -> file) are resolved in pure bash, so no
+# basename/readlink forks per icon.
+DARK_APPS="$DARK_BASE/apps/scalable"
+declare -A base_links=()
+while IFS=$'\t' read -r alias_name target; do
+    base_links["$alias_name"]="$target"
+done < <(find "$DEST_BASE/apps/scalable" -maxdepth 1 -type l -printf '%f\t%l\n')
+
+alias_count=0
+for alias_name in "${!base_links[@]}"; do
+    [[ -e "$DARK_APPS/$alias_name" || -L "$DARK_APPS/$alias_name" ]] && continue
+
+    # Resolve the chain down to the final file name (like readlink -f + basename).
+    target_name="${base_links[$alias_name]##*/}"
+    hops=0
+    while [[ -n "${base_links[$target_name]:-}" && "$hops" -lt 40 ]]; do
+        target_name="${base_links[$target_name]##*/}"
+        hops=$((hops + 1))
+    done
+    [[ -n "$target_name" ]] || continue
+
+    if [[ -e "$DARK_APPS/$target_name" || -L "$DARK_APPS/$target_name" ]]; then
+        ln -sfn "$target_name" "$DARK_APPS/$alias_name"
+        alias_count=$((alias_count + 1))
+    fi
+done
+unset base_links
+log "  linked $alias_count alias icon(s) to dark variants"
 
 if command -v gtk-update-icon-cache >/dev/null 2>&1; then
     log "Updating icon cache"
-    gtk-update-icon-cache -f -t "$DEST_BASE" >/dev/null 2>&1 || true
+    gtk-update-icon-cache -f -t "$DEST_BASE" >/dev/null 2>&1 &
+    pid_base=$!
+    gtk-update-icon-cache -f -t "$DARK_BASE" >/dev/null 2>&1 &
+    pid_dark=$!
+    wait "$pid_base" 2>/dev/null || true
+    wait "$pid_dark" 2>/dev/null || true
 fi
 
 log "Done."
