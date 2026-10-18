@@ -1,1 +1,21 @@
-tablet.svg
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 16.933 16.933">
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4285db"/>
+      <stop offset="1" stop-color="#42b9db"/>
+    </linearGradient>
+  </defs>
+  <g fill="#4d4d4d">
+    <rect x="13.390" y="-.006" width=".725" height=".2" rx=".05"/>
+    <rect x="14.913" y="2.272" width=".230" height=".236" rx=".05"/>
+    <rect x="14.913" y="3.070" width=".230" height=".533" rx=".05"/>
+    <rect x="14.913" y="3.940" width=".230" height=".533" rx=".05"/>
+  </g>
+  <rect x="1.900" y=".120" width="13.130" height="16.700" rx=".757" fill="#4d4d4d"/>
+  <rect x="2.567" y=".920" width="11.797" height="15.100" rx=".2" fill="url(#a)"/>
+  <circle cx="8.465" cy="1.480" r=".22" fill="#333333"/>
+  <rect x="2.607" y=".960" width="11.717" height="15.020" rx=".16" fill="none" stroke="#ffffff" stroke-width=".08" opacity=".1"/>
+  <rect x="2.527" y=".880" width="11.877" height="15.180" rx=".24" fill="none" stroke="#000000" stroke-width=".08" opacity=".25"/>
+  <rect x="1.967" y=".187" width="12.996" height="16.566" rx=".69" fill="none" stroke="#ffffff" stroke-width=".133" opacity=".1"/>
+</svg>
