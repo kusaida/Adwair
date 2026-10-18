@@ -25,6 +25,10 @@
 #                        the folder icons set by -f.
 #   -h, --help           Show this help message
 #
+# Symlinks are taken from ./links (same layout as src) and copied into the
+# theme; broken symlinks are removed afterwards. The dark theme only gets
+# links/apps/scalable.
+#
 # Dark app icons are installed as a separate theme (NAME-dark) that
 # inherits the base theme.
 
@@ -32,6 +36,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 SRC_DIR="$SCRIPT_DIR/src"
+LINKS_DIR="$SCRIPT_DIR/links"
 MAKE_DIR="$SCRIPT_DIR/make"
 COLORS_DIR="$MAKE_DIR/generator/colors"
 APPS_COLORS_DIR="$MAKE_DIR/generator/apps"
@@ -76,12 +81,70 @@ usage() {
 }
 
 die() {
+    spinner_stop
     echo "Error: $*" >&2
     exit 1
 }
 
-log() {
-    echo "==> $*"
+SPINNER_PID=""
+WARNINGS=()
+DONE_MSG=""
+
+# Warnings raised while the spinner is running are queued and printed
+# once it stops, so they never garble the animation line.
+warn() {
+    if [[ -n "$SPINNER_PID" ]]; then
+        WARNINGS+=("$*")
+    else
+        echo "Warning: $*" >&2
+    fi
+}
+
+spinner_start() {
+    local msg="$1"
+
+    if [[ ! -t 1 ]]; then
+        echo "==> $msg..."
+        return 0
+    fi
+
+    (
+        local frames=('|' '/' '-' '\') i=0
+        case "${LC_ALL:-${LC_CTYPE:-${LANG:-}}}" in
+            *[Uu][Tt][Ff]-8*|*[Uu][Tt][Ff]8*) frames=(⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏) ;;
+        esac
+        while true; do
+            printf '\r==> %s %s' "${frames[i % ${#frames[@]}]}" "$msg"
+            i=$((i + 1))
+            sleep 0.1
+        done
+    ) &
+    SPINNER_PID=$!
+    printf '\033[?25l'
+    trap 'spinner_stop' EXIT
+    trap 'spinner_stop; exit 130' INT TERM
+}
+
+spinner_stop() {
+    local w
+    if [[ -n "$SPINNER_PID" ]]; then
+        kill "$SPINNER_PID" 2>/dev/null || true
+        wait "$SPINNER_PID" 2>/dev/null || true
+        SPINNER_PID=""
+        printf '\r\033[K\033[?25h'
+    fi
+    for w in ${WARNINGS[@]+"${WARNINGS[@]}"}; do
+        echo "Warning: $w" >&2
+    done
+    WARNINGS=()
+}
+
+finish() {
+    [[ -z "$DONE_MSG" ]] || echo "==> $DONE_MSG"
+}
+
+prune_broken_links() {
+    find "$1" -xtype l -delete
 }
 
 resolve_color() {
@@ -148,7 +211,7 @@ while [[ $# -gt 0 ]]; do
         --uninstall)    ARGS+=(-u) ;;
         --folder-name)  ARGS+=(-F) ;;
         --help)         ARGS+=(-h) ;;
-        --)             shift; ARGS+=("$@"); break ;;
+        --)             shift; ARGS+=(-- "$@"); break ;;
         --*)            die "Unknown option: $1 (use -h for help)" ;;
         *)              ARGS+=("$1") ;;
     esac
@@ -170,6 +233,8 @@ while getopts ":c:n:p:afruFh" opt; do
         :) die "Option -$OPTARG requires an argument" ;;
     esac
 done
+shift $((OPTIND - 1))
+[[ $# -eq 0 ]] || die "Unexpected argument: $1 (options must come before it; use -h for help)"
 
 case "$INSTALL_PATH" in
     "~")   INSTALL_PATH="$HOME" ;;
@@ -178,27 +243,29 @@ esac
 INSTALL_PATH="${INSTALL_PATH%/}"
 [[ -n "$INSTALL_PATH" ]] || die "Installation path must not be empty or '/'"
 
+[[ -n "$THEME_NAME" && "$THEME_NAME" != */* && "$THEME_NAME" != "." && "$THEME_NAME" != ".." ]] \
+    || die "Invalid theme name '$THEME_NAME' (must be non-empty, without '/', not '.' or '..')"
+
 DEST_BASE="$INSTALL_PATH/$THEME_NAME"
 DARK_THEME_NAME="${THEME_NAME}-dark"
 DARK_BASE="$INSTALL_PATH/$DARK_THEME_NAME"
 
 uninstall() {
-    [[ -n "$THEME_NAME" && "$THEME_NAME" != *"/"* && "$THEME_NAME" != "." && "$THEME_NAME" != ".." ]] \
-        || die "Invalid theme name '$THEME_NAME'"
+    local dir
 
-    local dir found=0
+    if [[ ! -d "$DEST_BASE" && ! -d "$DARK_BASE" ]]; then
+        DONE_MSG="Nothing to uninstall: '$DEST_BASE' does not exist"
+        return 0
+    fi
+
+    spinner_start "Uninstalling theme from $DEST_BASE"
     for dir in "$DEST_BASE" "$DARK_BASE"; do
         [[ -d "$dir" ]] || continue
-        found=1
-        log "Uninstalling '$dir'..."
         rm -rf -- "$dir" \
             || die "Cannot remove $dir (permission denied? try sudo for system paths)"
     done
-    if [[ "$found" -eq 1 ]]; then
-        log "Done."
-    else
-        log "Nothing to uninstall: '$DEST_BASE' does not exist"
-    fi
+    spinner_stop
+    DONE_MSG="Theme uninstalled from $DEST_BASE"
 }
 
 FI_ROOTS=()
@@ -267,8 +334,11 @@ build_folder_roots() {
     fi_add_root "${SEARCH_ROOT:-$TARGET_HOME}"
 
     if [[ -n "$EXTRA_ROOTS" ]]; then
-        local IFS=':'
-        for extra in $EXTRA_ROOTS; do fi_add_root "$extra"; done
+        local -a extra_list=()
+        IFS=':' read -ra extra_list <<< "$EXTRA_ROOTS"
+        for extra in ${extra_list[@]+"${extra_list[@]}"}; do
+            fi_add_root "$extra"
+        done
     fi
 
     if [[ "$INCLUDE_MOUNTS" -eq 1 ]]; then
@@ -284,14 +354,13 @@ build_folder_roots() {
 }
 
 reset_folder_icons() {
-    local line cur="" val r reset=0 skipped=0 failed=0
+    local line cur="" val
     local -A handled=()
 
     build_protected_folders
     build_folder_roots
 
-    log "Resetting folder icon metadata (folder-* only)"
-    for r in "${FI_ROOTS[@]}"; do log "  scanning $r"; done
+    spinner_start "Resetting folder icons"
 
     while IFS= read -r line; do
         case "$line" in
@@ -305,63 +374,23 @@ reset_folder_icons() {
                 handled["$cur"]=1
 
                 if is_protected_folder "$cur" || is_standard_icon "$val"; then
-                    log "  skipped standard: $cur ($val)"
-                    skipped=$((skipped + 1))
-                elif "${GIO_CMD[@]}" set "$cur" metadata::custom-icon-name -d 2>/dev/null; then
-                    log "  reset: $cur ($val)"
-                    reset=$((reset + 1))
-                else
-                    echo "Warning: failed to reset $cur" >&2
-                    failed=$((failed + 1))
+                    continue
                 fi
+                "${GIO_CMD[@]}" set "$cur" metadata::custom-icon-name -d 2>/dev/null \
+                    || warn "failed to reset $cur"
                 ;;
         esac
     done < <(find "${FI_ROOTS[@]}" -xdev -type d -print0 2>/dev/null \
                  | xargs -0 -r -n 200 "${GIO_CMD[@]}" info -a metadata::custom-icon-name 2>/dev/null || true)
 
-    log "Folder icons: $reset reset, $skipped standard skipped, $failed failed"
-}
-
-SPINNER_PID=""
-
-spinner_start() {
-    local msg="$1"
-
-    if [[ ! -t 1 ]]; then
-        log "$msg..."
-        return 0
-    fi
-
-    (
-        local frames=('|' '/' '-' '\') i=0
-        case "${LC_ALL:-${LC_CTYPE:-${LANG:-}}}" in
-            *[Uu][Tt][Ff]-8*|*[Uu][Tt][Ff]8*) frames=(⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏) ;;
-        esac
-        while true; do
-            printf '\r==> %s %s' "${frames[i % ${#frames[@]}]}" "$msg"
-            i=$((i + 1))
-            sleep 0.1
-        done
-    ) &
-    SPINNER_PID=$!
-    printf '\033[?25l'
-    trap 'spinner_stop' EXIT
-    trap 'spinner_stop; exit 130' INT TERM
-}
-
-spinner_stop() {
-    [[ -n "$SPINNER_PID" ]] || return 0
-    kill "$SPINNER_PID" 2>/dev/null || true
-    wait "$SPINNER_PID" 2>/dev/null || true
-    SPINNER_PID=""
-    printf '\r\033[K\033[?25h'
+    spinner_stop
 }
 
 assign_folder_icons() {
     local catalog="${FI_CATALOG:-}" icon_file base keyword t dir name lname best bestlen
-    local assigned=0 skipped=0 failed=0
+    local nname nt
     local -A term_icon=() handled=()
-    local -a find_names=() fail_list=()
+    local -a find_names=()
 
     [[ -n "$catalog" && -d "$catalog" ]] || catalog="$DEST_BASE/places/scalable"
     [[ -d "$catalog" ]] || die "Folder icon catalog not found: $catalog"
@@ -382,7 +411,7 @@ assign_folder_icons() {
     shopt -u nullglob
 
     if [[ "${#term_icon[@]}" -eq 0 ]]; then
-        echo "Warning: no non-standard folder-*.svg icons in $catalog — nothing to assign." >&2
+        warn "no non-standard folder-*.svg icons in $catalog — nothing to assign."
         return 0
     fi
 
@@ -392,40 +421,35 @@ assign_folder_icons() {
     for t in "${!term_icon[@]}"; do find_names+=(-o -iname "*${t}*"); done
     find_names=("${find_names[@]:1}")
 
-    spinner_start "Matching icons"
+    spinner_start "Assigning folder icons"
 
     while IFS= read -r -d '' dir; do
         [[ -z "${handled[$dir]:-}" ]] || continue
         handled["$dir"]=1
 
         if is_protected_folder "$dir"; then
-            skipped=$((skipped + 1))
             continue
         fi
 
+        # Match whole words only: separators (- _ .) count as spaces, so
+        # "my-work" / "Work_2024" match "work", but "network" does not.
         name="${dir##*/}"; lname="${name,,}"; best=""; bestlen=0
+        nname=" ${lname//[-_.]/ } "
         for t in "${!term_icon[@]}"; do
-            if [[ "$lname" == *"$t"* && "${#t}" -gt "$bestlen" ]]; then
+            nt="${t//[-_.]/ }"
+            if [[ "$nname" == *" $nt "* && "${#t}" -gt "$bestlen" ]]; then
                 best="${term_icon[$t]}"; bestlen="${#t}"
             fi
         done
         [[ -n "$best" ]] || continue
 
-        if "${GIO_CMD[@]}" set "$dir" metadata::custom-icon-name "$best" 2>/dev/null; then
-            assigned=$((assigned + 1))
-        else
-            fail_list+=("$dir")
-            failed=$((failed + 1))
-        fi
-    done < <(find "${FI_ROOTS[@]}" -xdev \( -path "$SCRIPT_DIR" -o -path "$DEST_BASE" \) -prune -o \
+        "${GIO_CMD[@]}" set "$dir" metadata::custom-icon-name "$best" 2>/dev/null \
+            || warn "failed to set icon for $dir"
+    done < <(find "${FI_ROOTS[@]}" -xdev \
+                  \( -path "$SCRIPT_DIR" -o -path "$DEST_BASE" -o -name '.?*' -o -name node_modules \) -prune -o \
                   -type d \( "${find_names[@]}" \) -print0 2>/dev/null || true)
 
     spinner_stop
-
-    for dir in ${fail_list[@]+"${fail_list[@]}"}; do
-        echo "Warning: failed to set icon for $dir" >&2
-    done
-    log "Folder icons: $assigned assigned, $skipped standard skipped, $failed failed"
 }
 
 if [[ "$RESET_FOLDERS" -eq 1 && "$REMOVE" -ne 1 ]]; then
@@ -439,10 +463,12 @@ fi
 if [[ "$REMOVE" -eq 1 ]]; then
     uninstall
     [[ "$RESET_FOLDERS" -eq 0 ]] || reset_folder_icons
+    finish
     exit 0
 fi
 
 [[ -d "$SRC_DIR" ]] || die "Source directory not found: $SRC_DIR"
+[[ -d "$LINKS_DIR" ]] || die "Links directory not found: $LINKS_DIR"
 [[ -d "$DARK_DIR" ]] || die "Dark icons directory not found: $DARK_DIR"
 
 RESOLVED_COLOR="$(resolve_color "${COLOR:-blue}")"
@@ -460,16 +486,18 @@ if [[ "$RUN_FOLDER_ICONS" -eq 1 ]]; then
     FI_CATALOG="$COLORS_DIR/$RESOLVED_COLOR"
 fi
 
+spinner_start "Installing theme to $DEST_BASE"
+
 mkdir -p "$DEST_BASE" 2>/dev/null \
     || die "Cannot create $DEST_BASE (permission denied? try sudo for system paths)"
-log "Installing icons to: $DEST_BASE"
 
 for dir in "$SRC_DIR"/*/; do
     name="$(basename "$dir")"
-    log "  copying $name/"
     mkdir -p "$DEST_BASE/$name"
-    cp -a "$dir." "$DEST_BASE/$name/"
+    cp -a --remove-destination "$dir." "$DEST_BASE/$name/"
 done
+
+cp -a --remove-destination "$LINKS_DIR/." "$DEST_BASE/"
 
 INDEX_THEME=""
 if [[ -f "$SCRIPT_DIR/index.theme" ]]; then
@@ -479,17 +507,15 @@ elif [[ -f "$SRC_DIR/index.theme" ]]; then
 fi
 
 if [[ -n "$INDEX_THEME" ]]; then
-    log "  copying index.theme"
     cp -f "$INDEX_THEME" "$DEST_BASE/"
 else
-    echo "Warning: index.theme not found next to $SCRIPT_DIR or in $SRC_DIR — skipping." >&2
+    warn "index.theme not found next to $SCRIPT_DIR or in $SRC_DIR — skipping."
 fi
 
 if [[ -n "$RESOLVED_COLOR" ]]; then
     COLOR_SRC_DIR="$COLORS_DIR/$RESOLVED_COLOR"
     PLACES_DEST="$DEST_BASE/places/scalable"
 
-    log "Applying '$RESOLVED_COLOR' color variant to places/scalable"
     mkdir -p "$PLACES_DEST"
 
     shopt -s nullglob
@@ -501,16 +527,14 @@ if [[ -n "$RESOLVED_COLOR" ]]; then
     fi
 
     for f in "${files[@]}"; do
-        cp -f "$f" "$PLACES_DEST/"
+        cp -f --remove-destination "$f" "$PLACES_DEST/"
     done
-    log "  replaced $(printf '%s\n' "${files[@]}" | wc -l) file(s) in $PLACES_DEST"
 fi
 
 if [[ "$INSTALL_APPS" -eq 1 ]]; then
     APPS_SRC="$APPS_COLORS_DIR/$RESOLVED_COLOR"
     APPS_DEST="$DEST_BASE/apps/scalable"
 
-    log "Applying '$RESOLVED_COLOR' color variant to apps/scalable"
     mkdir -p "$APPS_DEST"
 
     shopt -s nullglob
@@ -520,14 +544,12 @@ if [[ "$INSTALL_APPS" -eq 1 ]]; then
     [[ ${#app_files[@]} -gt 0 ]] || die "No files found in $APPS_SRC"
 
     for f in "${app_files[@]}"; do
-        cp -f "$f" "$APPS_DEST/"
+        cp -f --remove-destination "$f" "$APPS_DEST/"
     done
-    log "  replaced ${#app_files[@]} file(s) in $APPS_DEST"
 fi
 
 mkdir -p "$DARK_BASE/apps/scalable" 2>/dev/null \
     || die "Cannot create $DARK_BASE (permission denied? try sudo for system paths)"
-log "Installing dark theme to: $DARK_BASE"
 
 cat > "$DARK_BASE/index.theme" <<EOF
 [Icon Theme]
@@ -548,7 +570,14 @@ MinSize=16
 MaxSize=512
 EOF
 
-# Copy dark icons in a single cp call instead of one cp per file.
+DARK_APPS="$DARK_BASE/apps/scalable"
+
+if [[ -d "$LINKS_DIR/apps/scalable" ]]; then
+    cp -a --remove-destination "$LINKS_DIR/apps/scalable/." "$DARK_APPS/"
+else
+    warn "$LINKS_DIR/apps/scalable not found — no alias symlinks for dark theme."
+fi
+
 dark_files=()
 while IFS= read -r -d '' f; do
     dark_files+=("$f")
@@ -557,45 +586,11 @@ done < <(find "$DARK_DIR" -maxdepth 1 \( -type f -o -type l \) \
 
 dark_count=${#dark_files[@]}
 [[ "$dark_count" -gt 0 ]] || die "No icons found in $DARK_DIR"
-cp -at "$DARK_BASE/apps/scalable/" "${dark_files[@]}"
-log "  copied $dark_count file(s) to $DARK_BASE/apps/scalable"
+cp -a --remove-destination -t "$DARK_APPS/" "${dark_files[@]}"
 
-# Symlinked icon names in the base theme must exist in the dark theme too,
-# otherwise lookups for them fall back to the base theme via Inherits and
-# return light artwork. Link them to the dark variant of their target.
-#
-# Performance: one find collects all base symlinks (name -> direct target);
-# chains (alias -> alias -> file) are resolved in pure bash, so no
-# basename/readlink forks per icon.
-DARK_APPS="$DARK_BASE/apps/scalable"
-declare -A base_links=()
-while IFS=$'\t' read -r alias_name target; do
-    base_links["$alias_name"]="$target"
-done < <(find "$DEST_BASE/apps/scalable" -maxdepth 1 -type l -printf '%f\t%l\n')
-
-alias_count=0
-for alias_name in "${!base_links[@]}"; do
-    [[ -e "$DARK_APPS/$alias_name" || -L "$DARK_APPS/$alias_name" ]] && continue
-
-    # Resolve the chain down to the final file name (like readlink -f + basename).
-    target_name="${base_links[$alias_name]##*/}"
-    hops=0
-    while [[ -n "${base_links[$target_name]:-}" && "$hops" -lt 40 ]]; do
-        target_name="${base_links[$target_name]##*/}"
-        hops=$((hops + 1))
-    done
-    [[ -n "$target_name" ]] || continue
-
-    if [[ -e "$DARK_APPS/$target_name" || -L "$DARK_APPS/$target_name" ]]; then
-        ln -sfn "$target_name" "$DARK_APPS/$alias_name"
-        alias_count=$((alias_count + 1))
-    fi
-done
-unset base_links
-log "  linked $alias_count alias icon(s) to dark variants"
+prune_broken_links "$DARK_BASE"
 
 if command -v gtk-update-icon-cache >/dev/null 2>&1; then
-    log "Updating icon cache"
     gtk-update-icon-cache -f -t "$DEST_BASE" >/dev/null 2>&1 &
     pid_base=$!
     gtk-update-icon-cache -f -t "$DARK_BASE" >/dev/null 2>&1 &
@@ -604,8 +599,11 @@ if command -v gtk-update-icon-cache >/dev/null 2>&1; then
     wait "$pid_dark" 2>/dev/null || true
 fi
 
-log "Done."
+spinner_stop
+DONE_MSG="Theme installed to $DEST_BASE"
 
 if [[ "$RUN_FOLDER_ICONS" -eq 1 ]]; then
     assign_folder_icons
 fi
+
+finish
