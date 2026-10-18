@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="svg1538" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="svg1538" width="64" height="64" version="1.1" viewBox="0 0 33.867 33.867">
  <defs id="defs1532">
   <filter id="filter2299" x="-.1109" y="-.14587" width="1.2218" height="1.2917" color-interpolation-filters="sRGB">
    <feGaussianBlur id="feGaussianBlur2301" stdDeviation="3.8421904"/>
@@ -8,7 +8,7 @@
    <stop id="stop1435" stop-color="#f5f5f5" offset="0"/>
    <stop id="stop1437" stop-color="#e7e9e9" offset="1"/>
   </linearGradient>
- </defs>
+ <linearGradient id="whiteTileBg" x1="0" y1="0.945" x2="0" y2="0.054"><stop offset="0" stop-color="#f1efeb"/><stop offset="1" stop-color="#fdfcfc"/></linearGradient></defs>
  <metadata id="metadata1535">
   <rdf:RDF>
    <cc:Work rdf:about="">
@@ -44,7 +44,7 @@
    <rect id="rect1676" x="69.649" y="40.3112" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="4.6"/>
    <rect id="rect1678" x="69.649" y="40.3112" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="5"/>
   </g>
-  <rect id="rect849" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#linearGradient1441)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
+  <rect id="rect849" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#whiteTileBg)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877" style="fill:url(#whiteTileBg)"/>
   <path id="path862-9" d="m11.484 9.2267a1.5877 1.5877 0 0 0-1.6247 1.587v12.472a1.5877 1.5877 0 0 0 2.3812 1.3746l5.4007-3.1182 5.4002-3.1176a1.5877 1.5877 0 0 0 0-2.7497l-5.4002-3.1182-5.4007-3.1182a1.5877 1.5877 0 0 0-0.75654-0.21187zm1.5503 4.3362 3.0195 1.7436 3.0189 1.7436-3.0189 1.743-3.0195 1.743v-3.4866z" color="#000000" color-rendering="auto" dominant-baseline="auto" fill="#1a1a1a" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;isolation:auto;mix-blend-mode:normal;paint-order:stroke markers fill;shape-padding:0;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal"/>
  </g>
 </svg>

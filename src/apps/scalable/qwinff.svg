@@ -1,4 +1,5 @@
-<svg id="svg6" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg6" width="64" height="64" version="1.1" viewBox="0 0 33.867 33.867">
  <metadata id="metadata43">
   <rdf:RDF>
    <cc:Work rdf:about="">
@@ -63,9 +64,9 @@
    <stop id="stop1192" stop-color="#ff660d" offset="0"/>
    <stop id="stop1194" stop-color="#ff9a0d" offset="1"/>
   </linearGradient>
- </defs>
+ <linearGradient id="whiteTileBg" x1="0" y1="0.945" x2="0" y2="0.054"><stop offset="0" stop-color="#f1efeb"/><stop offset="1" stop-color="#fdfcfc"/></linearGradient></defs>
  <g id="layer1">
-  <rect id="rect910" x="2.2943" y="2.485" width="29.087" height="29.087" rx="6.4495" ry="6.4495" fill="url(#linearGradient912)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
+  <rect id="rect910" x="2.2943" y="2.485" width="29.087" height="29.087" rx="6.4495" ry="6.4495" fill="url(#whiteTileBg)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877" style="fill:url(#whiteTileBg)"/>
   <g id="g934" transform="translate(.49382 -.79493)">
    <path id="path57" transform="matrix(.17286 0 0 .17286 -43.885 5.3864)" d="m289.4 104.32 38.728 7.9107-2.8-40.205-8.728 7.8943c-0.30884-0.34522-0.51963-0.48534-0.91248-1.1195-0.69637-1.1241-1.4539-2.6552-2.148-4.486-1.3881-3.6617-2.5265-8.529-2.606-13.924-0.15894-10.79 3.7746-23.648 18.469-33.971l1.5466-2.6149-2.9939 0.0066c-8.1134 3.4485-17.093 8.1835-24.082 15.769-6.9896 7.5854-11.918 18.057-11.903 32.562 8e-3 7.5664 1.7247 15.962 5.6362 25.09z" fill="#fff" filter="url(#f)" opacity=".26162"/>
    <path id="path59" transform="matrix(.17286 0 0 .17286 -43.885 5.3864)" d="m316.49 82.039 7.5565-6.8364 2.4483 35.159-33.805-6.9056 6.6974-5.7858c-4.1733-9.378-5.9093-17.899-5.9171-25.535-0.0291-28.338 19.024-40.128 35.072-46.949-30.152 21.183-16.783 53.79-12.052 56.852z" fill="url(#linearGradient903)" filter="url(#h)" stroke="#000" stroke-opacity=".088083"/>

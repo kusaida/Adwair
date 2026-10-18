@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="svg2547" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="svg2547" width="64" height="64" version="1.1" viewBox="0 0 33.867 33.867">
  <defs id="defs2541">
   <linearGradient id="linearGradient936" x1="-27.206" x2="-27.206" y1="-1.3796" y2="25.268" gradientTransform="translate(43.842 5.6325)" gradientUnits="userSpaceOnUse">
    <stop id="stop930" stop-color="#f5f9fb" offset="0"/>
    <stop id="stop932" stop-color="#f5eeec" offset="1"/>
   </linearGradient>
- </defs>
+ <linearGradient id="whiteTileBg" x1="0" y1="0.945" x2="0" y2="0.054"><stop offset="0" stop-color="#f1efeb"/><stop offset="1" stop-color="#fdfcfc"/></linearGradient></defs>
  <metadata id="metadata2544">
   <rdf:RDF>
    <cc:Work rdf:about="">
@@ -39,7 +39,7 @@
    <rect id="rect1676" x="69.5832" y="40.3521" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="4.6"/>
    <rect id="rect1678" x="69.5832" y="40.3521" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="5"/>
   </g>
-  <rect id="rect849-5" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#linearGradient936)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
+  <rect id="rect849-5" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#whiteTileBg)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877" style="fill:url(#whiteTileBg)"/>
   <path id="path2" d="m7.687 17.537v1.9261h2.5681v7.0623h15.409v-1.9261h-2.5681v-7.0623h-8.9883z" opacity=".2" stroke-width=".32101"/>
   <path id="path4" d="m7.687 17.216v1.9261h2.5681v7.0623h1.9261v-7.0623h1.9261v-1.9261z" fill="#0c91fa" stroke-width=".32101"/>
   <path id="path6" d="m12.181 19.143v7.0623h4.4942v-8.9883h-2.5681v1.9261z" fill="#0470c5" stroke-width=".32101"/>

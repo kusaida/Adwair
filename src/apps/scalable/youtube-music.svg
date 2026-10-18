@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" id="svg1443" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867" sodipodi:docname="youtube-music.svg" inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)">
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" id="svg1443" width="64" height="64" version="1.1" viewBox="0 0 33.867 33.867" sodipodi:docname="youtube-music.svg" inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)">
   <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#999999" borderopacity="1" inkscape:showpageshadow="2" inkscape:pageopacity="0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:zoom="2.3242188" inkscape:cx="255.78487" inkscape:cy="256" inkscape:window-width="2560" inkscape:window-height="1403" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="1" inkscape:current-layer="svg1443"/>
   <defs id="defs1437">
     <linearGradient id="linearGradient1632" x1="132.21" x2="132.21" y1="42.152" y2="70.68" gradientTransform="matrix(0.97573,0,0,0.97573,-111.77,-37.183)" gradientUnits="userSpaceOnUse">
@@ -57,7 +57,7 @@
     <filter inkscape:collect="always" style="color-interpolation-filters:sRGB" id="filter6" x="-0.075" y="-0.075" width="1.15" height="1.15">
       <feGaussianBlur inkscape:collect="always" stdDeviation="0.86925" id="feGaussianBlur6"/>
     </filter>
-  </defs>
+  <linearGradient id="whiteTileBg" x1="0" y1="0.945" x2="0" y2="0.054"><stop offset="0" stop-color="#f1efeb"/><stop offset="1" stop-color="#fdfcfc"/></linearGradient></defs>
   <metadata id="metadata1440">
     <rdf:RDF>
       <cc:Work rdf:about="">
@@ -91,7 +91,7 @@
     <rect id="rect1676" x="69.839996" y="40.709999" width="29.811001" height="29.811001" rx="6.6099" ry="6.6099" stroke-width="4.6"/>
     <rect id="rect1678" x="69.839996" y="40.709999" width="29.811001" height="29.811001" rx="6.6099" ry="6.6099" stroke-width="5"/>
   </g>
-  <rect id="rect849" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#linearGradient1632)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877" style="fill:url(#linearGradient1632)"/>
+  <rect id="rect849" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#whiteTileBg)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877" style="fill:url(#whiteTileBg)"/>
   <circle id="path1153" cx="17.299999" cy="17.606001" r="12.288" fill="url(#radialGradient1161)" style="fill:url(#radialGradient1161)"/>
   <g id="g1151" transform="matrix(0.80024,0,0,0.80024,-28.479,13.801)">
     <circle id="path859" cx="56.771" cy="4.1009998" r="13.908" fill="#9d271d" fill-opacity="0.97184" style="filter:url(#filter6);fill:#000000;fill-opacity:0.97184002;opacity:0.35"/>

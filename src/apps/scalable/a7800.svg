@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="svg1829" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="svg1829" width="64" height="64" version="1.1" viewBox="0 0 33.867 33.867">
  <defs id="defs1823">
   <radialGradient id="radialGradient886" cx="17.31" cy="2.5296" r="14.544" gradientTransform="matrix(7.1618 0 0 1.7511 -106.66 -1.9)" gradientUnits="userSpaceOnUse">
    <stop id="stop880" stop-color="#f5fafe" offset="0"/>
@@ -17,7 +17,7 @@
    <stop id="stop891" stop-color="#4a82de" offset="0"/>
    <stop id="stop893" stop-color="#723fe9" stop-opacity=".99996" offset="1"/>
   </linearGradient>
- </defs>
+ <linearGradient id="whiteTileBg" x1="0" y1="0.945" x2="0" y2="0.054"><stop offset="0" stop-color="#f1efeb"/><stop offset="1" stop-color="#fdfcfc"/></linearGradient></defs>
  <metadata id="metadata1826">
   <rdf:RDF>
    <cc:Work rdf:about="">
@@ -52,7 +52,7 @@
    <rect id="rect1676" x="69.3878" y="40.2871" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="4.6"/>
    <rect id="rect1678" x="69.3878" y="40.2871" width="30.3712" height="30.3712" rx="7.0503" ry="7.0503" stroke-width="5"/>
   </g>
-  <rect id="rect849-5" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#radialGradient886)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877"/>
+  <rect id="rect849-5" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#whiteTileBg)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6877" style="fill:url(#whiteTileBg)"/>
   <g id="g902" transform="matrix(1.531 0 0 1.531 -13.183 -9.3493)" stroke-width=".26458">
    <path id="path4" d="m21.365 9.7019h1.7651c0.35459-0.044575 0.32648 0.056279 0.32839 0.35502 0.05312 4.8381 0.98906 9.5166 3.9677 11.747 0.33029 0.21439 0.36667 0.2144 0.16278 0.57266l-1.0331 1.8156c-0.18907 0.44702-0.28164 0.33088-0.58631 0.12581-2.0558-1.4266-3.368-3.3063-4.0266-5.6123-0.6976-2.4427-0.57803-5.2974-0.57803-9.0042z" fill="url(#linearGradient897)"/>
    <path id="path6" d="m18.19 9.7121h-1.7651c-0.35459-0.044575-0.32648 0.056279-0.32839 0.35502-0.05312 4.8381-0.98906 9.5166-3.9677 11.747-0.33029 0.21439-0.36667 0.2144-0.16278 0.57266l1.0331 1.8156c0.18907 0.44702 0.28164 0.33088 0.58631 0.12581 2.0558-1.4266 3.368-3.3063 4.0266-5.6123 0.6976-2.4427 0.57803-5.2974 0.57803-9.0042z" fill="url(#linearGradient880)"/>

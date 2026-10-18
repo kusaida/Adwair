@@ -3,8 +3,8 @@
 
 <svg
    id="svg1"
-   width="128"
-   height="128"
+   width="64"
+   height="64"
    version="1.1"
    viewBox="0 0 128 128"
    sodipodi:docname="com.interversehq.qView.svg"
@@ -74,7 +74,7 @@
      filter="url(#filter2)"
      opacity=".25"
      stroke-width="1.9999" />
-  <rect fill="url(#bgNew)"
+  <defs><linearGradient id="tpl-bg-0" gradientUnits="userSpaceOnUse" x1="64.0" x2="64.0" y1="114.0" y2="14.0"><stop offset="0" stop-color="#363636"/><stop offset="1" stop-color="#525252"/></linearGradient></defs><rect fill="url(#tpl-bg-0)"
      id="rect12"
      x="8"
      y="8"

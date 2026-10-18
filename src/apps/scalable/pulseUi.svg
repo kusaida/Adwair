@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" id="svg6" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867">
+<svg xmlns="http://www.w3.org/2000/svg" id="svg6" width="64" height="64" version="1.1" viewBox="0 0 33.867 33.867">
  <defs id="defs2">
   <linearGradient id="linearGradient1484" x1="31.484" x2="31.484" y1="138.91" y2="11.969" gradientUnits="userSpaceOnUse">
    <stop id="stop1478" stop-color="#55b484" offset="0"/>
    <stop id="stop1480" stop-color="#55b484" stop-opacity="0" offset="1"/>
   </linearGradient>
- </defs>
+ <linearGradient id="whiteTileBg" x1="0" y1="0.945" x2="0" y2="0.054"><stop offset="0" stop-color="#f1efeb"/><stop offset="1" stop-color="#fdfcfc"/></linearGradient></defs>
  <g id="layer1">
   <g id="g1702" transform="translate(-65.748 -37.203) scale(.97573)" fill="none" opacity=".295" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".02">
    <rect id="rect1634" x="69.5537" y="40.2977" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width=".1"/>
@@ -31,7 +31,7 @@
    <rect id="rect1676" x="69.5537" y="40.2977" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="4.6"/>
    <rect id="rect1678" x="69.5537" y="40.2977" width="30.3712" height="30.3712" rx="7.0509" ry="7.0509" stroke-width="5"/>
   </g>
-  <rect id="rect849" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="#f4f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.688"/>
+  <rect id="rect849" x="2.1167" y="2.1167" width="29.6336" height="29.6336" rx="6.8792" ry="6.8792" fill="url(#whiteTileBg)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.688" style="fill:url(#whiteTileBg)"/>
   <g id="g1561" transform="translate(0 7.724)">
    <path id="path1557" d="M-.054 15.686h42.007" fill="none" stroke-width=".5"/>
   </g>

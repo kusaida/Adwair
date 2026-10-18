@@ -1,10 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="svg1443" width="512" height="512" version="1.1" viewBox="0 0 33.867 33.867">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="svg1443" width="64" height="64" version="1.1" viewBox="0 0 33.867 33.867">
  <defs id="defs1437">
-  <linearGradient id="linearGradient1632" x1="132.21" x2="132.21" y1="42.152" y2="64.966" gradientTransform="matrix(.97573 0 0 .97573 -111.77 -37.183)" gradientUnits="userSpaceOnUse">
-   <stop id="stop1626" stop-color="#ff875f" offset="0"/>
-   <stop id="stop1628" stop-color="#f052c9" offset="1"/>
-  </linearGradient>
+  <linearGradient id="linearGradient1632" x1="132.21" x2="132.21" y1="42.152" y2="64.966" gradientTransform="matrix(.97573 0 0 .97573 -111.77 -37.183)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff5cbc"/><stop offset="1" stop-color="#d51683"/></linearGradient>
  </defs>
  <metadata id="metadata1440">
   <rdf:RDF>

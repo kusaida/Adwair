@@ -30,9 +30,9 @@
       <stop offset="0" style="stop-color: #ffffff"/>
       <stop offset="1" style="stop-color: #919191"/>
     </linearGradient>
-  </defs>
+  <linearGradient id="whiteTileBg" x1="0" y1="0.945" x2="0" y2="0.054"><stop offset="0" stop-color="#f1efeb"/><stop offset="1" stop-color="#fdfcfc"/></linearGradient></defs>
   <use href="#input-tablet-shadow" transform="matrix(.242558 0 0 .247016 1.5593 1.999)"/>
-  <rect width="56" height="56" x="4" y="4" fill="url(#input-tablet-c)" rx="13" ry="13"/>
+  <rect width="56" height="56" x="4" y="4" fill="url(#whiteTileBg)" rx="13" ry="13" style="fill:url(#whiteTileBg)"/>
   <circle cx="32.02" cy="32.044" r="30.001" fill="none"/>
   <rect width="38" height="28" x="13" y="21.5" rx="3.4" filter="url(#input-tablet-d)" opacity=".75"/>
   <rect width="9" height="4" x="27.5" y="17.4" fill="#2b2b2b" rx="1.1"/>

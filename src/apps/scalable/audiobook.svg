@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg10" width="512" height="512" version="1.1" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg10" width="64" height="64" version="1.1" viewBox="0 0 64 64">
  <defs id="defs6"><linearGradient id="bgNew" x1="32" x2="32" y1="54.47" y2="9.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0e71de"/><stop offset="1" stop-color="#25c9ff"/></linearGradient>
   <linearGradient id="linearGradient2200" x1="33.067" x2="33.067" y1="5.8055" y2="58.569" gradientTransform="scale(1)" gradientUnits="userSpaceOnUse">
    <stop id="stop1" stop-color="#62a0ea" offset="0"/>
