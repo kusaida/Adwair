@@ -11,7 +11,7 @@ A refined icon theme blending the polished look of WhiteSur with the clean, nati
 Clone the repository and run the installer:
 
 ```bash
-git clone https://github.com/kusaida/Adwair.git
+git clone --depth 1 https://github.com/kusaida/Adwair.git
 cd Adwair
 chmod +x install.sh
 ./install.sh
@@ -24,37 +24,33 @@ Two themes are installed:
 ~/.local/share/icons/Adwair-dark  # dark app icons, inherits Adwair
 ```
 
-After installation, select **Adwair** as your icon theme, or **Adwair-dark** for dark app icons.
-
 ### Manual installation
 
-If you prefer not to use the installer, copy the contents of `src` directly into your local icon theme directory:
+Download the archive from the [Releases](https://github.com/kusaida/Adwair/releases) page, extract it and place the contents in `~/.local/share/icons`
+
+### Selecting the theme
+
+Select **Adwair** (or **Adwair-dark** for dark app icons) in **Refine** or **GNOME Tweaks**, or from the terminal:
 
 ```bash
-mkdir -p ~/.local/share/icons/Adwair
-cp -r src/. ~/.local/share/icons/Adwair/
+gsettings set org.gnome.desktop.interface icon-theme 'Adwair'
+gsettings set org.gnome.desktop.interface cursor-theme 'Adwair'
 ```
 
-Then select **Adwair** as your icon theme.
+## Installation options
 
-This installs the light theme only. The installer additionally builds `Adwair-dark` from `make/generator/dark`.
+| Option | Description |
+|:-------|:------------|
+| `-c`, `--color [COLOR]` | Use a colored folder variant (default: `blue`) |
+| `-a`, `--apps` | Also install colored app icons (requires `-c`) |
+| `-n`, `--name NAME` | Theme name (default: `Adwair`); the dark variant is installed as `NAME-dark` |
+| `-p`, `--path PATH` | Installation directory (default: `$HOME/.local/share/icons`) |
+| `-f`, `--folder-icons` | Assign folder icons by name after install (requires `gio`) |
+| `-r`, `--remove`, `-u`, `--uninstall` | Uninstall the theme and its dark variant |
+| `-F`, `--folder-name` | Only with `-r`/`-u`: also reset the folder icons set by `-f` |
+| `-h`, `--help` | Show help |
 
-### Installation options
-
-The installer supports colored folder variants and custom installation names.
-
-|  OPTIONS:                  |                                                                              |
-|:---------------------------|:-----------------------------------------------------------------------------|
-| -c, --color [COLOR]        | Specify color variant [blue/green/orange/pink/purple/red/slate/teal/yellow] (Default: blue) |
-| -a, --apps                 | Install colored app icons (requires -c)                                      |
-| -n, --name NAME            | Specify theme name (Default: Adwair)                                         |
-| -p, --path PATH            | Specify installation directory (Default: $HOME/.local/share/icons)           |
-| -f, --folder-icons         | Assign folder icons by name after install (requires gio)                     |
-| -r, --remove, -u, --uninstall | Uninstall (remove) the theme and its dark variant                         |
-| -F, --folder-name          | With -r/-u: also reset folder icons set by -f                                |
-| -h, --help                 | Show this help                                                               |
-
-#### Colored folders
+### Colored folders
 
 ```bash
 ./install.sh -c COLOR
@@ -62,7 +58,7 @@ The installer supports colored folder variants and custom installation names.
 
 ![Adwair folder variants](preview/folders.png)
 
-#### Colored folders and app icons
+### Colored app icons
 
 ```bash
 ./install.sh -c COLOR -a
@@ -85,21 +81,27 @@ A modernized Adwaita cursor theme with HiDPI support. It is already included and
 
 ## Custom folders
 
-The `-f` / `--folder-icons` option runs the custom folder icon generator after installation.
-
-The generator scans directories on the system and automatically assigns matching folder icons based on their names.
+The `-f` / `--folder-icons` option assigns themed icons to your folders after installation, so you don't have to change them one by one.
 
 For example:
-- `github` → `folder-github`
-- `Downloads` → `folder-downloads`
-- `Pictures` → `folder-pictures`
 
-This allows folders to automatically receive themed icons without manually changing them one by one.
+- `github` → `folder-github`
+- `games` → `folder-games`
+- `projects` → `folder-projects`
 
 ```bash
 # Teal folders with a custom theme name and run the folder generator
 ./install.sh -c t -n MyIcons -f
 ```
+
+## Uninstall
+
+```bash
+./install.sh -r          # remove the theme and its -dark variant
+./install.sh -r -F       # also reset the folder icons set by -f
+```
+
+If you installed with a custom name or path, pass the same `-n` / `-p` values. Note that `-F` resets all non-standard `folder-*` icons, including ones you may have set by hand.
 
 ## Credits
 
@@ -108,16 +110,7 @@ Adwair is a derivative work based on and incorporating modified artwork from the
 - [WhiteSur Icon Theme](https://github.com/vinceliuice/WhiteSur-icon-theme) by vinceliuice — GPL-3.0
 - [Hatter](https://github.com/Mibea/Hatter) by Mibea — GPL-3.0
 - [MoreWaita](https://github.com/somepaulo/MoreWaita) by somepaulo — GPL-3.0
-- [Adwaita Icon Theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) by the [GNOME Project](https://www.gnome.org) — used under LGPL-3.0
-
-### Modifications
-
-- **App icons:** based on WhiteSur, with extensive modifications and additions.
-- **Some app icons:** based on Hatter and adapted to the WhiteSur style.
-- **Symbolic icons:** from Adwaita and MoreWaita.
-- **Cursors:** modernized Adwaita cursor theme with HiDPI support.
-- **Folder icons:** modified Adwaita artwork combined with Adwaita symbolic icons.
-- Several app icons are original artwork.
+- [Adwaita Icon Theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) by the [GNOME Project](https://www.gnome.org) — LGPL-3.0
 
 ## License
 
