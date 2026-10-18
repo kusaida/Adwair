@@ -6,7 +6,6 @@ import base64
 import colorsys
 import io
 import math
-import os
 import re
 
 FOLDER = Path("folder")
@@ -150,64 +149,6 @@ BASE_GRADIENT = {
     "#c0d5ea": ("light", 0.20),
     "#b9d6f2": ("light", 0.23),
 }
-
-PER_COLOR_ALIASES = [
-    ("folder-downloads", "folder-download"),
-    ("folder-desktop", "user-desktop"),
-    ("folder-public", "folder-publicshare"),
-    ("folder-video", "folder-videos"),
-    ("folder-images", "folder-pictures"),
-    ("folder-photo", "folder-camera"),
-    ("folder-photos", "folder-camera"),
-]
-
-GLOBAL_ALIASES = [
-    ("desktop", "user-desktop"),
-    ("certificate-server", "folder-private"),
-    ("gtk-directory", "folder"),
-    ("inode-directory", "folder"),
-    ("stock_folder", "folder"),
-    ("stock_open", "folder-open"),
-    ("folder_open", "folder-open"),
-    ("folder-network", "folder-remote"),
-    ("gtk-network", "folder-remote"),
-    ("network", "folder-remote"),
-    ("repository", "folder-remote"),
-    ("knetattach", "folder-remote"),
-    ("library-music", "folder-music"),
-    ("insync-folder", "folder-google-drive"),
-    ("user-home", "folder-user"),
-    ("gnome-home", "folder-user"),
-    ("folder-home", "folder-user"),
-    ("folder_home", "folder-user"),
-    ("folder_home2", "folder-user"),
-    ("folder-text", "folder-documents"),
-    ("folder-txt", "folder-documents"),
-    ("folder_man", "folder-documents"),
-    ("folder_wordprocessing", "folder-documents"),
-    ("folder-encrypted", "folder-private"),
-    ("folder-locked", "folder-private"),
-    ("folder-decrypted", "folder-unlocked"),
-    ("folder-picture", "folder-pictures"),
-    ("folder-image", "folder-images"),
-    ("folder-sound", "folder-music"),
-    ("folder-videocamera", "folder-videos"),
-    ("folder-gdrive", "folder-google-drive"),
-    ("folder-html", "folder-remote"),
-    # issue #13
-    ("folder-comic", "folder-books"),
-    ("folder-book", "folder-books"),
-    ("folder-extension", "folder-extensions"),
-    ("folder-development", "folder-code"),
-    ("folder-build", "folder-code"),
-    ("folder-drawing", "folder-pictures"),
-    ("folder-paint", "folder-pictures"),
-    ("folder-dropbox", "folder-cloud"),
-    ("folder-owncloud", "folder-cloud"),
-    ("folder-favorites", "folder-user-bookmarks"),
-    ("folder-bookmark", "folder-user-bookmarks"),
-    ("folder-trash", "folder-user-trash"),
-]
 
 PAINT_ATTRS = ("fill", "stroke", "stop-color")
 SKIPPED_TAGS = ("defs", "namedview", "metadata", "title", "desc")
@@ -460,16 +401,7 @@ def strip_metadata(root):
     etree.cleanup_namespaces(root)
 
 
-def remove_stale_symlink(path):
-    path = Path(path)
-
-    if path.is_symlink():
-        path.unlink()
-
-
 def write_svg(root, path):
-    remove_stale_symlink(path)
-
     etree.ElementTree(root).write(
         str(path),
         encoding="UTF-8",
@@ -478,8 +410,6 @@ def write_svg(root, path):
     )
 
 
-GENERATED = {}
-
 FAILED = []
 
 
@@ -487,7 +417,6 @@ def make_plain_icon(base_key, base_name, main_color, light_color, output_dir):
     root = load_recolored_base(BASES[base_key], main_color, light_color)
     output_file = output_dir / f"{base_name}.svg"
     write_svg(root, output_file)
-    GENERATED.setdefault(output_dir, set()).add(base_name)
     print(f"✓ {output_file}")
 
 
@@ -523,7 +452,6 @@ def make_special_icon(base_key, short_name, symbolic_filename, suffix, main_colo
 
     output_file = output_dir / f"{out_name}.svg"
     write_svg(root, output_file)
-    GENERATED.setdefault(output_dir, set()).add(out_name)
     print(f"✓ {output_file}")
 
 
@@ -794,35 +722,8 @@ def make_accent_app_icon(app_name, text, accent, vis, color_name, main_color):
     output_dir.mkdir(parents=True, exist_ok=True)
 
     output_file = output_dir / f"{app_name}.svg"
-    remove_stale_symlink(output_file)
     output_file.write_text(replace_accent_colors(text, mapping), encoding="utf-8")
     print(f"✓ {output_file}")
-
-
-def make_symlink(output_dir: Path, link_name: str, target_name: str):
-    if link_name == target_name:
-        return
-
-    link_path = output_dir / f"{link_name}.svg"
-    target_filename = f"{target_name}.svg"
-    target_path = output_dir / target_filename
-
-    generated_here = GENERATED.get(output_dir, set())
-
-    if link_name in generated_here:
-        return
-
-    if target_name not in generated_here and not target_path.exists():
-        print(f"! пропуск symlink {output_dir.name}/{link_name}.svg -> {target_filename}: цели нет")
-        return
-
-    if link_path.is_symlink() or link_path.exists():
-        if link_path.is_symlink() and os.readlink(link_path) == target_filename:
-            return
-        link_path.unlink()
-
-    link_path.symlink_to(target_filename)
-    print(f"→ {output_dir.name}/{link_path.name} -> {target_filename}")
 
 
 open_count = sum(
@@ -868,12 +769,6 @@ for color_name, colors in COLORS.items():
                 "folder-open", short_name, symbolic_filename, "-open",
                 main_color, light_color, output_dir,
             )
-
-    for alias_base, target_base in PER_COLOR_ALIASES:
-        make_symlink(output_dir, alias_base, target_base)
-
-    for alias_name, target_base in GLOBAL_ALIASES:
-        make_symlink(output_dir, alias_name, target_base)
 
     app_main, app_light = APP_PALETTE.get(color_name, (main_color, light_color))
 
