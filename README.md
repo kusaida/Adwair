@@ -115,6 +115,7 @@ Adwair is a derivative work based on and incorporating modified artwork from the
 - [Hatter](https://github.com/Mibea/Hatter) by Mibea — GPL-3.0
 - [MoreWaita](https://github.com/somepaulo/MoreWaita) by somepaulo — GPL-3.0
 - [Adwaita Icon Theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) by the [GNOME Project](https://www.gnome.org) — LGPL-3.0
+- [Nextcloud Desktop Client](https://github.com/nextcloud/desktop) — GPL-2.0-or-later (status glyphs from [`theme/white/`](https://github.com/nextcloud/desktop/tree/master/theme/white))
 
 ## License
 
