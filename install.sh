@@ -28,6 +28,9 @@
 # Symlinks are taken from ./links (same layout as src) and copied into the
 # theme; broken symlinks are removed afterwards. The dark theme only gets
 # links/apps/scalable.
+# On update, files and symlinks no longer present in ./src or ./links are
+# removed from the installed theme; empty directories are cleaned up.
+# Use --dry-run to preview what would change without modifying anything.
 #
 # Dark app icons are installed as a separate theme (NAME-dark) that
 # inherits the base theme.
@@ -52,6 +55,7 @@ RUN_FOLDER_ICONS=0
 INSTALL_APPS=0
 REMOVE=0
 RESET_FOLDERS=0
+DRY_RUN=0
 INCLUDE_MOUNTS="${INCLUDE_MOUNTS:-1}"
 EXTRA_ROOTS="${EXTRA_ROOTS:-}"
 SEARCH_ROOT="${SEARCH_ROOT:-}"
@@ -103,6 +107,8 @@ warn() {
 spinner_start() {
     local msg="$1"
 
+    [[ "$DRY_RUN" -eq 1 ]] && { echo "==> $msg... (dry-run)"; return 0; }
+
     if [[ ! -t 1 ]]; then
         echo "==> $msg..."
         return 0
@@ -145,6 +151,43 @@ finish() {
 
 prune_broken_links() {
     find "$1" -xtype l -delete
+}
+
+# Remove files/symlinks from $dst_dir that no longer exist in any of the
+# source directories. Empty directories are removed afterwards.
+prune_obsolete() {
+    local dst_dir="$1" rel file
+    shift
+    local -a src_dirs=("$@")
+    [[ -d "$dst_dir" ]] || return 0
+
+    # Delete files and symlinks whose relative path is missing from every source
+    while IFS= read -r -d '' file; do
+        rel="${file#$dst_dir/}"
+        local found=0
+        for src_dir in "${src_dirs[@]}"; do
+            if [[ -e "$src_dir/$rel" || -L "$src_dir/$rel" ]]; then
+                found=1
+                break
+            fi
+        done
+        if [[ $found -eq 0 ]]; then
+            if [[ "$DRY_RUN" -eq 1 ]]; then
+                echo "Would remove: $file"
+            else
+                rm -f -- "$file"
+            fi
+        fi
+    done < <(find "$dst_dir" \( -type f -o -type l \) -print0 2>/dev/null)
+
+    # Remove now-empty directories (deepest first)
+    while IFS= read -r -d '' dir; do
+        if [[ "$DRY_RUN" -eq 1 ]]; then
+            echo "Would remove empty dir: $dir"
+        else
+            rmdir -- "$dir" 2>/dev/null || true
+        fi
+    done < <(find "$dst_dir" -mindepth 1 -depth -type d -print0 2>/dev/null)
 }
 
 resolve_color() {
@@ -210,6 +253,7 @@ while [[ $# -gt 0 ]]; do
         --remove)       ARGS+=(-r) ;;
         --uninstall)    ARGS+=(-u) ;;
         --folder-name)  ARGS+=(-F) ;;
+        --dry-run)      DRY_RUN=1 ;;
         --help)         ARGS+=(-h) ;;
         --)             shift; ARGS+=(-- "$@"); break ;;
         --*)            die "Unknown option: $1 (use -h for help)" ;;
@@ -261,8 +305,12 @@ uninstall() {
     spinner_start "Uninstalling theme from $DEST_BASE"
     for dir in "$DEST_BASE" "$DARK_BASE"; do
         [[ -d "$dir" ]] || continue
-        rm -rf -- "$dir" \
-            || die "Cannot remove $dir (permission denied? try sudo for system paths)"
+        if [[ "$DRY_RUN" -eq 1 ]]; then
+            echo "Would remove: $dir"
+        else
+            rm -rf -- "$dir" \
+                || die "Cannot remove $dir (permission denied? try sudo for system paths)"
+        fi
     done
     spinner_stop
     DONE_MSG="Theme uninstalled from $DEST_BASE"
@@ -462,7 +510,7 @@ fi
 
 if [[ "$REMOVE" -eq 1 ]]; then
     uninstall
-    [[ "$RESET_FOLDERS" -eq 0 ]] || reset_folder_icons
+    [[ "$RESET_FOLDERS" -eq 0 || "$DRY_RUN" -eq 1 ]] || reset_folder_icons
     finish
     exit 0
 fi
@@ -488,16 +536,52 @@ fi
 
 spinner_start "Installing theme to $DEST_BASE"
 
-mkdir -p "$DEST_BASE" 2>/dev/null \
-    || die "Cannot create $DEST_BASE (permission denied? try sudo for system paths)"
+if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "Would create: $DEST_BASE/"
+else
+    mkdir -p "$DEST_BASE" 2>/dev/null \
+        || die "Cannot create $DEST_BASE (permission denied? try sudo for system paths)"
+fi
 
 for dir in "$SRC_DIR"/*/; do
     name="$(basename "$dir")"
-    mkdir -p "$DEST_BASE/$name"
-    cp -a --remove-destination "$dir." "$DEST_BASE/$name/"
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        echo "Would create: $DEST_BASE/$name/"
+        echo "Would copy: $dir -> $DEST_BASE/$name/"
+    else
+        mkdir -p "$DEST_BASE/$name"
+        cp -a --remove-destination "$dir." "$DEST_BASE/$name/"
+    fi
 done
 
-cp -a --remove-destination "$LINKS_DIR/." "$DEST_BASE/"
+if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "Would copy: $LINKS_DIR/. -> $DEST_BASE/"
+else
+    cp -a --remove-destination "$LINKS_DIR/." "$DEST_BASE/"
+fi
+
+# Remove obsolete icons/links no longer present in src/ or links/
+declare -A prune_map=()
+for dir in "$SRC_DIR"/*/; do
+    [[ -d "$dir" ]] || continue
+    name="$(basename "$dir")"
+    prune_map["$name"]+="$SRC_DIR/$name "
+done
+for dir in "$LINKS_DIR"/*/; do
+    [[ -d "$dir" ]] || continue
+    name="$(basename "$dir")"
+    prune_map["$name"]+="$LINKS_DIR/$name "
+done
+for name in "${!prune_map[@]}"; do
+    read -ra src_dirs <<< "${prune_map[$name]}"
+    prune_obsolete "$DEST_BASE/$name" "${src_dirs[@]}"
+done
+
+# Prune obsolete files in dark theme as well
+if [[ -d "$DARK_BASE/apps/scalable" ]]; then
+    prune_obsolete "$DARK_BASE/apps/scalable" \
+        "$LINKS_DIR/apps/scalable" "$DARK_DIR"
+fi
 
 INDEX_THEME=""
 if [[ -f "$SCRIPT_DIR/index.theme" ]]; then
@@ -507,7 +591,11 @@ elif [[ -f "$SRC_DIR/index.theme" ]]; then
 fi
 
 if [[ -n "$INDEX_THEME" ]]; then
-    cp -f "$INDEX_THEME" "$DEST_BASE/"
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        echo "Would copy: $INDEX_THEME -> $DEST_BASE/"
+    else
+        cp -f "$INDEX_THEME" "$DEST_BASE/"
+    fi
 else
     warn "index.theme not found next to $SCRIPT_DIR or in $SRC_DIR — skipping."
 fi
@@ -516,7 +604,11 @@ if [[ -n "$RESOLVED_COLOR" ]]; then
     COLOR_SRC_DIR="$COLORS_DIR/$RESOLVED_COLOR"
     PLACES_DEST="$DEST_BASE/places/scalable"
 
-    mkdir -p "$PLACES_DEST"
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        echo "Would create: $PLACES_DEST/"
+    else
+        mkdir -p "$PLACES_DEST"
+    fi
 
     shopt -s nullglob
     files=("$COLOR_SRC_DIR"/*)
@@ -527,7 +619,11 @@ if [[ -n "$RESOLVED_COLOR" ]]; then
     fi
 
     for f in "${files[@]}"; do
-        cp -f --remove-destination "$f" "$PLACES_DEST/"
+        if [[ "$DRY_RUN" -eq 1 ]]; then
+            echo "Would copy: $f -> $PLACES_DEST/"
+        else
+            cp -f --remove-destination "$f" "$PLACES_DEST/"
+        fi
     done
 fi
 
@@ -535,7 +631,11 @@ if [[ "$INSTALL_APPS" -eq 1 ]]; then
     APPS_SRC="$APPS_COLORS_DIR/$RESOLVED_COLOR"
     APPS_DEST="$DEST_BASE/apps/scalable"
 
-    mkdir -p "$APPS_DEST"
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        echo "Would create: $APPS_DEST/"
+    else
+        mkdir -p "$APPS_DEST"
+    fi
 
     shopt -s nullglob
     app_files=("$APPS_SRC"/*)
@@ -544,13 +644,24 @@ if [[ "$INSTALL_APPS" -eq 1 ]]; then
     [[ ${#app_files[@]} -gt 0 ]] || die "No files found in $APPS_SRC"
 
     for f in "${app_files[@]}"; do
-        cp -f --remove-destination "$f" "$APPS_DEST/"
+        if [[ "$DRY_RUN" -eq 1 ]]; then
+            echo "Would copy: $f -> $APPS_DEST/"
+        else
+            cp -f --remove-destination "$f" "$APPS_DEST/"
+        fi
     done
 fi
 
-mkdir -p "$DARK_BASE/apps/scalable" 2>/dev/null \
-    || die "Cannot create $DARK_BASE (permission denied? try sudo for system paths)"
+if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "Would create: $DARK_BASE/apps/scalable/"
+else
+    mkdir -p "$DARK_BASE/apps/scalable" 2>/dev/null \
+        || die "Cannot create $DARK_BASE (permission denied? try sudo for system paths)"
+fi
 
+if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "Would write: $DARK_BASE/index.theme"
+else
 cat > "$DARK_BASE/index.theme" <<EOF
 [Icon Theme]
 Name=$DARK_THEME_NAME
@@ -569,11 +680,16 @@ Type=Scalable
 MinSize=16
 MaxSize=512
 EOF
+fi
 
 DARK_APPS="$DARK_BASE/apps/scalable"
 
 if [[ -d "$LINKS_DIR/apps/scalable" ]]; then
-    cp -a --remove-destination "$LINKS_DIR/apps/scalable/." "$DARK_APPS/"
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        echo "Would copy: $LINKS_DIR/apps/scalable/. -> $DARK_APPS/"
+    else
+        cp -a --remove-destination "$LINKS_DIR/apps/scalable/." "$DARK_APPS/"
+    fi
 else
     warn "$LINKS_DIR/apps/scalable not found — no alias symlinks for dark theme."
 fi
@@ -586,23 +702,36 @@ done < <(find "$DARK_DIR" -maxdepth 1 \( -type f -o -type l \) \
 
 dark_count=${#dark_files[@]}
 [[ "$dark_count" -gt 0 ]] || die "No icons found in $DARK_DIR"
-cp -a --remove-destination -t "$DARK_APPS/" "${dark_files[@]}"
+if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "Would copy: ${dark_files[*]} -> $DARK_APPS/"
+else
+    cp -a --remove-destination -t "$DARK_APPS/" "${dark_files[@]}"
+fi
 
-prune_broken_links "$DARK_BASE"
+if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "Would prune broken links in: $DARK_BASE"
+else
+    prune_broken_links "$DARK_BASE"
+fi
 
 if command -v gtk-update-icon-cache >/dev/null 2>&1; then
-    gtk-update-icon-cache -f -t "$DEST_BASE" >/dev/null 2>&1 &
-    pid_base=$!
-    gtk-update-icon-cache -f -t "$DARK_BASE" >/dev/null 2>&1 &
-    pid_dark=$!
-    wait "$pid_base" 2>/dev/null || true
-    wait "$pid_dark" 2>/dev/null || true
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        echo "Would run: gtk-update-icon-cache -f -t $DEST_BASE"
+        echo "Would run: gtk-update-icon-cache -f -t $DARK_BASE"
+    else
+        gtk-update-icon-cache -f -t "$DEST_BASE" >/dev/null 2>&1 &
+        pid_base=$!
+        gtk-update-icon-cache -f -t "$DARK_BASE" >/dev/null 2>&1 &
+        pid_dark=$!
+        wait "$pid_base" 2>/dev/null || true
+        wait "$pid_dark" 2>/dev/null || true
+    fi
 fi
 
 spinner_stop
 DONE_MSG="Theme installed to $DEST_BASE"
 
-if [[ "$RUN_FOLDER_ICONS" -eq 1 ]]; then
+if [[ "$RUN_FOLDER_ICONS" -eq 1 && "$DRY_RUN" -eq 0 ]]; then
     assign_folder_icons
 fi
 
