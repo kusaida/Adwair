@@ -79,8 +79,8 @@ def discover_special_icons():
 
         if short_name in icons:
             print(
-                f"! конфликт имён: '{short_name}' уже занято "
-                f"файлом {icons[short_name]}, пропускаю {symbolic_file.name}"
+                f"! name conflict: '{short_name}' is already taken by "
+                f"file {icons[short_name]}, skipping {symbolic_file.name}"
             )
             continue
 
@@ -202,10 +202,10 @@ def get_viewbox(root):
     height = parse_length(root.get("height"))
 
     if width is not None and height is not None:
-        print(f"  ! нет viewBox, восстановлен из width/height: 0 0 {width} {height}")
+        print(f"  ! no viewBox, recovered from width/height: 0 0 {width} {height}")
         return (0.0, 0.0, width, height)
 
-    print("  ! нет ни viewBox, ни пригодных width/height — использую дефолт 24x24")
+    print("  ! no viewBox or usable width/height — using default 24x24")
     return (0.0, 0.0, 24.0, 24.0)
 
 
@@ -290,7 +290,7 @@ def create_symbolic(symbolic_root, color, base_key, base_root):
     base_vb_w = get_viewbox(base_root)[2]
 
     if base_vb_w <= 0:
-        raise ValueError("некорректный viewBox базового шаблона")
+        raise ValueError("invalid viewBox of base template")
 
     k = base_vb_w / REFERENCE_SIZE
     area_x, area_y, area_w, area_h, max_size = (
@@ -300,7 +300,7 @@ def create_symbolic(symbolic_root, color, base_key, base_root):
     vb_x, vb_y, vb_w, vb_h = get_viewbox(symbolic_root)
 
     if vb_w <= 0 or vb_h <= 0:
-        raise ValueError(f"некорректный viewBox: {vb_x} {vb_y} {vb_w} {vb_h}")
+        raise ValueError(f"invalid viewBox: {vb_x} {vb_y} {vb_w} {vb_h}")
 
     scale = max_size / max(vb_w, vb_h)
 
@@ -424,16 +424,16 @@ def make_special_icon(base_key, short_name, symbolic_filename, suffix, main_colo
     symbolic_path = SYMBOLICS / symbolic_filename
 
     if not symbolic_path.exists():
-        print(f"! пропуск: нет файла {symbolic_path}")
-        FAILED.append((symbolic_filename, "файл не найден"))
+        print(f"! skip: file not found {symbolic_path}")
+        FAILED.append((symbolic_filename, "file not found"))
         return
 
     try:
         symbolic_tree = parse_svg(symbolic_path)
         symbolic_root = symbolic_tree.getroot()
     except Exception as e:
-        print(f"! пропуск {symbolic_filename}: не удалось распарсить XML ({e})")
-        FAILED.append((symbolic_filename, f"ошибка парсинга: {e}"))
+        print(f"! skip {symbolic_filename}: failed to parse XML ({e})")
+        FAILED.append((symbolic_filename, f"parse error: {e}"))
         return
 
     root = load_recolored_base(BASES[base_key], main_color, light_color)
@@ -441,7 +441,7 @@ def make_special_icon(base_key, short_name, symbolic_filename, suffix, main_colo
     try:
         symbolic_group = create_symbolic(symbolic_root, main_color, base_key, root)
     except Exception as e:
-        print(f"! пропуск {symbolic_filename}: {e}")
+        print(f"! skip {symbolic_filename}: {e}")
         FAILED.append((symbolic_filename, str(e)))
         return
 
@@ -459,8 +459,8 @@ def make_app_icon(app_name, color_name, main_color, light_color):
     source = APPS / f"{app_name}.svg"
 
     if not source.exists():
-        print(f"! пропуск: нет файла {source}")
-        FAILED.append((source.name, "файл не найден"))
+        print(f"! skip: file not found {source}")
+        FAILED.append((source.name, "file not found"))
         return
 
     try:
@@ -468,7 +468,7 @@ def make_app_icon(app_name, color_name, main_color, light_color):
         recolor_embedded_images(root, main_color, light_color)
         strip_metadata(root)
     except Exception as e:
-        print(f"! пропуск {source.name}: {e}")
+        print(f"! skip {source.name}: {e}")
         FAILED.append((source.name, str(e)))
         return
 
@@ -687,20 +687,20 @@ def prepare_app_accents():
         source = APPS / f"{app_name}.svg"
 
         if not source.exists():
-            print(f"! пропуск: нет файла {source}")
-            FAILED.append((source.name, "файл не найден"))
+            print(f"! skip: file not found {source}")
+            FAILED.append((source.name, "file not found"))
             continue
 
         text = rgb_to_hex_text(strip_metadata_text(source.read_text(encoding="utf-8", errors="ignore")))
         accent = find_accent_colors(text, windows)
 
         if not accent:
-            print(f"! {app_name}: акцентные цвета не найдены — проверьте окна в APP_SPEC")
-            FAILED.append((source.name, "акцентные цвета не найдены"))
+            print(f"! {app_name}: no accent colors found — check windows in APP_SPEC")
+            FAILED.append((source.name, "no accent colors found"))
             continue
 
         accents[app_name] = (text, accent, color_visibility(text))
-        print(f"✓ {app_name}: акцентных цветов — {len(accent)}")
+        print(f"✓ {app_name}: accent colors — {len(accent)}")
 
     return accents
 
@@ -731,8 +731,8 @@ open_count = sum(
     if ALIASES.get(short_name, short_name) in OPEN_ICONS
 )
 
-print(f"Найдено symbolic-эмблем: {len(SPECIAL_ICONS)}")
-print(f"  из них с открытым вариантом: {open_count}")
+print(f"Found symbolic emblems: {len(SPECIAL_ICONS)}")
+print(f"  of which with open variant: {open_count}")
 print()
 
 OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
@@ -780,9 +780,9 @@ for color_name, colors in COLORS.items():
 
     print()
 
-print("Готово.")
+print("Done.")
 
 if FAILED:
-    print(f"\nПроблемных symbolic-файлов: {len(FAILED)}")
+    print(f"\nProblematic symbolic files: {len(FAILED)}")
     for name, reason in FAILED:
         print(f"  - {name}: {reason}")
