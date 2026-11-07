@@ -350,6 +350,13 @@ GLOW_BASE = "#62a0ea"
 TINT_MIN_SATURATION = 0.25
 
 
+def _band_values(img):
+    get_flattened = getattr(img, "get_flattened_data", None)
+    if get_flattened is not None:
+        return get_flattened()
+    return img.getdata()
+
+
 def _is_colored_png(img):
     saturation = img.convert("RGB").convert("HSV").getchannel("S")
     alpha = img.getchannel("A")
@@ -357,7 +364,7 @@ def _is_colored_png(img):
     total = 0
     weighted = 0
 
-    for s, a in zip(saturation.getdata(), alpha.getdata()):
+    for s, a in zip(_band_values(saturation), _band_values(alpha)):
         total += a
         weighted += s * a
 
