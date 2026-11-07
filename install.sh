@@ -24,6 +24,8 @@
 #                        Respects -p and -n;
 #   -F, --folder-name    Only with -r/-u: after removing the theme, also reset
 #                        the folder icons set by -f.
+#   -d, --dry-run        Preview what would be created, copied or removed
+#                        without modifying anything.
 #   -h, --help           Show this help message
 #
 # Symlinks are taken from ./links (same layout as src) and copied into the
@@ -255,7 +257,7 @@ while [[ $# -gt 0 ]]; do
         --remove)       ARGS+=(-r) ;;
         --uninstall)    ARGS+=(-u) ;;
         --folder-name)  ARGS+=(-F) ;;
-        --dry-run)      DRY_RUN=1 ;;
+        --dry-run)      ARGS+=(-d) ;;
         --help)         ARGS+=(-h) ;;
         --)             shift; ARGS+=(-- "$@"); break ;;
         --*)            die "Unknown option: $1 (use -h for help)" ;;
@@ -265,7 +267,7 @@ while [[ $# -gt 0 ]]; do
 done
 set -- ${ARGS[@]+"${ARGS[@]}"}
 
-while getopts ":c:n:p:afruFh" opt; do
+while getopts ":c:n:p:afruFdh" opt; do
     case "$opt" in
         c) COLOR="$OPTARG"; COLOR_SET=1 ;;
         n) THEME_NAME="$OPTARG" ;;
@@ -274,6 +276,7 @@ while getopts ":c:n:p:afruFh" opt; do
         f) RUN_FOLDER_ICONS=1 ;;
         r|u) REMOVE=1 ;;
         F) RESET_FOLDERS=1 ;;
+        d) DRY_RUN=1 ;;
         h) usage 0 ;;
         \?) die "Unknown option: -$OPTARG (use -h for help)" ;;
         :) die "Option -$OPTARG requires an argument" ;;
