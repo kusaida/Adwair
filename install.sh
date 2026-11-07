@@ -11,7 +11,8 @@
 #                          b, blue     g, green    o, orange
 #                          p, pink     pu, purple  r, red
 #                          s, slate    t, teal     y, yellow
-#   -a, --apps           Also install colored app icons. Requires -c. (default: blue).
+#   -a, --apps           Also install colored app icons (light and dark).
+#                        Requires -c. (default: blue).
 #   -n, --name NAME      Theme folder name (default: Adwair)
 #   -p, --path PATH      Base installation path (default: ~/.local/share/icons)
 #                        The theme is installed into PATH/NAME
@@ -33,7 +34,8 @@
 # Use --dry-run to preview what would change without modifying anything.
 #
 # Dark app icons are installed as a separate theme (NAME-dark) that
-# inherits the base theme.
+# inherits the base theme. With -a, accent-colored variants of the dark
+# app icons are overlaid as well.
 
 set -euo pipefail
 
@@ -706,6 +708,28 @@ if [[ "$DRY_RUN" -eq 1 ]]; then
     echo "Would copy: ${dark_files[*]} -> $DARK_APPS/"
 else
     cp -a --remove-destination -t "$DARK_APPS/" "${dark_files[@]}"
+fi
+
+# Overlay the accent-colored dark variants (e.g. red file-manager and
+# preferences icons) so -c/-a also apply to the dark app icons.
+if [[ "$INSTALL_APPS" -eq 1 ]]; then
+    DARK_COLOR_SRC="$DARK_DIR/$RESOLVED_COLOR"
+
+    if [[ -d "$DARK_COLOR_SRC" ]]; then
+        shopt -s nullglob
+        dark_color_files=("$DARK_COLOR_SRC"/*)
+        shopt -u nullglob
+
+        for f in ${dark_color_files[@]+"${dark_color_files[@]}"}; do
+            if [[ "$DRY_RUN" -eq 1 ]]; then
+                echo "Would copy: $f -> $DARK_APPS/"
+            else
+                cp -f --remove-destination "$f" "$DARK_APPS/"
+            fi
+        done
+    else
+        warn "No accent-colored dark icons in $DARK_COLOR_SRC"
+    fi
 fi
 
 if [[ "$DRY_RUN" -eq 1 ]]; then

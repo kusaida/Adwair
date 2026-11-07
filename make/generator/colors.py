@@ -15,6 +15,9 @@ OUTPUT_ROOT = Path("colors")
 APPS = Path("apps")
 APP_OUTPUT_ROOT = APPS
 
+DARK = Path("dark")
+DARK_OUTPUT_ROOT = DARK
+
 APP_ICONS = ["file-manager"]
 
 RED = [(340, 360, 0.5), (0, 12, 0.5)]
@@ -683,7 +686,7 @@ def strip_metadata_text(text):
     return re.sub(r"<metadata\b.*?</metadata>", "", text, flags=re.S)
 
 
-def prepare_app_accents():
+def prepare_app_accents(source_root=APPS, quiet=False):
     accents = {}
 
     for app_name, windows in APP_SPEC.items():
@@ -691,9 +694,11 @@ def prepare_app_accents():
         if app_name in APP_ICONS:
             continue
 
-        source = APPS / f"{app_name}.svg"
+        source = source_root / f"{app_name}.svg"
 
         if not source.exists():
+            if quiet:
+                continue
             print(f"! skip: file not found {source}")
             FAILED.append((source.name, "file not found"))
             continue
@@ -702,6 +707,8 @@ def prepare_app_accents():
         accent = find_accent_colors(text, windows)
 
         if not accent:
+            if quiet:
+                continue
             print(f"! {app_name}: no accent colors found — check windows in APP_SPEC")
             FAILED.append((source.name, "no accent colors found"))
             continue
@@ -712,7 +719,7 @@ def prepare_app_accents():
     return accents
 
 
-def make_accent_app_icon(app_name, text, accent, vis, color_name, main_color):
+def make_accent_app_icon(app_name, text, accent, vis, color_name, main_color, output_root=APP_OUTPUT_ROOT):
     mapping = build_map_inherit(accent, main_color, vis, **APP_TWEAKS.get(color_name, {}))
 
     override = APP_COLOR_OVERRIDES.get(app_name, {}).get(color_name, {})
@@ -725,12 +732,34 @@ def make_accent_app_icon(app_name, text, accent, vis, color_name, main_color):
         lightest = max(body, key=lambda c: hex_to_oklab(c)[0])
         mapping[lightest] = override["light"].lower()
 
-    output_dir = APP_OUTPUT_ROOT / color_name
+    output_dir = output_root / color_name
     output_dir.mkdir(parents=True, exist_ok=True)
 
     output_file = output_dir / f"{app_name}.svg"
     output_file.write_text(replace_accent_colors(text, mapping), encoding="utf-8")
     print(f"✓ {output_file}")
+
+
+def make_dark_color_variants(color_name, main_color, light_color):
+    output_dir = DARK_OUTPUT_ROOT / color_name
+
+    file_manager = DARK / "file-manager.svg"
+
+    if file_manager.exists():
+        root = load_recolored_base(file_manager, main_color, light_color)
+        recolor_embedded_images(root, main_color, light_color)
+        strip_metadata(root)
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        output_file = output_dir / "file-manager.svg"
+        write_svg(root, output_file)
+        print(f"✓ {output_file}")
+
+    for app_name, (text, accent, vis) in DARK_APP_ACCENTS.items():
+        make_accent_app_icon(
+            app_name, text, accent, vis, color_name, main_color,
+            output_root=DARK_OUTPUT_ROOT,
+        )
 
 
 open_count = sum(
@@ -745,6 +774,7 @@ print()
 OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
 
 APP_ACCENTS = prepare_app_accents()
+DARK_APP_ACCENTS = prepare_app_accents(DARK, quiet=True)
 print()
 
 for color_name, colors in COLORS.items():
@@ -784,6 +814,8 @@ for color_name, colors in COLORS.items():
 
     for app_name, (app_text, app_accent, app_vis) in APP_ACCENTS.items():
         make_accent_app_icon(app_name, app_text, app_accent, app_vis, color_name, app_main)
+
+    make_dark_color_variants(color_name, app_main, app_light)
 
     print()
 

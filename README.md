@@ -46,7 +46,7 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Adwair'
 | Option | Description |
 |:-------|:------------|
 | `-c`, `--color [COLOR]` | Use a colored folder variant (default: `blue`) |
-| `-a`, `--apps` | Also install colored app icons (requires `-c`) |
+| `-a`, `--apps` | Also install colored app icons, including the dark variants (requires `-c`) |
 | `-n`, `--name NAME` | Theme name (default: `Adwair`); the dark variant is installed as `NAME-dark` |
 | `-p`, `--path PATH` | Installation directory (default: `$HOME/.local/share/icons`) |
 | `-f`, `--folder-icons` | Assign folder icons by name after install (requires `gio`) |
@@ -67,6 +67,9 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Adwair'
 ```bash
 ./install.sh -c COLOR -a
 ```
+
+This also installs the matching accent-colored icons for the dark app icon
+theme (`NAME-dark`), so the dark variant uses the same accent color.
 
 ![Adwair colored app icons](preview/apps-recolor-preview.png)
 
