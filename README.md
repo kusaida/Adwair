@@ -45,14 +45,17 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Adwair'
 
 | Option | Description |
 |:-------|:------------|
-| `-c`, `--color [COLOR]` | Use a colored folder variant (default: `blue`) |
-| `-a`, `--apps` | Also install colored app icons (requires `-c`) |
+| `-c`, `--color [COLOR]` | Use a colored folder variant (default: `blue`); accepts a case-insensitive name or unambiguous prefix, e.g. `b`, `pu` or `s` |
+| `-a`, `--apps` | Also install colored app icons, including the dark variants (requires `-c`) |
 | `-n`, `--name NAME` | Theme name (default: `Adwair`); the dark variant is installed as `NAME-dark` |
 | `-p`, `--path PATH` | Installation directory (default: `$HOME/.local/share/icons`) |
 | `-f`, `--folder-icons` | Assign folder icons by name after install (requires `gio`) |
 | `-r`, `--remove`, `-u`, `--uninstall` | Uninstall the theme and its dark variant |
 | `-F`, `--folder-name` | Only with `-r`/`-u`: also reset the folder icons set by `-f` |
+| `-d`, `--dry-run` | Preview what would be created, copied or removed without changing anything |
 | `-h`, `--help` | Show help |
+
+Available colors: `blue`, `green`, `orange`, `pink`, `purple`, `red`, `slate`, `teal`, `yellow`.
 
 ### Colored folders
 
@@ -68,7 +71,27 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Adwair'
 ./install.sh -c COLOR -a
 ```
 
+This also installs the matching accent-colored icons for the dark app icon
+theme (`Adwair-dark`), so the dark variant uses the same accent color.
+
 ![Adwair colored app icons](preview/apps-recolor-preview.png)
+
+## Updating
+
+To update an existing installation, pull the latest changes and run the installer again with the same options you used originally:
+
+```bash
+git pull
+./install.sh -c COLOR -a
+```
+
+On update, files and symlinks that no longer exist in `src/` or `links/` are removed from the installed theme, and empty directories are cleaned up. This keeps the installed theme in sync with the repository, but it also means icons removed upstream will disappear locally.
+
+To preview what an install, update or uninstall would do without modifying anything, add `-d` / `--dry-run`:
+
+```bash
+./install.sh -c COLOR -a -d
+```
 
 ## Cursor theme
 
@@ -101,11 +124,12 @@ For example:
 ## Uninstall
 
 ```bash
-./install.sh -r          # remove the theme and its -dark variant
-./install.sh -r -F       # also reset the folder icons set by -f
+./install.sh -r        # remove the theme and its -dark variant
+./install.sh -r -F     # also reset the folder icons set by -f
+./install.sh -r -d     # preview what would be removed
 ```
 
-If you installed with a custom name or path, pass the same `-n` / `-p` values. Note that `-F` resets all non-standard `folder-*` icons, including ones you may have set by hand.
+If you installed with a custom name or path, pass the same `-n` / `-p` values. Note that `-F` resets all non-standard `folder-*` icons, including ones you may have set by hand. `-d` / `--dry-run` only reports what would happen, so folder icons are left untouched.
 
 ## Credits
 
